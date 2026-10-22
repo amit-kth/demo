@@ -137,7 +137,7 @@ export default function Home() {
       <section className="relative isolate min-h-svh overflow-hidden bg-hero text-hero-foreground" id="top">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/slash-logic-backdrop-v2.png"
+            src="/slash-logic-backdrop-v3.png"
             alt=""
             fill
             priority
@@ -154,7 +154,7 @@ export default function Home() {
             <div className="max-w-3xl lg:col-span-7">
               <p className="hero-enter mb-5 inline-flex items-center gap-3 rounded-full border border-hero-border bg-hero-surface/75 px-4 py-2 text-xs font-bold uppercase tracking-widest text-hero-muted backdrop-blur-sm sm:text-sm">
                 <span className="size-2 rounded-full bg-accent shadow-md" />
-                Slash Logic <span className="text-signal">/</span> Digital studio
+                Slash Logic <span className="text-primary">/</span> Digital studio
               </p>
               <h1 className="font-display text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
                 <span className="hero-enter hero-enter-delay-1 block">Web &amp; app</span>
@@ -175,8 +175,8 @@ export default function Home() {
                 <WhatsAppButton href={whatsappHref} />
               </div>
               <div className="hero-enter hero-enter-delay-4 mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-bold uppercase tracking-widest text-hero-muted sm:text-sm">
-                <span>Web development</span><span className="text-signal">/</span>
-                <span>App development</span><span className="text-signal">/</span>
+                <span>Web development</span><span className="text-primary">/</span>
+                <span>App development</span><span className="text-primary">/</span>
                 <span>Digital marketing</span>
               </div>
             </div>
@@ -194,11 +194,11 @@ export default function Home() {
               <div className="hero-float hero-float-late absolute right-0 top-1/2 inline-flex -translate-y-1/2 items-center gap-3 rounded-full bg-accent px-5 py-3 text-sm font-bold text-accent-foreground shadow-xl">
                 <Smartphone className="size-5" aria-hidden="true" /> App development
               </div>
-              <div className="hero-float absolute bottom-10 left-4 inline-flex items-center gap-3 rounded-full bg-signal px-5 py-3 text-sm font-bold text-signal-foreground shadow-xl">
-                <Megaphone className="size-5" aria-hidden="true" /> Digital marketing
+              <div className="hero-float absolute bottom-10 left-4 inline-flex items-center gap-3 rounded-full bg-background px-5 py-3 text-sm font-bold text-foreground shadow-xl">
+                <Megaphone className="size-5 text-primary" aria-hidden="true" /> Digital marketing
               </div>
               <span className="absolute right-10 top-6 size-3 rounded-full bg-accent shadow-lg" />
-              <span className="absolute bottom-8 right-12 size-2 rounded-full bg-signal shadow-lg" />
+              <span className="absolute bottom-8 right-12 size-2 rounded-full bg-primary shadow-lg" />
             </div>
           </div>
         </Container>
@@ -253,7 +253,7 @@ export default function Home() {
 
             <Reveal className="lg:col-span-5">
               <article className="group relative isolate flex min-h-96 flex-col overflow-hidden rounded-3xl bg-accent p-7 text-accent-foreground shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-9">
-                <div className="absolute -right-10 -top-10 size-52 rounded-full bg-signal/35 transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute -right-10 -top-10 size-52 rounded-full bg-primary/35 transition-transform duration-700 group-hover:scale-110" />
                 <div className="relative z-10 flex items-center justify-between gap-4">
                   <span className="rounded-full border border-accent-foreground/20 bg-background/30 px-4 py-2 text-xs font-bold uppercase tracking-widest">02 / Create</span>
                   <Smartphone className="size-8 text-primary transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110" strokeWidth={1.5} aria-hidden="true" />
@@ -274,7 +274,7 @@ export default function Home() {
 
             <Reveal className="lg:col-span-12">
               <article className="relative isolate overflow-hidden rounded-3xl bg-hero p-7 text-hero-foreground shadow-xl sm:p-10">
-                <div className="absolute -right-16 -top-20 size-72 rounded-full bg-signal/20 blur-3xl" />
+                <div className="absolute -right-16 -top-20 size-72 rounded-full bg-primary/20 blur-3xl" />
                 <div className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-center">
                   <div className="lg:col-span-4">
                     <span className="inline-flex items-center gap-2 rounded-full border border-hero-border bg-hero-surface px-4 py-2 text-xs font-bold uppercase tracking-widest text-accent">03 / Reach</span>
@@ -286,7 +286,7 @@ export default function Home() {
                   <div className="grid gap-3 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
                     {marketingServices.map(({ title, detail, icon: Icon }) => (
                       <div className="rounded-2xl border border-hero-border bg-hero-surface/70 p-4 transition duration-300 hover:-translate-y-1 hover:border-primary/60" key={title}>
-                        <Icon className="size-6 text-signal" strokeWidth={1.8} aria-hidden="true" />
+                        <Icon className="size-6 text-primary" strokeWidth={1.8} aria-hidden="true" />
                         <h4 className="mt-5 font-display text-lg font-semibold">{title}</h4>
                         <p className="mt-2 text-sm leading-relaxed text-hero-muted">{detail}</p>
                       </div>

@@ -28,7 +28,7 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <div className="h-1 bg-linear-to-r from-primary via-signal to-accent" aria-hidden="true" />
+      <div className="h-1 bg-primary" aria-hidden="true" />
       <div className={`border-b border-border bg-background transition-shadow duration-300 ${compact ? "shadow-md" : "shadow-sm"}`}>
         <Container className={`relative flex items-center justify-between gap-4 transition-[height] duration-300 ${compact ? "h-14" : "h-16"}`}>
           <div className="flex items-center gap-3">

@@ -38,12 +38,7 @@ export function SiteHeader() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className={`transition-colors duration-300 ${overHero ? "bg-transparent" : "border-b border-border bg-background shadow-md"}`}>
         <Container className={`relative flex items-center justify-between gap-4 transition-[height] duration-300 ${overHero ? "h-16" : "h-14"}`}>
-          <div className="flex items-center gap-3">
-            <BrandMark tone={overHero ? "light" : "dark"} />
-            <span className={`hidden border-l pl-3 text-xs font-semibold uppercase leading-tight tracking-wider lg:block ${overHero ? "border-hero-border text-hero-muted" : "border-border text-muted-foreground"}`}>
-              IT<br />company
-            </span>
-          </div>
+          <BrandMark tone={overHero ? "light" : "dark"} />
 
           <nav
             id="primary-navigation"

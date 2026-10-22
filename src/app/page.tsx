@@ -6,15 +6,14 @@ import {
   ArrowUpRight,
   Check,
   Code2,
-  Coffee,
   FileText,
-  Leaf,
   Megaphone,
   MessageCircle,
   PenTool,
   Plus,
   Search,
   Share2,
+  ShoppingBag,
   Smartphone,
   Sparkles,
   Workflow,
@@ -28,10 +27,10 @@ import { WhatsAppButton } from "@/components/whatsapp-button";
 import { whatsappHref } from "@/lib/site-config";
 
 const sampleBrands = [
-  { name: "JUNIPER & CO.", icon: Leaf },
-  { name: "MORROW", icon: Coffee },
-  { name: "FORMA", icon: Activity },
-  { name: "NORTHLINE", icon: Sparkles },
+  { name: "NORTHLINE", icon: Code2 },
+  { name: "MORROW", icon: ShoppingBag },
+  { name: "FORMA", icon: Smartphone },
+  { name: "ORBIT", icon: Workflow },
 ];
 
 const marketingServices = [
@@ -50,30 +49,30 @@ const processSteps = [
 
 const projects = [
   {
-    brand: "Juniper & Co.",
-    category: "Online store · Home",
-    title: "A warmer way to shop for home.",
-    description: "A concept storefront with a product-led layout and a simple path from browsing to checkout.",
-    image: "/concept-juniper.jpg",
-    alt: "Sculptural ceramic homewares against a warm coral wall",
+    brand: "Northline",
+    category: "Website · IT services",
+    title: "IT services, made clear.",
+    description: "A business website concept that introduces digital services, explains capabilities and makes it easy to start a conversation.",
+    image: "/concept-morrow.jpg",
+    alt: "Desktop website interface concept for a technology services business, with service information and a clear contact path",
     layout: "feature",
   },
   {
-    brand: "Morrow Coffee",
-    category: "Business website · Hospitality",
-    title: "A local favourite, online.",
-    description: "A welcoming café website concept for the menu, location, opening hours and story.",
-    image: "/concept-morrow.jpg",
-    alt: "Contemporary coffee bar with a cobalt counter and warm interior",
+    brand: "Morrow",
+    category: "E-commerce · Retail",
+    title: "A smoother way to browse and buy.",
+    description: "An online store concept with product categories, a browsable catalogue and a straightforward path to checkout.",
+    image: "/concept-juniper.jpg",
+    alt: "E-commerce website interface with navigation, a retail product grid and shopping controls",
     layout: "side",
   },
   {
     brand: "Forma",
-    category: "Mobile app · Wellness",
-    title: "A little more movement, every day.",
-    description: "A mobile app concept for a clear, friendly daily movement routine on iOS and Android.",
+    category: "Mobile app · Productivity",
+    title: "A clearer view of the workday.",
+    description: "A mobile productivity app concept with task planning, priorities and a quick progress overview.",
     image: "/concept-forma.jpg",
-    alt: "Cobalt smartphone with a colorful abstract wellness interface",
+    alt: "Smartphone displaying a mobile productivity app interface with task cards and a progress dashboard",
     layout: "wide",
   },
 ] as const;
@@ -154,7 +153,7 @@ export default function Home() {
             <div className="max-w-3xl lg:col-span-7">
               <p className="hero-enter mb-5 inline-flex items-center gap-3 rounded-full border border-hero-border bg-hero-surface/75 px-4 py-2 text-xs font-bold uppercase tracking-widest text-hero-muted backdrop-blur-sm sm:text-sm">
                 <span className="size-2 rounded-full bg-accent shadow-md" />
-                Slash Logic <span className="text-primary">/</span> IT company
+                Slash Logic <span className="text-primary">/</span> Web, apps &amp; marketing
               </p>
               <h1 className="font-display text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
                 <span className="hero-enter hero-enter-delay-1 block">Web &amp; app</span>
@@ -338,13 +337,13 @@ export default function Home() {
         <Container>
           <Reveal className="grid gap-8 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
-              <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">03 / Concept portfolio</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">03 / Project examples</p>
               <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-                Different ideas. Thoughtfully built.
+                Websites, online stores & apps.
               </h2>
             </div>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:col-span-5">
-              Fictional brand and project concepts across e-commerce, hospitality and mobile apps.
+              Explore a website, an online store and a mobile app concept. These are illustrative examples—not client projects or case studies.
             </p>
           </Reveal>
 

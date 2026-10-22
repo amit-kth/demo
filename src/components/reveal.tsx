@@ -1,39 +1,41 @@
 "use client";
 
-import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
   className?: string;
-  delay?: number;
 };
 
-export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
+export function Reveal({ children, className = "" }: RevealProps) {
   const elementRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const element = elementRef.current;
-    if (!element || !("IntersectionObserver" in window)) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!element || reduceMotion || !("IntersectionObserver" in window)) return;
 
-    element.dataset.revealReady = "true";
+    setVisible(false);
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
-          element.dataset.revealVisible = "true";
+          setVisible(true);
           observer.unobserve(element);
         }
       },
-      { threshold: 0.14, rootMargin: "0px 0px -36px 0px" },
+      { threshold: 0.14 },
     );
 
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
 
-  const style = delay ? ({ transitionDelay: `${delay}ms` } satisfies CSSProperties) : undefined;
-
   return (
-    <div ref={elementRef} className={`reveal ${className}`} style={style}>
+    <div
+      ref={elementRef}
+      className={`transition-all duration-700 ease-out motion-reduce:transition-none ${visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} ${className}`}
+    >
       {children}
     </div>
   );

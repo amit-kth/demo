@@ -1,6 +1,6 @@
 # Slash Logic
 
-A responsive, motion-led service catalogue website for Slash Logic, built with Next.js, TypeScript, and Tailwind CSS. The visual system uses shadcn-style CSS variables in `src/app/globals.css`; the logo and interface artwork are original SVG/CSS elements.
+A responsive service catalogue website for Slash Logic, built with Next.js, TypeScript, and Tailwind CSS. Components use semantic Tailwind utilities mapped to shadcn-style theme variables in `src/app/globals.css`. The hero uses a generated editorial image; the brand mark is an inline SVG.
 
 ## Run locally
 
@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Connect WhatsApp
 
-Set `NEXT_PUBLIC_WHATSAPP_NUMBER` in `.env.local` to the confirmed international phone number using digits only (country code included). Until a number is supplied, the WhatsApp button remains a clearly marked draft placeholder and does not link to a made-up number.
+Set `NEXT_PUBLIC_WHATSAPP_NUMBER` in `.env.local` to the confirmed international phone number using digits only (country code included). Until a number is supplied, WhatsApp buttons are disabled; no number is invented.
 
 ## Scripts
 
@@ -24,4 +24,4 @@ Set `NEXT_PUBLIC_WHATSAPP_NUMBER` in `.env.local` to the confirmed international
 - `npm run lint` — run ESLint
 - `npm run typecheck` — run TypeScript checks
 
-The work archive is intentionally a visual placeholder until real client projects, portfolio details, and proof points are provided.
+The portfolio section uses clearly labeled fictional brand marks and project concepts for layout demonstration only; it contains no client claims or performance results.

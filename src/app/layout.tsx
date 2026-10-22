@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Slash Logic — Web, Apps & Digital Marketing",
+  title: "Slash Logic — Web & App Development, Digital Marketing",
   description:
-    "Websites, e-commerce, web and mobile apps, SEO, social media, paid ads, and content marketing for businesses of every kind.",
+    "Web and app development for businesses: websites, online stores, mobile apps, and digital marketing services.",
   applicationName: "Slash Logic",
   openGraph: {
-    title: "Slash Logic — Digital services for every kind of business",
+    title: "Slash Logic — Web & App Development for Business",
     description:
       "Websites, e-commerce, apps, and digital marketing services from Slash Logic.",
     type: "website",

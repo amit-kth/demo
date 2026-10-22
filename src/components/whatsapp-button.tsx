@@ -8,7 +8,7 @@ type WhatsAppButtonProps = {
 };
 
 const buttonClasses =
-  "group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring active:scale-95";
+  "group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-whatsapp px-6 py-3 text-base font-semibold text-whatsapp-foreground shadow-lg transition hover:-translate-y-0.5 hover:brightness-110 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring active:scale-95";
 
 function ButtonContent() {
   return (

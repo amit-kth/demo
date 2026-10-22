@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { BrandMark } from "@/components/brand-mark";
 import { Container } from "@/components/container";
+import { whatsappHref } from "@/lib/site-config";
 
 const links = [
   { label: "Services", href: "#services" },
@@ -18,7 +19,7 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 pt-4">
       <Container>
-        <div className="relative flex items-center justify-between gap-4 rounded-full border border-hero-border bg-hero/90 px-4 py-3 text-hero-foreground shadow-xl backdrop-blur-xl sm:px-6">
+        <div className="relative flex items-center justify-between gap-4 rounded-full border border-hero-border bg-hero px-4 py-3 text-hero-foreground shadow-2xl sm:px-6">
           <BrandMark />
 
           <nav
@@ -37,8 +38,10 @@ export function SiteHeader() {
               </a>
             ))}
             <a
-              className="mt-2 inline-flex items-center justify-between gap-4 rounded-full bg-primary px-5 py-3 text-base font-semibold text-primary-foreground transition hover:brightness-110 md:hidden"
-              href="#contact"
+              className="mt-2 inline-flex items-center justify-between gap-4 rounded-full bg-whatsapp px-5 py-3 text-base font-semibold text-whatsapp-foreground transition hover:brightness-110 md:hidden"
+              href={whatsappHref ?? "#contact"}
+              target={whatsappHref ? "_blank" : undefined}
+              rel={whatsappHref ? "noreferrer" : undefined}
               onClick={closeMenu}
             >
               WhatsApp us <ArrowUpRight className="size-5" aria-hidden="true" />
@@ -46,8 +49,10 @@ export function SiteHeader() {
           </nav>
 
           <a
-            className="hidden items-center gap-3 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-md transition hover:-translate-y-0.5 hover:brightness-110 md:inline-flex"
-            href="#contact"
+            className="hidden items-center gap-3 rounded-full bg-whatsapp px-5 py-3 text-sm font-semibold text-whatsapp-foreground shadow-md transition hover:-translate-y-0.5 hover:brightness-110 md:inline-flex"
+            href={whatsappHref ?? "#contact"}
+            target={whatsappHref ? "_blank" : undefined}
+            rel={whatsappHref ? "noreferrer" : undefined}
           >
             WhatsApp us <ArrowUpRight className="size-4" strokeWidth={1.8} aria-hidden="true" />
           </a>

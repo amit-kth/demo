@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ArrowUpRight, BriefcaseBusiness, Code2, Menu, MessageCircle, Workflow, X } from "lucide-react";
 import { BrandMark } from "@/components/brand-mark";
 import { Container } from "@/components/container";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { whatsappHref } from "@/lib/site-config";
 
 const links = [
@@ -13,28 +14,34 @@ const links = [
   { label: "Contact", href: "#contact", icon: MessageCircle },
 ];
 
-
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [compact, setCompact] = useState(false);
+  const [overHero, setOverHero] = useState(true);
   const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
-    const updateHeader = () => setCompact(window.scrollY > 24);
+    const updateHeader = () => {
+      const hero = document.getElementById("top");
+      setOverHero(Boolean(hero && hero.getBoundingClientRect().bottom > 72));
+    };
+
     updateHeader();
     window.addEventListener("scroll", updateHeader, { passive: true });
-    return () => window.removeEventListener("scroll", updateHeader);
+    window.addEventListener("resize", updateHeader);
+    return () => {
+      window.removeEventListener("scroll", updateHeader);
+      window.removeEventListener("resize", updateHeader);
+    };
   }, []);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <div className="h-1 bg-primary" aria-hidden="true" />
-      <div className={`border-b border-border bg-background transition-shadow duration-300 ${compact ? "shadow-md" : "shadow-sm"}`}>
-        <Container className={`relative flex items-center justify-between gap-4 transition-[height] duration-300 ${compact ? "h-14" : "h-16"}`}>
+      <div className={`transition-colors duration-300 ${overHero ? "bg-transparent" : "border-b border-border bg-background shadow-md"}`}>
+        <Container className={`relative flex items-center justify-between gap-4 transition-[height] duration-300 ${overHero ? "h-16" : "h-14"}`}>
           <div className="flex items-center gap-3">
-            <BrandMark tone="dark" />
-            <span className="hidden border-l border-border pl-3 text-xs font-semibold uppercase leading-tight tracking-wider text-muted-foreground lg:block">
-              Digital<br />studio
+            <BrandMark tone={overHero ? "light" : "dark"} />
+            <span className={`hidden border-l pl-3 text-xs font-semibold uppercase leading-tight tracking-wider lg:block ${overHero ? "border-hero-border text-hero-muted" : "border-border text-muted-foreground"}`}>
+              IT<br />company
             </span>
           </div>
 
@@ -45,9 +52,13 @@ export function SiteHeader() {
           >
             {links.map((link) => {
               const Icon = link.icon;
+              const linkColors = overHero && !menuOpen
+                ? "text-hero-muted hover:bg-hero-surface/70 hover:text-hero-foreground"
+                : "text-muted-foreground hover:bg-secondary hover:text-foreground";
+
               return (
                 <a
-                  className="group inline-flex items-center gap-2 rounded-full px-3 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-secondary hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
+                  className={`group inline-flex items-center gap-2 rounded-full px-3 py-2.5 text-sm font-semibold transition focus-visible:ring-2 focus-visible:ring-ring ${linkColors}`}
                   href={link.href}
                   key={link.href}
                   onClick={closeMenu}
@@ -64,7 +75,8 @@ export function SiteHeader() {
               rel={whatsappHref ? "noreferrer" : undefined}
               onClick={closeMenu}
             >
-              WhatsApp us <ArrowUpRight className="size-4" aria-hidden="true" />
+              <span className="inline-flex items-center gap-2"><WhatsAppIcon className="size-5" /> WhatsApp us</span>
+              <ArrowUpRight className="size-4" aria-hidden="true" />
             </a>
           </nav>
 
@@ -75,13 +87,13 @@ export function SiteHeader() {
               target={whatsappHref ? "_blank" : undefined}
               rel={whatsappHref ? "noreferrer" : undefined}
             >
-              <MessageCircle className="size-4" aria-hidden="true" />
+              <WhatsAppIcon className="size-5" />
               Start a conversation
               <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
             </a>
 
             <button
-              className="grid size-10 place-items-center rounded-full border border-border bg-secondary text-foreground transition hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+              className={`grid size-10 place-items-center rounded-full border transition focus-visible:ring-2 focus-visible:ring-ring md:hidden ${overHero ? "border-hero-border bg-hero-surface/70 text-hero-foreground hover:bg-hero-surface" : "border-border bg-secondary text-foreground hover:bg-accent hover:text-accent-foreground"}`}
               type="button"
               aria-label={menuOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={menuOpen}

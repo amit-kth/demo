@@ -154,7 +154,7 @@ export default function Home() {
             <div className="max-w-3xl lg:col-span-7">
               <p className="hero-enter mb-5 inline-flex items-center gap-3 rounded-full border border-hero-border bg-hero-surface/75 px-4 py-2 text-xs font-bold uppercase tracking-widest text-hero-muted backdrop-blur-sm sm:text-sm">
                 <span className="size-2 rounded-full bg-accent shadow-md" />
-                Slash Logic <span className="text-primary">/</span> Digital studio
+                Slash Logic <span className="text-primary">/</span> IT company
               </p>
               <h1 className="font-display text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
                 <span className="hero-enter hero-enter-delay-1 block">Web &amp; app</span>
@@ -222,9 +222,9 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 lg:grid-cols-12">
-            <Reveal className="lg:col-span-7">
-              <article className="group relative isolate flex min-h-96 flex-col overflow-hidden rounded-3xl bg-primary p-7 text-primary-foreground shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-2xl sm:p-10">
+          <div className="mt-12 grid items-stretch gap-5 lg:grid-cols-12">
+            <Reveal className="h-full lg:col-span-7">
+              <article className="group relative isolate flex h-full min-h-96 flex-col overflow-hidden rounded-3xl bg-primary p-7 text-primary-foreground shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-2xl sm:p-10">
                 <div className="absolute -right-20 -top-20 size-80 rounded-full border border-primary-foreground/20 transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute right-10 top-10 size-52 rounded-full border border-dashed border-accent/60 transition-transform duration-700 group-hover:rotate-12" />
                 <Code2 className="absolute right-16 top-16 z-0 size-24 text-primary-foreground/20 transition-transform duration-500 group-hover:-rotate-6 sm:size-32" strokeWidth={1} aria-hidden="true" />
@@ -251,8 +251,8 @@ export default function Home() {
               </article>
             </Reveal>
 
-            <Reveal className="lg:col-span-5">
-              <article className="group relative isolate flex min-h-96 flex-col overflow-hidden rounded-3xl bg-accent p-7 text-accent-foreground shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-9">
+            <Reveal className="h-full lg:col-span-5">
+              <article className="group relative isolate flex h-full min-h-96 flex-col overflow-hidden rounded-3xl bg-accent p-7 text-accent-foreground shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-9">
                 <div className="absolute -right-10 -top-10 size-52 rounded-full bg-primary/35 transition-transform duration-700 group-hover:scale-110" />
                 <div className="relative z-10 flex items-center justify-between gap-4">
                   <span className="rounded-full border border-accent-foreground/20 bg-background/30 px-4 py-2 text-xs font-bold uppercase tracking-widest">02 / Create</span>
@@ -283,9 +283,9 @@ export default function Home() {
                       Make it easier to find you, understand you and choose you.
                     </p>
                   </div>
-                  <div className="grid gap-3 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
+                  <div className="grid items-stretch gap-3 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
                     {marketingServices.map(({ title, detail, icon: Icon }) => (
-                      <div className="rounded-2xl border border-hero-border bg-hero-surface/70 p-4 transition duration-300 hover:-translate-y-1 hover:border-primary/60" key={title}>
+                      <div className="h-full rounded-2xl border border-hero-border bg-hero-surface/70 p-4 transition duration-300 hover:-translate-y-1 hover:border-primary/60" key={title}>
                         <Icon className="size-6 text-primary" strokeWidth={1.8} aria-hidden="true" />
                         <h4 className="mt-5 font-display text-lg font-semibold">{title}</h4>
                         <p className="mt-2 text-sm leading-relaxed text-hero-muted">{detail}</p>
@@ -313,11 +313,11 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-12 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map(({ number, title, detail, icon: Icon }) => (
-              <li key={number}>
-                <Reveal>
-                  <div className="group h-full rounded-3xl border border-border bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-7">
+              <li className="h-full" key={number}>
+                <Reveal className="h-full">
+                  <div className="group flex h-full min-h-72 flex-col rounded-3xl border border-border bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-7">
                     <div className="flex items-start justify-between gap-4">
                       <span className="font-display text-5xl font-semibold leading-none text-primary">{number}</span>
                       <span className="grid size-11 place-items-center rounded-2xl bg-accent text-accent-foreground transition-transform duration-300 group-hover:rotate-6">
@@ -350,14 +350,14 @@ export default function Home() {
 
           <BrandRail />
 
-          <div className="mt-8 grid gap-5 lg:grid-cols-12">
+          <div className="mt-8 grid items-stretch gap-5 lg:grid-cols-12">
             {projects.map((project) => (
               <Reveal
-                className={project.layout === "feature" ? "lg:col-span-7" : project.layout === "side" ? "lg:col-span-5" : "lg:col-span-12"}
+                className={project.layout === "feature" ? "h-full lg:col-span-7" : project.layout === "side" ? "h-full lg:col-span-5" : "h-full lg:col-span-12"}
                 key={project.brand}
               >
-                <article className={`project-card group h-full overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl ${project.layout === "wide" ? "lg:grid lg:grid-cols-12" : ""}`}>
-                  <div className={`relative aspect-video overflow-hidden ${project.layout === "wide" ? "lg:col-span-7 lg:aspect-auto lg:min-h-80" : ""}`}>
+                <article className={`project-card group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl ${project.layout === "wide" ? "lg:grid lg:grid-cols-12" : ""}`}>
+                  <div className={`relative h-64 overflow-hidden sm:h-72 ${project.layout === "wide" ? "lg:col-span-7 lg:h-80" : ""}`}>
                     <Image
                       src={project.image}
                       alt={project.alt}
@@ -379,7 +379,7 @@ export default function Home() {
                       </span>
                     </div>
                   </div>
-                  <div className={`p-6 sm:p-7 ${project.layout === "wide" ? "lg:col-span-5 lg:self-center lg:p-10" : ""}`}>
+                  <div className={`flex flex-1 flex-col justify-center p-6 sm:p-7 ${project.layout === "wide" ? "lg:col-span-5 lg:p-10" : ""}`}>
                     <p className="text-xs font-bold uppercase tracking-widest text-primary">{project.category}</p>
                     <h3 className="mt-3 font-display text-2xl font-semibold leading-tight sm:text-3xl">{project.title}</h3>
                     <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">{project.description}</p>

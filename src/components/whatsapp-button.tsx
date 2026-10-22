@@ -1,4 +1,5 @@
-import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
 
 type WhatsAppButtonProps = {
   href: string | null;
@@ -10,7 +11,7 @@ const buttonClasses =
 function ButtonContent() {
   return (
     <>
-      <MessageCircle className="size-5" strokeWidth={1.8} aria-hidden="true" />
+      <WhatsAppIcon className="size-5" />
       <span>Chat on WhatsApp</span>
       <ArrowUpRight className="size-5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.8} aria-hidden="true" />
     </>

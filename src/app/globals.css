@@ -100,7 +100,7 @@
 
   html {
     @apply scroll-smooth;
-    scroll-padding-top: 8rem;
+    scroll-padding-top: 6rem;
     scrollbar-color: var(--primary) var(--background);
     scrollbar-width: thin;
   }

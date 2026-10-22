@@ -13,7 +13,7 @@ export function BrandMark({ href = "#top", tone = "light" }: BrandMarkProps) {
       aria-label="Slash Logic home"
     >
       <svg
-        className="size-10 text-primary transition duration-300 group-hover:-rotate-6 group-hover:text-accent-foreground"
+        className="size-8 text-primary transition duration-300 group-hover:-rotate-6 group-hover:text-accent-foreground sm:size-9"
         viewBox="0 0 44 44"
         fill="none"
         aria-hidden="true"

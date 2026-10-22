@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 
 type WhatsAppButtonProps = {
@@ -8,7 +5,7 @@ type WhatsAppButtonProps = {
 };
 
 const buttonClasses =
-  "group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-whatsapp px-6 py-3 text-base font-semibold text-whatsapp-foreground shadow-lg transition hover:-translate-y-0.5 hover:brightness-110 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring active:scale-95";
+  "group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-whatsapp px-6 py-3 text-base font-semibold text-whatsapp-foreground shadow-lg transition hover:-translate-y-0.5 hover:brightness-110 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring active:scale-95 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:brightness-100 disabled:hover:shadow-lg";
 
 function ButtonContent() {
   return (
@@ -21,8 +18,6 @@ function ButtonContent() {
 }
 
 export function WhatsAppButton({ href }: WhatsAppButtonProps) {
-  const [notice, setNotice] = useState(false);
-
   if (href) {
     return (
       <a className={buttonClasses} href={href} target="_blank" rel="noreferrer">
@@ -32,15 +27,8 @@ export function WhatsAppButton({ href }: WhatsAppButtonProps) {
   }
 
   return (
-    <div className="flex flex-col items-start gap-3">
-      <button className={buttonClasses} type="button" onClick={() => setNotice(true)}>
-        <ButtonContent />
-      </button>
-      <p className="min-h-5 text-sm text-hero-muted" role="status" aria-live="polite">
-        {notice
-          ? "The chat link will be connected when your WhatsApp number is added."
-          : "WhatsApp number to be added before launch."}
-      </p>
-    </div>
+    <button className={buttonClasses} type="button" disabled>
+      <ButtonContent />
+    </button>
   );
 }

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: "DM Sans Variable", "DM Sans", sans-serif;
-  --font-display: "Sora Variable", "Sora", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Sora", sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

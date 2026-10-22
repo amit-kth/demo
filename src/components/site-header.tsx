@@ -16,19 +16,19 @@ export function SiteHeader() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="absolute inset-x-0 top-4 z-50 pointer-events-none md:top-[22px]">
+    <header className="fixed inset-x-0 top-0 z-50 pt-4">
       <Container>
-        <div className="pointer-events-auto relative flex min-h-[62px] items-center justify-between rounded-full border border-white/15 bg-slate-950/65 px-3 py-2 shadow-[0_16px_48px_rgba(0,0,0,.16)] backdrop-blur-2xl md:min-h-[70px] md:pl-[18px]">
+        <div className="relative flex items-center justify-between gap-4 rounded-full border border-hero-border bg-hero/90 px-4 py-3 text-hero-foreground shadow-xl backdrop-blur-xl sm:px-6">
           <BrandMark />
 
           <nav
             id="primary-navigation"
             aria-label="Main navigation"
-            className={`${menuOpen ? "flex" : "hidden"} absolute left-0 right-0 top-[calc(100%+8px)] flex-col rounded-[20px] border border-white/15 bg-slate-950/95 px-4 pb-4 pt-2 shadow-2xl backdrop-blur-2xl md:static md:mx-auto md:flex md:flex-row md:items-center md:gap-[clamp(24px,3.1vw,48px)] md:border-0 md:bg-transparent md:px-8 md:py-0 md:shadow-none md:backdrop-blur-none`}
+            className={`${menuOpen ? "flex" : "hidden"} absolute left-0 right-0 top-full mt-3 flex-col rounded-3xl border border-hero-border bg-hero p-4 shadow-xl md:static md:mx-auto md:mt-0 md:flex md:flex-row md:items-center md:gap-2 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
           >
             {links.map((link) => (
               <a
-                className="border-b border-white/10 py-3 text-sm text-slate-200/75 transition hover:text-white md:border-0 md:py-2 md:text-xs"
+                className="rounded-full px-4 py-3 text-base text-hero-muted transition hover:bg-hero-surface hover:text-hero-foreground md:py-2 md:text-sm"
                 href={link.href}
                 key={link.href}
                 onClick={closeMenu}
@@ -37,23 +37,23 @@ export function SiteHeader() {
               </a>
             ))}
             <a
-              className="mt-3 inline-flex min-h-11 items-center justify-between gap-4 rounded-full border border-white/15 bg-white/10 px-4 text-sm text-white transition hover:bg-blue-300/15 md:hidden"
+              className="mt-2 inline-flex items-center justify-between gap-4 rounded-full bg-primary px-5 py-3 text-base font-semibold text-primary-foreground transition hover:brightness-110 md:hidden"
               href="#contact"
               onClick={closeMenu}
             >
-              Start a conversation <ArrowUpRight className="size-4" aria-hidden="true" />
+              WhatsApp us <ArrowUpRight className="size-5" aria-hidden="true" />
             </a>
           </nav>
 
           <a
-            className="hidden min-h-[46px] items-center justify-center gap-4 rounded-full border border-white/15 bg-white/10 px-5 text-xs text-white transition hover:-translate-y-px hover:border-cyan-100/50 hover:bg-blue-300/15 md:inline-flex"
+            className="hidden items-center gap-3 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-md transition hover:-translate-y-0.5 hover:brightness-110 md:inline-flex"
             href="#contact"
           >
-            Start a conversation <ArrowUpRight className="size-4" strokeWidth={1.8} aria-hidden="true" />
+            WhatsApp us <ArrowUpRight className="size-4" strokeWidth={1.8} aria-hidden="true" />
           </a>
 
           <button
-            className="grid size-10 place-items-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-blue-300/15 md:hidden"
+            className="grid size-11 place-items-center rounded-full border border-hero-border bg-hero-surface text-hero-foreground transition hover:bg-primary hover:text-primary-foreground md:hidden"
             type="button"
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={menuOpen}

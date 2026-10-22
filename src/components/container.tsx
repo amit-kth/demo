@@ -1,13 +1,14 @@
 import type { ReactNode } from "react";
 
-const containerClasses =
-  "mx-auto w-full max-w-[1448px] px-11 max-[1100px]:px-7 max-[680px]:px-[18px] max-[380px]:px-[15px]";
-
 type ContainerProps = {
   children: ReactNode;
   className?: string;
 };
 
 export function Container({ children, className = "" }: ContainerProps) {
-  return <div className={`${containerClasses} ${className}`}>{children}</div>;
+  return (
+    <div className={`mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`}>
+      {children}
+    </div>
+  );
 }

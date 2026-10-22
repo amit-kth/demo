@@ -1,6 +1,6 @@
 # Slash Logic
 
-A responsive, motion-led service catalogue website for Slash Logic, built with Next.js, TypeScript, and Tailwind CSS. Components are styled with Tailwind utilities; `src/app/globals.css` contains the shadcn-style color tokens, typography theme, animation keyframes, and a small base layer. The logo and interface artwork are original inline SVGs.
+A responsive service catalogue website for Slash Logic, built with Next.js, TypeScript, and Tailwind CSS. Components use semantic Tailwind utilities mapped to shadcn-style theme variables in `src/app/globals.css`. The hero uses a generated editorial image; the brand mark is an inline SVG.
 
 ## Run locally
 

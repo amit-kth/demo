@@ -4,17 +4,16 @@ type BrandMarkProps = {
 };
 
 export function BrandMark({ href = "#top", tone = "light" }: BrandMarkProps) {
-  const symbolColor = tone === "dark" ? "text-blue-600" : "text-cyan-200";
-  const wordColor = tone === "dark" ? "text-slate-950" : "text-slate-50";
+  const wordColor = tone === "dark" ? "text-foreground" : "text-hero-foreground";
 
   return (
     <a
-      className={`group inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap ${wordColor}`}
+      className={`group inline-flex shrink-0 items-center gap-3 whitespace-nowrap ${wordColor}`}
       href={href}
       aria-label="Slash Logic home"
     >
       <svg
-        className={`h-9 w-9 transition duration-300 group-hover:-rotate-6 group-hover:text-blue-300 ${symbolColor}`}
+        className="size-10 text-primary transition duration-300 group-hover:-rotate-6 group-hover:text-accent-foreground"
         viewBox="0 0 44 44"
         fill="none"
         aria-hidden="true"
@@ -29,8 +28,8 @@ export function BrandMark({ href = "#top", tone = "light" }: BrandMarkProps) {
         <circle cx="27.1" cy="8.6" r="2.1" fill="currentColor" />
         <circle cx="16.9" cy="35.4" r="2.1" fill="currentColor" />
       </svg>
-      <span className="text-[11px] font-bold tracking-[.13em]">
-        SLASH<span className="mx-[5px] font-normal text-cyan-300">/</span>LOGIC
+      <span className="text-sm font-semibold tracking-wide sm:text-base">
+        Slash <span className="mx-1 font-normal text-primary">/</span> Logic
       </span>
     </a>
   );

@@ -5,10 +5,9 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 type RevealProps = {
   children: ReactNode;
   className?: string;
-  delay?: number;
 };
 
-export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
+export function Reveal({ children, className = "" }: RevealProps) {
   const elementRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
 
@@ -25,7 +24,7 @@ export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
           observer.unobserve(element);
         }
       },
-      { threshold: 0.14, rootMargin: "0px 0px -36px 0px" },
+      { threshold: 0.14 },
     );
 
     observer.observe(element);
@@ -35,8 +34,7 @@ export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
   return (
     <div
       ref={elementRef}
-      className={`transition-[opacity,transform] duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none ${visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"} ${className}`}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+      className={`transition-all duration-700 ease-out motion-reduce:transition-none ${visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} ${className}`}
     >
       {children}
     </div>

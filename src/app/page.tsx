@@ -1,5 +1,24 @@
 import Image from "next/image";
-import { Activity, ArrowDownRight, ArrowUpRight, Coffee, Code2, Leaf, Megaphone, Mountain, Smartphone } from "lucide-react";
+import {
+  Activity,
+  ArrowDownRight,
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  Code2,
+  FileText,
+  Megaphone,
+  MessageCircle,
+  PenTool,
+  Plus,
+  Search,
+  Share2,
+  ShoppingBag,
+  Smartphone,
+  Sparkles,
+  Workflow,
+  Zap,
+} from "lucide-react";
 import { BrandMark } from "@/components/brand-mark";
 import { Container } from "@/components/container";
 import { Reveal } from "@/components/reveal";
@@ -7,109 +26,104 @@ import { SiteHeader } from "@/components/site-header";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { whatsappHref } from "@/lib/site-config";
 
-const webServices = ["Business websites", "Online stores", "Web apps"];
-const appServices = ["Android apps", "iOS apps"];
-const marketingServices = ["SEO", "Social media", "Paid ads", "Content marketing"];
-
 const sampleBrands = [
-  { name: "JUNIPER & CO.", icon: Leaf },
-  { name: "MORROW", icon: Coffee },
-  { name: "FORMA", icon: Activity },
-  { name: "NORTHLINE", icon: Mountain },
+  { name: "NORTHLINE", icon: Code2 },
+  { name: "MORROW", icon: ShoppingBag },
+  { name: "FORMA", icon: Smartphone },
+  { name: "ORBIT", icon: Workflow },
 ];
 
-const conceptProjects = [
-  { brand: "Juniper & Co.", category: "E-commerce / Home", kind: "store", title: "A thoughtful homewares store." },
-  { brand: "Morrow Coffee", category: "Website / Hospitality", kind: "site", title: "A warmer welcome online." },
-  { brand: "Forma", category: "Mobile app / Wellness", kind: "app", title: "Movement made easy to return to." },
+const marketingServices = [
+  { title: "SEO", detail: "Be easier to find", icon: Search },
+  { title: "Social media", detail: "Build a clear presence", icon: Share2 },
+  { title: "Paid ads", detail: "Reach the right audience", icon: Megaphone },
+  { title: "Content", detail: "Give people a reason to stay", icon: FileText },
+];
+
+const processSteps = [
+  { number: "01", title: "Listen", detail: "We learn about your goals, customers and current setup.", icon: MessageCircle },
+  { number: "02", title: "Plan", detail: "We agree on scope, priorities and what success should look like.", icon: Workflow },
+  { number: "03", title: "Create", detail: "We design, develop and review the work with you.", icon: PenTool },
+  { number: "04", title: "Launch & grow", detail: "We get it live and can keep improving it through marketing.", icon: Zap },
+];
+
+const projects = [
+  {
+    brand: "Northline",
+    category: "Website · IT services",
+    title: "IT services, made clear.",
+    description: "A business website concept that introduces digital services, explains capabilities and makes it easy to start a conversation.",
+    image: "/concept-morrow.jpg",
+    alt: "Desktop website interface concept for a technology services business, with service information and a clear contact path",
+    layout: "feature",
+  },
+  {
+    brand: "Morrow",
+    category: "E-commerce · Retail",
+    title: "A smoother way to browse and buy.",
+    description: "An online store concept with product categories, a browsable catalogue and a straightforward path to checkout.",
+    image: "/concept-juniper.jpg",
+    alt: "E-commerce website interface with navigation, a retail product grid and shopping controls",
+    layout: "side",
+  },
+  {
+    brand: "Forma",
+    category: "Mobile app · Productivity",
+    title: "A clearer view of the workday.",
+    description: "A mobile productivity app concept with task planning, priorities and a quick progress overview.",
+    image: "/concept-forma.jpg",
+    alt: "Smartphone displaying a mobile productivity app interface with task cards and a progress dashboard",
+    layout: "wide",
+  },
 ] as const;
 
-type ProjectKind = "store" | "site" | "app";
+const commonQuestions = [
+  {
+    question: "What can you build for my business?",
+    answer: "Business websites, online stores, custom web apps and mobile apps for iOS and Android. We can also plan the digital marketing that supports them.",
+  },
+  {
+    question: "Can I choose just one service?",
+    answer: "Yes. Start with the service you need now—website development, an app, SEO, social media, paid ads or content marketing—and add more later if useful.",
+  },
+  {
+    question: "Do you work with both small and larger companies?",
+    answer: "Yes. We work with local businesses and larger teams, shaping the scope around the people who will use and manage the work.",
+  },
+  {
+    question: "What happens after a project goes live?",
+    answer: "We can help with updates, new features and ongoing marketing. The next steps depend on your goals and the kind of support you need.",
+  },
+];
 
-function ProjectPreview({ kind, brand }: { kind: ProjectKind; brand: string }) {
+function BrandRail() {
+  const loop = [...sampleBrands, ...sampleBrands];
+
   return (
-    <div
-      aria-hidden="true"
-      className={`relative h-64 overflow-hidden p-5 sm:h-72 ${kind === "site" ? "bg-hero" : "bg-accent"}`}
-    >
-      {kind === "store" && (
-        <>
-          <span className="absolute -right-5 -top-8 size-40 rounded-full bg-primary/15" />
-          <div className="relative mx-auto flex h-full max-w-72 flex-col rounded-t-2xl border border-border bg-background p-4 shadow-xl">
-            <div className="flex items-center justify-between gap-2">
-              <span className="grid size-7 place-items-center rounded-full bg-secondary text-primary">
-                <Leaf className="size-4" />
-              </span>
-              <span className="text-xs font-bold tracking-wide text-foreground">{brand}</span>
-              <span className="ml-auto flex gap-1">
-                <span className="size-2 rounded-full bg-border" />
-                <span className="size-2 rounded-full bg-border" />
-              </span>
-            </div>
-            <div className="mt-4 rounded-xl bg-secondary p-3">
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary">The everyday edit</p>
-              <p className="mt-1 text-lg font-semibold leading-tight text-foreground">Objects for a slower home.</p>
-              <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground">
-                Explore collection <ArrowUpRight className="size-3" />
-              </span>
-            </div>
-            <div className="mt-3 grid flex-1 grid-cols-2 gap-2">
-              <span className="rounded-xl bg-accent" />
-              <span className="rounded-xl bg-muted" />
-            </div>
-          </div>
-        </>
-      )}
-
-      {kind === "site" && (
-        <>
-          <span className="absolute right-5 top-5 size-36 rounded-full bg-primary/20" />
-          <div className="relative mx-auto flex h-full max-w-72 flex-col rounded-t-2xl border border-hero-border bg-hero-surface p-4 text-hero-foreground shadow-xl">
-            <div className="flex items-center justify-between gap-2">
-              <span className="text-xs font-bold tracking-wide">{brand}</span>
-              <span className="rounded-full border border-hero-border px-2 py-1 text-xs text-hero-muted">MENU</span>
-            </div>
-            <div className="my-auto py-3">
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary">Coffee, made slowly</p>
-              <p className="mt-2 text-3xl font-semibold leading-none tracking-tight">Good days<br />start here.</p>
-              <span className="mt-3 inline-flex rounded-full bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground">Find your cup</span>
-            </div>
-            <div className="flex justify-between border-t border-hero-border pt-3 text-xs text-hero-muted">
-              <span>Visit</span><span>Menu</span><span>Our story</span>
-            </div>
-          </div>
-        </>
-      )}
-
-      {kind === "app" && (
-        <>
-          <span className="absolute left-6 top-8 size-24 rounded-full bg-primary/15" />
-          <div className="relative mx-auto flex h-full w-44 flex-col rounded-3xl border-4 border-border bg-background p-3 shadow-xl">
-            <span className="mx-auto h-1 w-12 rounded-full bg-border" />
-            <div className="mt-3 flex items-center justify-between gap-2">
-              <span className="grid size-8 place-items-center rounded-xl bg-primary text-primary-foreground">
-                <Activity className="size-4" />
-              </span>
-              <span className="text-xs font-bold tracking-wide text-foreground">{brand}</span>
-            </div>
-            <p className="mt-3 text-sm font-semibold text-foreground">Today&apos;s movement</p>
-            <div className="mt-2 rounded-xl bg-accent p-3">
-              <p className="text-xs font-medium text-accent-foreground">Move at your pace</p>
-              <div className="mt-3 flex h-12 items-end gap-1.5">
-                <span className="h-5 flex-1 rounded-t-full bg-primary/30" />
-                <span className="h-9 flex-1 rounded-t-full bg-primary/50" />
-                <span className="h-7 flex-1 rounded-t-full bg-primary/40" />
-                <span className="h-11 flex-1 rounded-t-full bg-primary/70" />
-                <span className="h-6 flex-1 rounded-t-full bg-primary/40" />
+    <div className="mt-16 border-y border-border py-5 sm:mt-20">
+      <div className="flex items-center gap-6">
+        <p className="hidden shrink-0 text-xs font-bold uppercase tracking-widest text-muted-foreground lg:block">
+          Sample brand identities
+        </p>
+        <div className="min-w-0 flex-1 overflow-hidden">
+          <div className="brand-marquee flex w-max items-center gap-10 sm:gap-14">
+            {loop.map(({ name, icon: Icon }, index) => (
+              <div
+                aria-hidden={index >= sampleBrands.length ? true : undefined}
+                className={`flex items-center gap-3 ${index >= sampleBrands.length ? "motion-reduce:hidden" : ""}`}
+                key={`${name}-${index}`}
+              >
+                <span className="grid size-9 place-items-center rounded-full bg-primary text-primary-foreground">
+                  <Icon className="size-5" strokeWidth={1.8} aria-hidden="true" />
+                </span>
+                <span className="whitespace-nowrap font-display text-base font-semibold tracking-wide text-foreground sm:text-lg">
+                  {name}
+                </span>
               </div>
-            </div>
-            <div className="mt-2 grid flex-1 grid-cols-2 gap-2">
-              <span className="rounded-xl bg-secondary" />
-              <span className="rounded-xl bg-muted" />
-            </div>
+            ))}
           </div>
-        </>
-      )}
+        </div>
+      </div>
     </div>
   );
 }
@@ -118,162 +132,256 @@ export default function Home() {
   return (
     <main className="bg-background text-foreground">
       <SiteHeader />
+
       <section className="relative isolate min-h-svh overflow-hidden bg-hero text-hero-foreground" id="top">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/slash-logic-backdrop.png"
+            src="/slash-logic-backdrop-v3.png"
             alt=""
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-left md:object-center"
           />
-          <div className="absolute inset-0 bg-linear-to-r from-hero via-hero/85 to-hero/35" />
-          <div className="absolute inset-0 bg-linear-to-t from-hero/80 via-transparent to-hero/20" />
+          <div className="absolute inset-0 bg-linear-to-r from-hero via-hero/75 to-hero/35" />
+          <div className="absolute inset-0 bg-linear-to-t from-hero/70 via-transparent to-hero/10" />
+          <div className="absolute inset-0 bg-linear-to-b from-hero/35 via-transparent to-transparent" />
         </div>
 
-        <Container className="flex min-h-svh items-center pt-24 pb-8 sm:pt-28 lg:pt-24">
-          <Reveal className="max-w-5xl">
-            <p className="mb-6 flex items-center gap-3 text-sm font-semibold uppercase tracking-wider text-hero-muted sm:text-base">
-              <span className="size-2 rounded-full bg-primary" />
-              Slash Logic <span className="text-primary">/</span> Development &amp; digital marketing
-            </p>
-            <h1 className="text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
-              <span className="block">Web &amp; app</span>
-              <span className="block">development</span>
-              <span className="block text-primary">for your business.</span>
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-hero-muted sm:mt-8 sm:text-xl">
-              Websites, online stores, mobile apps, and digital marketing for local businesses and large companies alike.
-            </p>
-            <div className="mt-8 flex flex-wrap items-start gap-4 sm:mt-10">
-              <a
-                className="group inline-flex min-h-14 items-center gap-3 rounded-full bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring"
-                href="#services"
-              >
-                Explore services
-                <ArrowDownRight className="size-5 transition group-hover:translate-y-1" aria-hidden="true" />
-              </a>
-              <WhatsAppButton href={whatsappHref} />
+        <Container className="flex min-h-svh items-center pb-12 pt-28 sm:pb-16 lg:pt-24">
+          <div className="grid w-full items-center gap-10 lg:grid-cols-12 lg:gap-6">
+            <div className="max-w-3xl lg:col-span-7">
+              <p className="hero-enter mb-5 inline-flex items-center gap-3 rounded-full border border-hero-border bg-hero-surface/75 px-4 py-2 text-xs font-bold uppercase tracking-widest text-hero-muted backdrop-blur-sm sm:text-sm">
+                <span className="size-2 rounded-full bg-accent shadow-md" />
+                Slash Logic <span className="text-primary">/</span> Web, apps &amp; marketing
+              </p>
+              <h1 className="font-display text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
+                <span className="hero-enter hero-enter-delay-1 block">Web &amp; app</span>
+                <span className="hero-enter hero-enter-delay-2 block text-accent">development</span>
+                <span className="hero-enter hero-enter-delay-3 block">for what&apos;s next.</span>
+              </h1>
+              <p className="hero-enter hero-enter-delay-3 mt-6 max-w-2xl text-lg leading-relaxed text-hero-muted sm:mt-7 sm:text-xl">
+                We design and develop websites, online stores, web apps and mobile apps—then help the right people find them.
+              </p>
+              <div className="hero-enter hero-enter-delay-4 mt-8 flex flex-wrap items-center gap-3 sm:mt-9">
+                <a
+                  className="group inline-flex min-h-14 items-center gap-3 rounded-full bg-primary px-6 py-3 text-base font-bold text-primary-foreground shadow-lg transition hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring"
+                  href="#services"
+                >
+                  Explore services
+                  <ArrowDownRight className="size-5 transition-transform group-hover:translate-y-1 group-hover:translate-x-0.5" aria-hidden="true" />
+                </a>
+                <WhatsAppButton href={whatsappHref} />
+              </div>
+              <div className="hero-enter hero-enter-delay-4 mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-bold uppercase tracking-widest text-hero-muted sm:text-sm">
+                <span>Web development</span><span className="text-primary">/</span>
+                <span>App development</span><span className="text-primary">/</span>
+                <span>Digital marketing</span>
+              </div>
             </div>
-            <p className="mt-7 text-sm text-hero-muted sm:text-base">
-              Website development <span className="px-2 text-primary">/</span> App development <span className="px-2 text-primary">/</span> Digital marketing
-            </p>
-          </Reveal>
+
+            <div className="relative hidden min-h-96 lg:col-span-5 lg:block" aria-hidden="true">
+              <div className="hero-orbit absolute inset-3 rounded-full border border-primary-foreground/20" />
+              <div className="hero-orbit hero-orbit-reverse absolute inset-12 rounded-full border border-dashed border-accent/45" />
+              <div className="absolute inset-24 rounded-full bg-primary/20 blur-3xl" />
+              <div className="hero-float absolute left-1/2 top-1/2 grid size-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-3xl border border-hero-border bg-hero-surface/90 text-primary shadow-2xl backdrop-blur-sm">
+                <Code2 className="size-14" strokeWidth={1.2} aria-hidden="true" />
+              </div>
+              <div className="hero-float absolute left-0 top-12 inline-flex items-center gap-3 rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground shadow-xl">
+                <Code2 className="size-5" aria-hidden="true" /> Web development
+              </div>
+              <div className="hero-float hero-float-late absolute right-0 top-1/2 inline-flex -translate-y-1/2 items-center gap-3 rounded-full bg-accent px-5 py-3 text-sm font-bold text-accent-foreground shadow-xl">
+                <Smartphone className="size-5" aria-hidden="true" /> App development
+              </div>
+              <div className="hero-float absolute bottom-10 left-4 inline-flex items-center gap-3 rounded-full bg-background px-5 py-3 text-sm font-bold text-foreground shadow-xl">
+                <Megaphone className="size-5 text-primary" aria-hidden="true" /> Digital marketing
+              </div>
+              <span className="absolute right-10 top-6 size-3 rounded-full bg-accent shadow-lg" />
+              <span className="absolute bottom-8 right-12 size-2 rounded-full bg-primary shadow-lg" />
+            </div>
+          </div>
         </Container>
+
+        <a className="absolute bottom-5 right-6 hidden items-center gap-2 text-xs font-semibold uppercase tracking-widest text-hero-muted transition hover:text-hero-foreground sm:inline-flex" href="#services">
+          Scroll to explore <ArrowDownRight className="size-4" aria-hidden="true" />
+        </a>
       </section>
 
       <section className="bg-background py-24 sm:py-32" id="services">
         <Container>
-          <Reveal className="mb-12 max-w-3xl sm:mb-16">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary sm:text-base">Our services</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Web, app &amp; marketing services.
-            </h2>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              Choose web development, app development, or digital marketing for your business.
+          <Reveal className="grid gap-8 md:grid-cols-12 md:items-end">
+            <div className="md:col-span-7">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">01 / What we do</p>
+              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+                Build it. Launch it. Help it grow.
+              </h2>
+            </div>
+            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:col-span-5">
+              Development and marketing, connected from the start—so every part of your digital presence works toward the same goal.
             </p>
           </Reveal>
 
-          <div className="grid gap-6 md:grid-cols-12">
-            <Reveal className="md:col-span-7">
-              <article className="group relative isolate h-full min-h-80 overflow-hidden rounded-3xl bg-hero p-8 text-hero-foreground shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-2xl sm:p-10">
-                <Code2 className="pointer-events-none absolute right-8 top-8 z-0 size-24 text-primary/35 transition duration-500 group-hover:rotate-6 group-hover:scale-105 sm:size-32" strokeWidth={1.2} aria-hidden="true" />
-                <div className="relative z-10 flex h-full flex-col items-start">
-                  <p className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-base font-bold text-primary-foreground shadow-sm sm:text-lg">
-                    <span className="size-2 rounded-full bg-primary-foreground" />
-                    01 / Web development
+          <div className="mt-12 grid items-stretch gap-5 lg:grid-cols-12">
+            <Reveal className="h-full lg:col-span-7">
+              <article className="group relative isolate flex h-full min-h-96 flex-col overflow-hidden rounded-3xl bg-primary p-7 text-primary-foreground shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-2xl sm:p-10">
+                <div className="absolute -right-20 -top-20 size-80 rounded-full border border-primary-foreground/20 transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute right-10 top-10 size-52 rounded-full border border-dashed border-accent/60 transition-transform duration-700 group-hover:rotate-12" />
+                <Code2 className="absolute right-16 top-16 z-0 size-24 text-primary-foreground/20 transition-transform duration-500 group-hover:-rotate-6 sm:size-32" strokeWidth={1} aria-hidden="true" />
+                <div className="relative z-10 flex items-center justify-between gap-4">
+                  <span className="rounded-full border border-primary-foreground/30 bg-primary-foreground/10 px-4 py-2 text-xs font-bold uppercase tracking-widest">01 / Build</span>
+                  <span className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">Web &amp; e-commerce</span>
+                </div>
+                <div className="relative z-10 mt-auto max-w-2xl pt-16">
+                  <h3 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">Web development</h3>
+                  <p className="mt-4 max-w-xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
+                    Responsive, accessible websites, online stores and web apps, built around your customers and your day-to-day.
                   </p>
-                  <h3 className="mt-8 text-3xl font-semibold tracking-tight sm:mt-10 sm:text-4xl lg:text-5xl">Build your online presence.</h3>
-                  <ul className="mt-6 flex flex-wrap gap-3">
-                    {webServices.map((service) => (
-                      <li className="rounded-full border border-hero-border bg-hero-surface px-4 py-2 text-base text-hero-foreground" key={service}>{service}</li>
+                  <ul className="mt-7 flex flex-wrap gap-2">
+                    {["Business websites", "Online stores", "Web apps"].map((item) => (
+                      <li className="inline-flex items-center gap-2 rounded-full bg-background/15 px-4 py-2 text-sm font-semibold" key={item}>
+                        <Check className="size-4 text-accent" aria-hidden="true" /> {item}
+                      </li>
                     ))}
                   </ul>
+                  <p className="mt-7 flex items-center gap-2 text-sm font-semibold text-primary-foreground/80">
+                    Plan <ArrowRight className="size-4 text-accent" /> Design <ArrowRight className="size-4 text-accent" /> Develop <ArrowRight className="size-4 text-accent" /> Launch
+                  </p>
                 </div>
               </article>
             </Reveal>
 
-            <Reveal className="md:col-span-5">
-              <article className="group relative isolate h-full min-h-80 overflow-hidden rounded-3xl bg-accent p-8 text-accent-foreground shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
-                <Smartphone className="pointer-events-none absolute right-8 top-8 z-0 size-24 text-primary/25 transition duration-500 group-hover:-rotate-6 group-hover:scale-105 sm:size-32" strokeWidth={1.2} aria-hidden="true" />
-                <div className="relative z-10 flex h-full flex-col items-start">
-                  <p className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-base font-bold text-primary-foreground shadow-sm sm:text-lg">
-                    <span className="size-2 rounded-full bg-primary-foreground" />
-                    02 / App development
-                  </p>
-                  <h3 className="mt-8 text-3xl font-semibold tracking-tight sm:mt-10 sm:text-4xl">Apps for Android &amp; iOS.</h3>
-                  <ul className="mt-6 flex flex-wrap gap-3">
-                    {appServices.map((service) => (
-                      <li className="rounded-full border border-accent-foreground/20 bg-background/50 px-4 py-2 text-base" key={service}>{service}</li>
-                    ))}
-                  </ul>
+            <Reveal className="h-full lg:col-span-5">
+              <article className="group relative isolate flex h-full min-h-96 flex-col overflow-hidden rounded-3xl bg-accent p-7 text-accent-foreground shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-9">
+                <div className="absolute -right-10 -top-10 size-52 rounded-full bg-primary/35 transition-transform duration-700 group-hover:scale-110" />
+                <div className="relative z-10 flex items-center justify-between gap-4">
+                  <span className="rounded-full border border-accent-foreground/20 bg-background/30 px-4 py-2 text-xs font-bold uppercase tracking-widest">02 / Create</span>
+                  <Smartphone className="size-8 text-primary transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110" strokeWidth={1.5} aria-hidden="true" />
                 </div>
+                <div className="relative z-10 mt-auto pt-16">
+                  <h3 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">App development</h3>
+                  <p className="mt-4 text-base leading-relaxed sm:text-lg">
+                    Plan, design and develop useful mobile products for Android and iOS—from first screen to app-store release.
+                  </p>
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-accent-foreground px-4 py-2 text-sm font-semibold text-background"><Smartphone className="size-4" /> Android</span>
+                    <span className="inline-flex items-center gap-2 rounded-full bg-accent-foreground px-4 py-2 text-sm font-semibold text-background"><Activity className="size-4" /> iOS</span>
+                  </div>
+                </div>
+                <span className="absolute bottom-20 right-5 select-none font-display text-9xl font-bold leading-none text-accent-foreground/10" aria-hidden="true">02</span>
               </article>
             </Reveal>
 
-            <Reveal className="md:col-span-12">
-              <article className="group relative isolate grid gap-8 overflow-hidden rounded-3xl border border-border bg-secondary p-8 text-secondary-foreground shadow-lg transition duration-300 hover:shadow-xl sm:p-10 lg:grid-cols-12 lg:items-center">
-                <div className="relative z-10 lg:col-span-5">
-                  <p className="text-sm font-semibold uppercase tracking-wider text-primary sm:text-base">03 / Digital marketing</p>
-                  <h3 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Help more people find you.</h3>
+            <Reveal className="lg:col-span-12">
+              <article className="relative isolate overflow-hidden rounded-3xl bg-hero p-7 text-hero-foreground shadow-xl sm:p-10">
+                <div className="absolute -right-16 -top-20 size-72 rounded-full bg-primary/20 blur-3xl" />
+                <div className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-center">
+                  <div className="lg:col-span-4">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-hero-border bg-hero-surface px-4 py-2 text-xs font-bold uppercase tracking-widest text-accent">03 / Reach</span>
+                    <h3 className="mt-5 font-display text-4xl font-semibold leading-tight sm:text-5xl">Digital marketing</h3>
+                    <p className="mt-4 max-w-md text-base leading-relaxed text-hero-muted sm:text-lg">
+                      Make it easier to find you, understand you and choose you.
+                    </p>
+                  </div>
+                  <div className="grid items-stretch gap-3 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
+                    {marketingServices.map(({ title, detail, icon: Icon }) => (
+                      <div className="h-full rounded-2xl border border-hero-border bg-hero-surface/70 p-4 transition duration-300 hover:-translate-y-1 hover:border-primary/60" key={title}>
+                        <Icon className="size-6 text-primary" strokeWidth={1.8} aria-hidden="true" />
+                        <h4 className="mt-5 font-display text-lg font-semibold">{title}</h4>
+                        <p className="mt-2 text-sm leading-relaxed text-hero-muted">{detail}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="relative z-10 flex flex-wrap gap-3 lg:col-span-7 lg:justify-end">
-                  {marketingServices.map((service) => (
-                    <span className="rounded-full border border-border bg-card px-5 py-3 text-base font-medium text-card-foreground shadow-sm sm:text-lg" key={service}>{service}</span>
-                  ))}
-                </div>
-                <Megaphone className="pointer-events-none absolute -bottom-8 right-8 z-0 size-32 text-primary/10 transition duration-500 group-hover:-rotate-6 group-hover:scale-105 sm:size-40" strokeWidth={1} aria-hidden="true" />
               </article>
             </Reveal>
           </div>
         </Container>
       </section>
 
-      <section className="bg-secondary/60 py-24 sm:py-32" id="work">
+      <section className="bg-secondary py-24 sm:py-32" id="process">
         <Container>
-          <div className="grid gap-6 md:grid-cols-2 md:items-end md:gap-12">
-            <Reveal>
-              <p className="text-sm font-semibold uppercase tracking-wider text-primary sm:text-base">Portfolio</p>
-              <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-                Sample brands.<br className="hidden sm:block" /> Project concepts.
+          <Reveal className="grid gap-8 md:grid-cols-12 md:items-end">
+            <div className="md:col-span-7">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">02 / How we work</p>
+              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+                A clear route from idea to launch.
               </h2>
-            </Reveal>
-            <Reveal>
-              <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-                A few example directions across online stores, business websites, and mobile apps.
-              </p>
-            </Reveal>
-          </div>
-
-          <Reveal className="mt-10">
-            <div className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
-              <p className="mb-5 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Sample client logos</p>
-              <ul className="grid grid-cols-2 gap-3 md:grid-cols-4" aria-label="Sample client logo concepts">
-                {sampleBrands.map(({ name, icon: Icon }) => (
-                  <li className="flex min-h-16 items-center gap-3 rounded-2xl border border-border bg-background px-4 py-3" key={name}>
-                    <span className="grid size-9 shrink-0 place-items-center rounded-full bg-secondary text-primary">
-                      <Icon className="size-5" strokeWidth={1.8} aria-hidden="true" />
-                    </span>
-                    <span className="text-sm font-bold tracking-wide text-foreground sm:text-base">{name}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
+            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:col-span-5">
+              You see the steps, share feedback along the way and know what comes next.
+            </p>
           </Reveal>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {conceptProjects.map((project) => (
-              <Reveal className="h-full" key={project.brand}>
-                <article className="group h-full overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <ProjectPreview kind={project.kind} brand={project.brand} />
-                  <div className="p-6 sm:p-7">
-                    <div className="flex items-center justify-between gap-3">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-primary">{project.category}</p>
-                      <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">Concept</span>
+          <ol className="mt-12 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map(({ number, title, detail, icon: Icon }) => (
+              <li className="h-full" key={number}>
+                <Reveal className="h-full">
+                  <div className="group flex h-full min-h-72 flex-col rounded-3xl border border-border bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-7">
+                    <div className="flex items-start justify-between gap-4">
+                      <span className="font-display text-5xl font-semibold leading-none text-primary">{number}</span>
+                      <span className="grid size-11 place-items-center rounded-2xl bg-accent text-accent-foreground transition-transform duration-300 group-hover:rotate-6">
+                        <Icon className="size-5" strokeWidth={1.8} aria-hidden="true" />
+                      </span>
                     </div>
-                    <h3 className="mt-4 text-xl font-semibold leading-tight tracking-tight text-card-foreground sm:text-2xl">{project.title}</h3>
-                    <p className="mt-3 text-sm font-medium text-muted-foreground">{project.brand}</p>
+                    <h3 className="mt-8 font-display text-2xl font-semibold">{title}</h3>
+                    <p className="mt-3 text-base leading-relaxed text-muted-foreground">{detail}</p>
+                  </div>
+                </Reveal>
+              </li>
+            ))}
+          </ol>
+        </Container>
+      </section>
+
+      <section className="bg-background py-24 sm:py-32" id="work">
+        <Container>
+          <Reveal className="grid gap-8 md:grid-cols-12 md:items-end">
+            <div className="md:col-span-7">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">03 / Project examples</p>
+              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+                Websites, online stores & apps.
+              </h2>
+            </div>
+            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:col-span-5">
+              Explore a website, an online store and a mobile app concept. These are illustrative examples—not client projects or case studies.
+            </p>
+          </Reveal>
+
+          <BrandRail />
+
+          <div className="mt-8 grid items-stretch gap-5 lg:grid-cols-12">
+            {projects.map((project) => (
+              <Reveal
+                className={project.layout === "feature" ? "h-full lg:col-span-7" : project.layout === "side" ? "h-full lg:col-span-5" : "h-full lg:col-span-12"}
+                key={project.brand}
+              >
+                <article className={`project-card group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl ${project.layout === "wide" ? "lg:grid lg:grid-cols-12" : ""}`}>
+                  <div className={`relative h-64 overflow-hidden sm:h-72 ${project.layout === "wide" ? "lg:col-span-7 lg:h-80" : ""}`}>
+                    <Image
+                      src={project.image}
+                      alt={project.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 55vw"
+                      className="project-art object-cover"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-foreground/70 via-foreground/5 to-transparent" />
+                    <span className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-background/95 px-4 py-2 text-xs font-bold uppercase tracking-wider text-foreground shadow-md">
+                      <Sparkles className="size-4 text-primary" aria-hidden="true" /> Concept project
+                    </span>
+                    <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 text-background">
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-background/80">{project.category}</p>
+                        <p className="mt-2 font-display text-2xl font-semibold sm:text-3xl">{project.brand}</p>
+                      </div>
+                      <span className="grid size-11 shrink-0 place-items-center rounded-full bg-accent text-accent-foreground transition-transform duration-300 group-hover:rotate-45">
+                        <ArrowUpRight className="size-5" aria-hidden="true" />
+                      </span>
+                    </div>
+                  </div>
+                  <div className={`flex flex-1 flex-col justify-center p-6 sm:p-7 ${project.layout === "wide" ? "lg:col-span-5 lg:p-10" : ""}`}>
+                    <p className="text-xs font-bold uppercase tracking-widest text-primary">{project.category}</p>
+                    <h3 className="mt-3 font-display text-2xl font-semibold leading-tight sm:text-3xl">{project.title}</h3>
+                    <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">{project.description}</p>
                   </div>
                 </article>
               </Reveal>
@@ -282,38 +390,66 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-hero py-24 text-hero-foreground sm:py-32" id="contact">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary sm:text-base">Get in touch</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Tell us what your business needs.
+      <section className="bg-hero py-24 text-hero-foreground sm:py-32" id="faq">
+        <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <Reveal className="lg:col-span-4">
+            <p className="text-xs font-bold uppercase tracking-widest text-accent sm:text-sm">04 / Good to know</p>
+            <h2 className="mt-4 font-display text-4xl font-semibold leading-tight sm:text-5xl">A few useful answers.</h2>
+            <p className="mt-5 text-lg leading-relaxed text-hero-muted">
+              Have a different question? Tell us what you&apos;re planning and we&apos;ll take it from there.
+            </p>
+            <a className="mt-7 inline-flex items-center gap-2 font-semibold text-accent transition hover:gap-3" href="#contact">
+              Start a conversation <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
+          </Reveal>
+
+          <div className="space-y-3 lg:col-span-8">
+            {commonQuestions.map(({ question, answer }, index) => (
+              <Reveal key={question}>
+                <details className="group rounded-2xl border border-hero-border bg-hero-surface/80 p-5 open:bg-hero-surface sm:p-6" open={index === 0}>
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-display text-lg font-semibold sm:text-xl">
+                    {question}
+                    <span className="grid size-9 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground transition-transform duration-300 group-open:rotate-45">
+                      <Plus className="size-5" aria-hidden="true" />
+                    </span>
+                  </summary>
+                  <p className="mt-4 max-w-2xl pr-10 text-base leading-relaxed text-hero-muted">{answer}</p>
+                </details>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="relative isolate overflow-hidden bg-primary py-20 text-primary-foreground sm:py-28" id="contact">
+        <div className="absolute -right-24 -top-32 size-96 rounded-full border border-primary-foreground/20" />
+        <div className="absolute -right-12 -top-20 size-72 rounded-full border border-dashed border-accent/65" />
+        <Container className="relative z-10 grid gap-10 lg:grid-cols-12 lg:items-center">
+          <Reveal className="lg:col-span-8">
+            <p className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/10 px-4 py-2 text-xs font-bold uppercase tracking-widest">Ready when you are <span className="size-2 rounded-full bg-accent" /></p>
+            <h2 className="mt-5 max-w-4xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+              What should we build together?
             </h2>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-hero-muted">
-              Send us a message about a website, app, online store, or marketing service.
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-primary-foreground/85">
+              Tell us about the website, app or marketing challenge you&apos;re working on.
             </p>
           </Reveal>
-          <Reveal>
-            <div className="rounded-3xl border border-hero-border bg-hero-surface p-8 shadow-xl sm:p-10">
-              <div className="flex items-center gap-3 text-hero-foreground">
-                <span className="grid size-12 place-items-center rounded-full bg-whatsapp text-whatsapp-foreground">
-                  <ArrowUpRight className="size-5" aria-hidden="true" />
-                </span>
-                <p className="text-lg font-semibold">Start with a WhatsApp message.</p>
-              </div>
-              <div className="mt-6">
-                <WhatsAppButton href={whatsappHref} />
-              </div>
-            </div>
+          <Reveal className="lg:col-span-4 lg:justify-self-end">
+            <WhatsAppButton href={whatsappHref} />
           </Reveal>
         </Container>
       </section>
 
-      <footer className="bg-background py-8">
-        <Container className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+      <footer className="bg-background py-8 sm:py-10">
+        <Container className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <BrandMark tone="dark" />
-          <p className="text-sm text-muted-foreground">Website development · App development · Digital marketing</p>
-          <span className="text-sm text-muted-foreground">© {new Date().getFullYear()} Slash Logic</span>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-muted-foreground">
+            <a className="transition hover:text-primary" href="#services">Services</a>
+            <a className="transition hover:text-primary" href="#process">How we work</a>
+            <a className="transition hover:text-primary" href="#work">Concepts</a>
+            <a className="transition hover:text-primary" href="#faq">FAQ</a>
+          </div>
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Slash Logic</p>
         </Container>
       </footer>
     </main>

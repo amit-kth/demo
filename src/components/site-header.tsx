@@ -1,78 +1,105 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowUpRight, Briefcase, Code2, Menu, MessageCircle, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ArrowUpRight, BriefcaseBusiness, Code2, Menu, MessageCircle, Workflow, X } from "lucide-react";
 import { BrandMark } from "@/components/brand-mark";
 import { Container } from "@/components/container";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { whatsappHref } from "@/lib/site-config";
 
 const links = [
   { label: "Services", href: "#services", icon: Code2 },
-  { label: "Our work", href: "#work", icon: Briefcase },
+  { label: "How we work", href: "#process", icon: Workflow },
+  { label: "Work", href: "#work", icon: BriefcaseBusiness },
   { label: "Contact", href: "#contact", icon: MessageCircle },
 ];
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [overHero, setOverHero] = useState(true);
   const closeMenu = () => setMenuOpen(false);
 
+  useEffect(() => {
+    const updateHeader = () => {
+      const hero = document.getElementById("top");
+      setOverHero(Boolean(hero && hero.getBoundingClientRect().bottom > 72));
+    };
+
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    window.addEventListener("resize", updateHeader);
+    return () => {
+      window.removeEventListener("scroll", updateHeader);
+      window.removeEventListener("resize", updateHeader);
+    };
+  }, []);
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 pt-3">
-      <Container>
-        <div className="relative flex h-12 items-center justify-between gap-3 rounded-full border border-border bg-background px-3 text-foreground shadow-lg sm:h-14 sm:px-4">
-          <BrandMark tone="dark" />
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div className={`transition-colors duration-300 ${overHero ? "bg-transparent" : "border-b border-border bg-background shadow-md"}`}>
+        <Container className={`relative flex items-center justify-between gap-4 transition-[height] duration-300 ${overHero ? "h-16" : "h-14"}`}>
+          <BrandMark tone={overHero ? "light" : "dark"} />
 
           <nav
             id="primary-navigation"
             aria-label="Main navigation"
-            className={`${menuOpen ? "flex" : "hidden"} absolute left-0 right-0 top-full mt-2 flex-col rounded-3xl border border-border bg-background p-3 text-foreground shadow-xl md:static md:mx-auto md:mt-0 md:flex md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
+            className={`${menuOpen ? "flex" : "hidden"} absolute left-4 right-4 top-full mt-2 flex-col rounded-2xl border border-border bg-background p-3 text-foreground shadow-xl md:static md:ml-auto md:mr-5 md:flex md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
           >
             {links.map((link) => {
               const Icon = link.icon;
+              const linkColors = overHero && !menuOpen
+                ? "text-hero-muted hover:bg-hero-surface/70 hover:text-hero-foreground"
+                : "text-muted-foreground hover:bg-secondary hover:text-foreground";
+
               return (
                 <a
-                  className="inline-flex items-center gap-2 rounded-full px-3 py-2.5 text-sm font-medium text-muted-foreground transition hover:bg-secondary hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
+                  className={`group inline-flex items-center gap-2 rounded-full px-3 py-2.5 text-sm font-semibold transition focus-visible:ring-2 focus-visible:ring-ring ${linkColors}`}
                   href={link.href}
                   key={link.href}
                   onClick={closeMenu}
                 >
-                  <Icon className="size-4 text-primary" strokeWidth={1.8} aria-hidden="true" />
+                  <Icon className="size-4 text-primary transition-transform group-hover:-translate-y-0.5" strokeWidth={1.8} aria-hidden="true" />
                   {link.label}
                 </a>
               );
             })}
             <a
-              className="mt-2 inline-flex min-h-10 items-center justify-between gap-3 rounded-full bg-whatsapp px-4 py-2 text-sm font-semibold text-whatsapp-foreground transition hover:brightness-110 md:hidden"
+              className="mt-2 inline-flex min-h-11 items-center justify-between gap-3 rounded-full bg-whatsapp px-4 py-2.5 text-sm font-bold text-whatsapp-foreground transition hover:brightness-110 md:hidden"
               href={whatsappHref ?? "#contact"}
               target={whatsappHref ? "_blank" : undefined}
               rel={whatsappHref ? "noreferrer" : undefined}
               onClick={closeMenu}
             >
-              WhatsApp us <ArrowUpRight className="size-4" aria-hidden="true" />
+              <span className="inline-flex items-center gap-2"><WhatsAppIcon className="size-5" /> WhatsApp us</span>
+              <ArrowUpRight className="size-4" aria-hidden="true" />
             </a>
           </nav>
 
-          <a
-            className="hidden min-h-10 items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-sm font-semibold text-whatsapp-foreground shadow-sm transition hover:-translate-y-0.5 hover:brightness-110 md:inline-flex"
-            href={whatsappHref ?? "#contact"}
-            target={whatsappHref ? "_blank" : undefined}
-            rel={whatsappHref ? "noreferrer" : undefined}
-          >
-            WhatsApp <ArrowUpRight className="size-4" strokeWidth={1.8} aria-hidden="true" />
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              className="group hidden min-h-11 items-center gap-2 rounded-full bg-whatsapp px-4 py-2.5 text-sm font-bold text-whatsapp-foreground shadow-sm transition hover:-translate-y-0.5 hover:shadow-md md:inline-flex"
+              href={whatsappHref ?? "#contact"}
+              target={whatsappHref ? "_blank" : undefined}
+              rel={whatsappHref ? "noreferrer" : undefined}
+            >
+              <WhatsAppIcon className="size-5" />
+              Start a conversation
+              <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+            </a>
 
-          <button
-            className="grid size-9 place-items-center rounded-full border border-border bg-secondary text-foreground transition hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring md:hidden"
-            type="button"
-            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
-            aria-expanded={menuOpen}
-            aria-controls="primary-navigation"
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            {menuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
-          </button>
-        </div>
-      </Container>
+            <button
+              className={`grid size-10 place-items-center rounded-full border transition focus-visible:ring-2 focus-visible:ring-ring md:hidden ${overHero ? "border-hero-border bg-hero-surface/70 text-hero-foreground hover:bg-hero-surface" : "border-border bg-secondary text-foreground hover:bg-accent hover:text-accent-foreground"}`}
+              type="button"
+              aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+              aria-expanded={menuOpen}
+              aria-controls="primary-navigation"
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
+          </div>
+        </Container>
+      </div>
     </header>
   );
 }

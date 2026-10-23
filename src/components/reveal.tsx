@@ -16,6 +16,9 @@ export function Reveal({ children, className = "" }: RevealProps) {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!element || reduceMotion || !("IntersectionObserver" in window)) return;
 
+    const bounds = element.getBoundingClientRect();
+    if (bounds.top < window.innerHeight * 0.9) return;
+
     setVisible(false);
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -24,7 +27,7 @@ export function Reveal({ children, className = "" }: RevealProps) {
           observer.unobserve(element);
         }
       },
-      { threshold: 0.14 },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
 
     observer.observe(element);
@@ -34,7 +37,7 @@ export function Reveal({ children, className = "" }: RevealProps) {
   return (
     <div
       ref={elementRef}
-      className={`transition-all duration-700 ease-out motion-reduce:transition-none ${visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} ${className}`}
+      className={`transition-all duration-700 ease-out motion-reduce:transition-none ${visible ? "translate-y-0 opacity-100 blur-0" : "translate-y-8 opacity-0 blur-sm"} ${className}`}
     >
       {children}
     </div>

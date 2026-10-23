@@ -13,22 +13,15 @@ export function BrandMark({ href = "#top", tone = "light" }: BrandMarkProps) {
       aria-label="Slash Logic home"
     >
       <svg
-        className="size-8 text-primary transition duration-300 group-hover:-rotate-6 group-hover:text-accent-foreground sm:size-9"
+        className="size-8 text-primary transition duration-300 group-hover:scale-105 sm:size-9"
         viewBox="0 0 44 44"
         fill="none"
         aria-hidden="true"
       >
-        <path
-          d="M15.2 5.5H7.7a2.2 2.2 0 0 0-2.2 2.2v7.5M28.8 5.5h7.5a2.2 2.2 0 0 1 2.2 2.2v7.5M38.5 28.8v7.5a2.2 2.2 0 0 1-2.2 2.2h-7.5M15.2 38.5H7.7a2.2 2.2 0 0 1-2.2-2.2v-7.5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path d="M26.5 8.8 17.5 35.2" stroke="currentColor" strokeWidth="3.4" strokeLinecap="round" />
-        <circle cx="27.1" cy="8.6" r="2.1" fill="currentColor" />
-        <circle cx="16.9" cy="35.4" r="2.1" fill="currentColor" />
+        <path d="m15 11-8 11 8 11M29 11l8 11-8 11" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="m25 6-7 32" stroke="currentColor" strokeWidth="3.4" strokeLinecap="round" />
       </svg>
-      <span className="text-sm font-semibold tracking-wide sm:text-base">
+      <span className="font-display text-sm font-semibold tracking-tight sm:text-base">
         Slash <span className="mx-1 font-normal text-primary">/</span> Logic
       </span>
     </a>

@@ -9,28 +9,29 @@ export function HeroSection() {
       className="relative isolate min-h-svh overflow-hidden bg-hero text-hero-foreground"
       id="top"
     >
-      <div className="absolute inset-0 -z-10 overflow-hidden bg-hero">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-br from-hero via-hero to-primary/20" />
+      <div className="absolute inset-y-0 right-0 -z-10 hidden w-1/2 overflow-hidden lg:block">
         <Image
           src="/hero-creative-bg.webp"
           alt=""
           fill
           priority
-          sizes="100vw"
-          className="hero-backdrop object-cover object-center"
+          sizes="50vw"
+          className="hero-backdrop object-cover object-right"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-hero/85 via-hero/60 to-hero/40 md:from-hero/35 md:via-hero/10 md:to-transparent" />
-        <div className="absolute inset-0 bg-linear-to-t from-hero/75 via-hero/10 to-hero/25" />
+        <div className="absolute inset-0 bg-linear-to-r from-hero/75 via-hero/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-hero/50 via-transparent to-hero/15" />
       </div>
 
       <Container className="flex min-h-svh items-center pb-12 pt-24 sm:pb-16 sm:pt-28 lg:pt-20 2xl:pb-20 2xl:pt-24">
-        <div className="grid w-full items-center md:grid-cols-12">
-          <div className="relative z-10 max-w-3xl md:col-span-8 lg:col-span-7">
+        <div className="grid w-full items-center gap-8 md:grid-cols-12 lg:gap-6 2xl:gap-10">
+          <div className="relative z-10 max-w-2xl md:col-span-8 lg:col-span-6">
             <p className="hero-enter mb-5 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-hero-muted sm:mb-6 sm:text-sm">
               <span className="h-px w-8 bg-primary" />
               Websites / apps / digital marketing
             </p>
             <h1
-              className="font-display text-balance text-3xl font-semibold leading-none tracking-tight sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl"
+              className="font-display text-balance text-3xl font-semibold leading-none tracking-tight sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
               id="hero-title"
             >
               <span className="hero-enter hero-enter-delay-1 block">Websites to apps.</span>
@@ -58,10 +59,6 @@ export function HeroSection() {
           </div>
         </div>
       </Container>
-
-      <p className="pointer-events-none absolute bottom-6 right-8 z-10 hidden text-xs font-medium text-hero-muted/70 md:block">
-        Illustrative service visual
-      </p>
     </section>
   );
 }

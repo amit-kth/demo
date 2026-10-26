@@ -145,12 +145,6 @@
   }
 }
 
-@keyframes orbit-slow {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes enter-up {
   from {
     opacity: 0;
@@ -169,15 +163,6 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-orbit {
-    animation: orbit-slow 34s linear infinite;
-  }
-
-  .hero-orbit-reverse {
-    animation-direction: reverse;
-    animation-duration: 48s;
-  }
-
   .hero-enter {
     animation: enter-up 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }

@@ -188,11 +188,11 @@ export default function Home() {
           <div className="grid w-full items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-6 2xl:gap-12">
             <div className="max-w-3xl lg:col-span-7">
               <h1
-                className="font-display text-balance text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl"
+                className="font-display text-balance text-2xl font-semibold leading-none tracking-tight sm:text-3xl md:text-4xl lg:text-4xl xl:text-6xl 2xl:text-7xl"
                 id="hero-title"
               >
-                <span className="hero-enter hero-enter-delay-1 block">Web &amp; app</span>
-                <span className="hero-enter hero-enter-delay-2 block text-accent">development</span>
+                <span className="hero-enter hero-enter-delay-1 block">Digital development</span>
+                <span className="hero-enter hero-enter-delay-2 block text-accent">for growing businesses.</span>
               </h1>
               <p className="hero-enter hero-enter-delay-3 mt-5 max-w-2xl text-base leading-relaxed text-hero-muted sm:mt-6 sm:text-lg lg:text-xl">
                 We build mobile-friendly websites, online stores and apps, then help businesses across India reach the right customers with digital marketing.

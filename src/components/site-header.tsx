@@ -43,7 +43,7 @@ export function SiteHeader() {
           <nav
             id="primary-navigation"
             aria-label="Main navigation"
-            className={`${menuOpen ? "flex" : "hidden"} absolute left-4 right-4 top-full mt-2 flex-col rounded-2xl border border-border bg-background p-3 text-foreground shadow-xl md:static md:ml-auto md:mr-5 md:flex md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
+            className={`${menuOpen ? "flex" : "hidden"} absolute left-4 right-4 top-full mt-2 flex-col rounded-2xl border border-border bg-background p-3 text-foreground shadow-xl lg:static lg:ml-auto lg:mr-5 lg:flex lg:flex-row lg:items-center lg:gap-1 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
           >
             {links.map((link) => {
               const Icon = link.icon;
@@ -64,10 +64,10 @@ export function SiteHeader() {
               );
             })}
             <a
-              className="mt-2 inline-flex min-h-11 items-center justify-between gap-3 rounded-full bg-whatsapp px-4 py-2.5 text-sm font-bold text-whatsapp-foreground transition hover:brightness-110 md:hidden"
-              href={whatsappHref ?? "#contact"}
-              target={whatsappHref ? "_blank" : undefined}
-              rel={whatsappHref ? "noreferrer" : undefined}
+              className="mt-2 inline-flex min-h-11 items-center justify-between gap-3 rounded-full bg-whatsapp px-4 py-2.5 text-sm font-bold text-whatsapp-foreground transition hover:brightness-110 lg:hidden"
+              href={whatsappHref}
+              target="_blank"
+              rel="noreferrer"
               onClick={closeMenu}
             >
               <span className="inline-flex items-center gap-2"><WhatsAppIcon className="size-5" /> WhatsApp us</span>
@@ -77,10 +77,10 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-3">
             <a
-              className="group hidden min-h-11 items-center gap-2 rounded-full bg-whatsapp px-4 py-2.5 text-sm font-bold text-whatsapp-foreground shadow-sm transition hover:-translate-y-0.5 hover:shadow-md md:inline-flex"
-              href={whatsappHref ?? "#contact"}
-              target={whatsappHref ? "_blank" : undefined}
-              rel={whatsappHref ? "noreferrer" : undefined}
+              className="group hidden min-h-11 items-center gap-2 rounded-full bg-whatsapp px-4 py-2.5 text-sm font-bold text-whatsapp-foreground shadow-sm transition hover:-translate-y-0.5 hover:shadow-md lg:inline-flex"
+              href={whatsappHref}
+              target="_blank"
+              rel="noreferrer"
             >
               <WhatsAppIcon className="size-5" />
               Start a conversation
@@ -88,7 +88,7 @@ export function SiteHeader() {
             </a>
 
             <button
-              className={`grid size-10 place-items-center rounded-full border transition focus-visible:ring-2 focus-visible:ring-ring md:hidden ${overHero ? "border-hero-border bg-hero-surface/70 text-hero-foreground hover:bg-hero-surface" : "border-border bg-secondary text-foreground hover:bg-accent hover:text-accent-foreground"}`}
+              className={`grid size-10 place-items-center rounded-full border transition focus-visible:ring-2 focus-visible:ring-ring lg:hidden ${overHero ? "border-hero-border bg-hero-surface/70 text-hero-foreground hover:bg-hero-surface" : "border-border bg-secondary text-foreground hover:bg-accent hover:text-accent-foreground"}`}
               type="button"
               aria-label={menuOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={menuOpen}

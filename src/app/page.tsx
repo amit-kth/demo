@@ -24,7 +24,35 @@ import { Container } from "@/components/container";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsAppButton } from "@/components/whatsapp-button";
-import { whatsappHref } from "@/lib/site-config";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
+import { siteUrl, whatsappDisplayNumber, whatsappHref, whatsappNumber } from "@/lib/site-config";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Slash Logic",
+  description:
+    "Website, e-commerce, custom software, mobile app development and digital marketing services for businesses across India.",
+  ...(siteUrl ? { url: siteUrl } : {}),
+  areaServed: {
+    "@type": "Country",
+    name: "India",
+  },
+  knowsAbout: [
+    "Website development",
+    "E-commerce development",
+    "Custom software development",
+    "Android and iOS app development",
+    "Search engine optimization",
+    "Digital marketing",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: `+${whatsappNumber}`,
+    contactType: "sales",
+    areaServed: "IN",
+  },
+};
 
 const sampleBrands = [
   { name: "NORTHLINE", icon: Code2 },
@@ -84,11 +112,11 @@ const commonQuestions = [
   },
   {
     question: "Can I choose just one service?",
-    answer: "Yes. Start with the service you need now—website development, an app, SEO, social media, paid ads or content marketing—and add more later if useful.",
+    answer: "Yes. Start with the service you need now: website development, an app, SEO, social media, paid ads or content marketing. Add more later if useful.",
   },
   {
     question: "Do you work with both small and larger companies?",
-    answer: "Yes. We work with local businesses and larger teams, shaping the scope around the people who will use and manage the work.",
+    answer: "Yes. We work with local Indian businesses and larger teams, shaping each project around the people who will use and manage it.",
   },
   {
     question: "What happens after a project goes live?",
@@ -131,9 +159,17 @@ function BrandRail() {
 export default function Home() {
   return (
     <main className="bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c") }}
+      />
       <SiteHeader />
 
-      <section className="relative isolate min-h-svh overflow-hidden bg-hero text-hero-foreground" id="top">
+      <section
+        aria-labelledby="hero-title"
+        className="relative isolate min-h-svh overflow-hidden bg-hero text-hero-foreground"
+        id="top"
+      >
         <div className="absolute inset-0 -z-10">
           <Image
             src="/slash-logic-backdrop-v3.png"
@@ -148,35 +184,29 @@ export default function Home() {
           <div className="absolute inset-0 bg-linear-to-b from-hero/35 via-transparent to-transparent" />
         </div>
 
-        <Container className="flex min-h-svh items-center pb-12 pt-28 sm:pb-16 lg:pt-24">
-          <div className="grid w-full items-center gap-10 lg:grid-cols-12 lg:gap-6">
+        <Container className="flex min-h-svh items-center pb-12 pt-24 sm:pb-16 sm:pt-28 lg:pt-20 2xl:pb-20 2xl:pt-24">
+          <div className="grid w-full items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-6 2xl:gap-12">
             <div className="max-w-3xl lg:col-span-7">
-              <p className="hero-enter mb-5 inline-flex items-center gap-3 rounded-full border border-hero-border bg-hero-surface/75 px-4 py-2 text-xs font-bold uppercase tracking-widest text-hero-muted backdrop-blur-sm sm:text-sm">
-                <span className="size-2 rounded-full bg-accent shadow-md" />
-                Slash Logic <span className="text-primary">/</span> Web, apps &amp; marketing
-              </p>
-              <h1 className="font-display text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
+              <h1
+                className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl"
+                id="hero-title"
+              >
                 <span className="hero-enter hero-enter-delay-1 block">Web &amp; app</span>
                 <span className="hero-enter hero-enter-delay-2 block text-accent">development</span>
-                <span className="hero-enter hero-enter-delay-3 block">for what&apos;s next.</span>
+                <span className="hero-enter hero-enter-delay-3 block">for your business.</span>
               </h1>
-              <p className="hero-enter hero-enter-delay-3 mt-6 max-w-2xl text-lg leading-relaxed text-hero-muted sm:mt-7 sm:text-xl">
-                We design and develop websites, online stores, web apps and mobile apps—then help the right people find them.
+              <p className="hero-enter hero-enter-delay-3 mt-5 max-w-2xl text-base leading-relaxed text-hero-muted sm:mt-6 sm:text-lg lg:text-xl">
+                We build mobile-friendly websites, online stores and apps, then help businesses across India reach the right customers with digital marketing.
               </p>
-              <div className="hero-enter hero-enter-delay-4 mt-8 flex flex-wrap items-center gap-3 sm:mt-9">
+              <div className="hero-enter hero-enter-delay-4 mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
                 <a
-                  className="group inline-flex min-h-14 items-center gap-3 rounded-full bg-primary px-6 py-3 text-base font-bold text-primary-foreground shadow-lg transition hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring"
+                  className="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-primary px-6 py-3 text-base font-bold text-primary-foreground shadow-lg transition hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring sm:w-auto"
                   href="#services"
                 >
                   Explore services
                   <ArrowDownRight className="size-5 transition-transform group-hover:translate-y-1 group-hover:translate-x-0.5" aria-hidden="true" />
                 </a>
                 <WhatsAppButton href={whatsappHref} />
-              </div>
-              <div className="hero-enter hero-enter-delay-4 mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-bold uppercase tracking-widest text-hero-muted sm:text-sm">
-                <span>Web development</span><span className="text-primary">/</span>
-                <span>App development</span><span className="text-primary">/</span>
-                <span>Digital marketing</span>
               </div>
             </div>
 
@@ -207,23 +237,23 @@ export default function Home() {
         </a>
       </section>
 
-      <section className="bg-background py-24 sm:py-32" id="services">
+      <section className="bg-background py-16 sm:py-20 lg:py-24 2xl:py-32" id="services">
         <Container>
           <Reveal className="grid gap-8 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
               <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">01 / What we do</p>
-              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl 2xl:text-7xl">
                 Build it. Launch it. Help it grow.
               </h2>
             </div>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:col-span-5">
-              Development and marketing, connected from the start—so every part of your digital presence works toward the same goal.
+              Practical development and marketing for local businesses and growing teams across India.
             </p>
           </Reveal>
 
           <div className="mt-12 grid items-stretch gap-5 lg:grid-cols-12">
             <Reveal className="h-full lg:col-span-7">
-              <article className="group relative isolate flex h-full min-h-96 flex-col overflow-hidden rounded-3xl bg-primary p-7 text-primary-foreground shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-2xl sm:p-10">
+              <article className="group relative isolate flex h-full min-h-96 flex-col overflow-hidden rounded-3xl bg-primary p-7 text-primary-foreground shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-2xl sm:p-10 2xl:p-12">
                 <div className="absolute -right-20 -top-20 size-80 rounded-full border border-primary-foreground/20 transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute right-10 top-10 size-52 rounded-full border border-dashed border-accent/60 transition-transform duration-700 group-hover:rotate-12" />
                 <Code2 className="absolute right-16 top-16 z-0 size-24 text-primary-foreground/20 transition-transform duration-500 group-hover:-rotate-6 sm:size-32" strokeWidth={1} aria-hidden="true" />
@@ -232,7 +262,7 @@ export default function Home() {
                   <span className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">Web &amp; e-commerce</span>
                 </div>
                 <div className="relative z-10 mt-auto max-w-2xl pt-16">
-                  <h3 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">Web development</h3>
+                  <h3 className="font-display text-4xl font-semibold leading-tight sm:text-5xl 2xl:text-6xl">Web development</h3>
                   <p className="mt-4 max-w-xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
                     Responsive, accessible websites, online stores and web apps, built around your customers and your day-to-day.
                   </p>
@@ -251,16 +281,16 @@ export default function Home() {
             </Reveal>
 
             <Reveal className="h-full lg:col-span-5">
-              <article className="group relative isolate flex h-full min-h-96 flex-col overflow-hidden rounded-3xl bg-accent p-7 text-accent-foreground shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-9">
+              <article className="group relative isolate flex h-full min-h-96 flex-col overflow-hidden rounded-3xl bg-accent p-7 text-accent-foreground shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-9 2xl:p-12">
                 <div className="absolute -right-10 -top-10 size-52 rounded-full bg-primary/35 transition-transform duration-700 group-hover:scale-110" />
                 <div className="relative z-10 flex items-center justify-between gap-4">
                   <span className="rounded-full border border-accent-foreground/20 bg-background/30 px-4 py-2 text-xs font-bold uppercase tracking-widest">02 / Create</span>
                   <Smartphone className="size-8 text-primary transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110" strokeWidth={1.5} aria-hidden="true" />
                 </div>
                 <div className="relative z-10 mt-auto pt-16">
-                  <h3 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">App development</h3>
+                  <h3 className="font-display text-4xl font-semibold leading-tight sm:text-5xl 2xl:text-6xl">App development</h3>
                   <p className="mt-4 text-base leading-relaxed sm:text-lg">
-                    Plan, design and develop useful mobile products for Android and iOS—from first screen to app-store release.
+                    Plan, design and build Android and iOS apps, from the first screen through app store submission.
                   </p>
                   <div className="mt-7 flex flex-wrap gap-3">
                     <span className="inline-flex items-center gap-2 rounded-full bg-accent-foreground px-4 py-2 text-sm font-semibold text-background"><Smartphone className="size-4" /> Android</span>
@@ -272,12 +302,12 @@ export default function Home() {
             </Reveal>
 
             <Reveal className="lg:col-span-12">
-              <article className="relative isolate overflow-hidden rounded-3xl bg-hero p-7 text-hero-foreground shadow-xl sm:p-10">
+              <article className="relative isolate overflow-hidden rounded-3xl bg-hero p-7 text-hero-foreground shadow-xl sm:p-10 2xl:p-12">
                 <div className="absolute -right-16 -top-20 size-72 rounded-full bg-primary/20 blur-3xl" />
                 <div className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-center">
                   <div className="lg:col-span-4">
                     <span className="inline-flex items-center gap-2 rounded-full border border-hero-border bg-hero-surface px-4 py-2 text-xs font-bold uppercase tracking-widest text-accent">03 / Reach</span>
-                    <h3 className="mt-5 font-display text-4xl font-semibold leading-tight sm:text-5xl">Digital marketing</h3>
+                    <h3 className="mt-5 font-display text-4xl font-semibold leading-tight sm:text-5xl 2xl:text-6xl">Digital marketing</h3>
                     <p className="mt-4 max-w-md text-base leading-relaxed text-hero-muted sm:text-lg">
                       Make it easier to find you, understand you and choose you.
                     </p>
@@ -298,12 +328,12 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-secondary py-24 sm:py-32" id="process">
+      <section className="bg-secondary py-16 sm:py-20 lg:py-24 2xl:py-32" id="process">
         <Container>
           <Reveal className="grid gap-8 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
               <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">02 / How we work</p>
-              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl 2xl:text-7xl">
                 A clear route from idea to launch.
               </h2>
             </div>
@@ -316,7 +346,7 @@ export default function Home() {
             {processSteps.map(({ number, title, detail, icon: Icon }) => (
               <li className="h-full" key={number}>
                 <Reveal className="h-full">
-                  <div className="group flex h-full min-h-72 flex-col rounded-3xl border border-border bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-7">
+                  <div className="group flex h-full min-h-72 flex-col rounded-3xl border border-border bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-7 2xl:p-8">
                     <div className="flex items-start justify-between gap-4">
                       <span className="font-display text-5xl font-semibold leading-none text-primary">{number}</span>
                       <span className="grid size-11 place-items-center rounded-2xl bg-accent text-accent-foreground transition-transform duration-300 group-hover:rotate-6">
@@ -333,17 +363,17 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-background py-24 sm:py-32" id="work">
+      <section className="bg-background py-16 sm:py-20 lg:py-24 2xl:py-32" id="work">
         <Container>
           <Reveal className="grid gap-8 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
               <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">03 / Project examples</p>
-              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl 2xl:text-7xl">
                 Websites, online stores & apps.
               </h2>
             </div>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:col-span-5">
-              Explore a website, an online store and a mobile app concept. These are illustrative examples—not client projects or case studies.
+              Explore examples of a business website, an online store and a mobile app. Each is an illustrative concept, not client work or a case study.
             </p>
           </Reveal>
 
@@ -356,7 +386,7 @@ export default function Home() {
                 key={project.brand}
               >
                 <article className={`project-card group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl ${project.layout === "wide" ? "lg:grid lg:grid-cols-12" : ""}`}>
-                  <div className={`relative h-64 overflow-hidden sm:h-72 ${project.layout === "wide" ? "lg:col-span-7 lg:h-80" : ""}`}>
+                  <div className={`relative h-64 overflow-hidden sm:h-72 ${project.layout === "wide" ? "lg:col-span-7 lg:h-80 2xl:h-96" : "2xl:h-80"}`}>
                     <Image
                       src={project.image}
                       alt={project.alt}
@@ -390,11 +420,11 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-hero py-24 text-hero-foreground sm:py-32" id="faq">
+      <section className="bg-hero py-16 text-hero-foreground sm:py-20 lg:py-24 2xl:py-32" id="faq">
         <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-4">
             <p className="text-xs font-bold uppercase tracking-widest text-accent sm:text-sm">04 / Good to know</p>
-            <h2 className="mt-4 font-display text-4xl font-semibold leading-tight sm:text-5xl">A few useful answers.</h2>
+            <h2 className="mt-4 font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl 2xl:text-7xl">A few useful answers.</h2>
             <p className="mt-5 text-lg leading-relaxed text-hero-muted">
               Have a different question? Tell us what you&apos;re planning and we&apos;ll take it from there.
             </p>
@@ -421,26 +451,30 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-primary py-20 text-primary-foreground sm:py-28" id="contact">
+      <section className="relative isolate overflow-hidden bg-primary py-16 text-primary-foreground sm:py-20 lg:py-28 2xl:py-32" id="contact">
         <div className="absolute -right-24 -top-32 size-96 rounded-full border border-primary-foreground/20" />
         <div className="absolute -right-12 -top-20 size-72 rounded-full border border-dashed border-accent/65" />
         <Container className="relative z-10 grid gap-10 lg:grid-cols-12 lg:items-center">
           <Reveal className="lg:col-span-8">
             <p className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/10 px-4 py-2 text-xs font-bold uppercase tracking-widest">Ready when you are <span className="size-2 rounded-full bg-accent" /></p>
-            <h2 className="mt-5 max-w-4xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+            <h2 className="mt-5 max-w-4xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl 2xl:text-7xl">
               What should we build together?
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-primary-foreground/85">
               Tell us about the website, app or marketing challenge you&apos;re working on.
             </p>
           </Reveal>
-          <Reveal className="lg:col-span-4 lg:justify-self-end">
+          <Reveal className="flex flex-col items-center gap-3 lg:col-span-4 lg:items-end lg:justify-self-end">
             <WhatsAppButton href={whatsappHref} />
+            <p className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground/85">
+              <WhatsAppIcon className="size-4 text-whatsapp" />
+              WhatsApp: {whatsappDisplayNumber}
+            </p>
           </Reveal>
         </Container>
       </section>
 
-      <footer className="bg-background py-8 sm:py-10">
+      <footer className="bg-background py-8 sm:py-10 2xl:py-12">
         <Container className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <BrandMark tone="dark" />
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-muted-foreground">

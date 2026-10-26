@@ -1,28 +1,30 @@
+import Image from "next/image";
+
 type BrandMarkProps = {
-  href?: string;
   tone?: "light" | "dark";
 };
 
-export function BrandMark({ href = "#top", tone = "light" }: BrandMarkProps) {
+export function BrandMark({ tone = "light" }: BrandMarkProps) {
   const wordColor = tone === "dark" ? "text-foreground" : "text-hero-foreground";
 
   return (
     <a
       className={`group inline-flex shrink-0 items-center gap-3 whitespace-nowrap ${wordColor}`}
-      href={href}
+      href="#top"
       aria-label="Slash Logic home"
     >
-      <svg
-        className="size-8 text-primary transition duration-300 group-hover:scale-105 sm:size-9"
-        viewBox="0 0 44 44"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path d="m15 11-8 11 8 11M29 11l8 11-8 11" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="m25 6-7 32" stroke="currentColor" strokeWidth="3.4" strokeLinecap="round" />
-      </svg>
-      <span className="font-display text-sm font-semibold tracking-tight sm:text-base">
-        Slash <span className="mx-1 font-normal text-primary">/</span> Logic
+      <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-card p-1 shadow-sm ring-1 ring-border/70 transition-transform duration-300 group-hover:scale-105 sm:size-11">
+        <Image
+          src="/slash-logic-logo-mark.png"
+          alt=""
+          width={509}
+          height={379}
+          sizes="44px"
+          className="h-6 w-8 object-contain sm:h-7 sm:w-9"
+        />
+      </span>
+      <span className="font-display text-base font-semibold tracking-tight sm:text-lg">
+        Slash Logic
       </span>
     </a>
   );

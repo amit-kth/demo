@@ -1,84 +1,67 @@
 import Image from "next/image";
-import { ArrowDownRight, ArrowUpRight, Monitor, Smartphone } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Monitor } from "lucide-react";
 import { Container } from "@/components/container";
 
 export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative isolate min-h-svh overflow-hidden bg-hero text-hero-foreground"
+      className="relative isolate min-h-svh overflow-hidden bg-background text-foreground"
       id="top"
     >
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-br from-hero via-hero to-primary/20" />
-      <div className="pointer-events-none absolute -right-24 top-16 -z-10 size-96 rounded-full bg-primary/20 blur-3xl sm:right-0" />
-      <div className="pointer-events-none absolute bottom-0 left-0 -z-10 size-80 rounded-full bg-accent/10 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-br from-background via-background to-secondary/60" />
+      <div className="pointer-events-none absolute -left-32 top-12 -z-10 size-96 rounded-full bg-primary/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 right-0 -z-10 size-80 rounded-full bg-accent/50 blur-3xl" />
 
-      <Container className="flex min-h-svh items-center pb-12 pt-24 sm:pb-16 sm:pt-28 lg:pt-20 2xl:pb-20 2xl:pt-24">
-        <div className="grid w-full items-center gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-6 2xl:gap-12">
-          <div className="relative z-20 max-w-3xl lg:col-span-7">
+      <Container className="flex min-h-svh items-center pb-10 pt-24 sm:pb-12 sm:pt-28 lg:pb-16 lg:pt-20">
+        <div className="grid w-full items-center gap-5 md:grid-cols-12 lg:gap-6 2xl:gap-8">
+          <div className="relative z-10 max-w-2xl md:col-span-7 lg:col-span-6">
+            <p className="mb-5 inline-flex items-center gap-3 rounded-full border border-border bg-card/90 px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary shadow-sm sm:mb-6 sm:text-sm">
+              <span className="size-2 rounded-full bg-primary" />
+              Websites · apps · digital marketing
+            </p>
             <h1
-              className="font-display text-balance text-2xl font-semibold leading-none tracking-tight sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl"
+              className="font-display text-balance text-2xl font-semibold leading-none tracking-tight sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
               id="hero-title"
             >
-              <span className="hero-enter hero-enter-delay-1 block">Digital development</span>
-              <span className="hero-enter hero-enter-delay-2 block text-accent">for growing businesses.</span>
+              <span className="block">Make your business</span>
+              <span className="block text-primary">work better online.</span>
             </h1>
-            <p className="hero-enter hero-enter-delay-3 mt-5 max-w-2xl text-base leading-relaxed text-hero-muted sm:mt-6 sm:text-lg lg:text-xl">
-              We build mobile-friendly websites, online stores and apps, then help businesses across India reach the right customers with digital marketing.
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg xl:text-xl">
+              We build websites, online stores and apps, then help the right customers find you through SEO and digital marketing.
             </p>
-            <div className="hero-enter hero-enter-delay-4 mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
               <a
-                className="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-primary px-6 py-3 text-base font-bold text-primary-foreground shadow-lg transition hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring sm:w-auto"
+                className="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-primary px-6 py-3 text-base font-bold text-primary-foreground shadow-lg transition motion-reduce:transition-none hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring sm:w-auto"
+                href="#contact"
+              >
+                Start a project
+                <ArrowUpRight className="size-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+              </a>
+              <a
+                className="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full border border-border bg-card/80 px-6 py-3 text-base font-semibold text-foreground shadow-sm transition motion-reduce:transition-none hover:-translate-y-0.5 hover:bg-card hover:shadow-md focus-visible:ring-2 focus-visible:ring-ring sm:w-auto"
                 href="#services"
               >
                 Explore services
                 <ArrowDownRight className="size-5 transition-transform group-hover:translate-y-1 group-hover:translate-x-0.5" aria-hidden="true" />
               </a>
-              <a
-                className="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full border border-hero-border bg-hero-surface/40 px-6 py-3 text-base font-semibold text-hero-foreground backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-hero-surface/75 focus-visible:ring-2 focus-visible:ring-ring sm:w-auto"
-                href="#work"
-              >
-                See our work
-                <ArrowUpRight className="size-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
-              </a>
             </div>
           </div>
 
-          <div className="relative hidden min-h-96 lg:col-span-5 lg:block" aria-hidden="true">
-            <div className="absolute inset-6 rounded-full bg-primary/20 blur-3xl" />
-            <div className="relative ml-auto w-11/12 max-w-2xl pt-6">
-              <div className="relative overflow-hidden rounded-3xl border border-hero-border bg-card shadow-2xl shadow-primary/20">
-                <Image
-                  src="/concept-juniper.jpg"
-                  alt=""
-                  width={1200}
-                  height={896}
-                  priority
-                  sizes="(max-width: 1279px) 36vw, 560px"
-                  className="block h-auto w-full"
-                />
-                <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-background/95 px-3 py-2 text-xs font-bold text-foreground shadow-md">
-                  <Monitor className="size-4 text-primary" />
-                  Illustrative website concept
-                </span>
-              </div>
-
-              <div className="absolute -bottom-6 -left-6 z-20 w-40 rounded-3xl border border-hero-border bg-card p-2 shadow-2xl shadow-primary/20 transition-transform duration-500 motion-reduce:transition-none hover:-translate-y-1 sm:w-44 xl:w-48">
-                <div className="relative aspect-square overflow-hidden rounded-2xl">
-                  <Image
-                    src="/concept-forma.jpg"
-                    alt=""
-                    fill
-                    sizes="192px"
-                    className="object-cover"
-                  />
-                </div>
-                <span className="flex items-center gap-2 px-2 pb-1 pt-3 text-xs font-bold text-card-foreground">
-                  <Smartphone className="size-4 text-primary" />
-                  Illustrative app concept
-                </span>
-              </div>
-            </div>
+          <div className="relative mx-auto hidden w-full max-w-sm md:col-span-5 md:block lg:col-span-6 lg:max-w-none" aria-hidden="true">
+            <Image
+              src="/hero-interface-art.webp"
+              alt=""
+              width={650}
+              height={560}
+              priority
+              sizes="(max-width: 1023px) 40vw, 50vw"
+              className="block h-auto w-full"
+            />
+            <span className="absolute bottom-4 right-2 inline-flex items-center gap-2 rounded-full border border-border bg-card/95 px-3 py-2 text-xs font-semibold text-muted-foreground shadow-md sm:bottom-6 sm:right-4">
+              <Monitor className="size-4 text-primary" />
+              Illustrative interface
+            </span>
           </div>
         </div>
       </Container>

@@ -38,7 +38,7 @@ export function SiteHeader() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className={`transition-colors duration-300 ${overHero ? "bg-transparent" : "border-b border-border bg-background shadow-md"}`}>
         <Container className={`relative flex items-center justify-between gap-4 transition-[height] duration-300 ${overHero ? "h-16" : "h-14"}`}>
-          <BrandMark tone={overHero ? "light" : "dark"} />
+          <BrandMark tone="dark" />
 
           <nav
             id="primary-navigation"
@@ -49,9 +49,9 @@ export function SiteHeader() {
               const Icon = link.icon;
               const isOverHero = overHero && !menuOpen;
               const linkColors = isOverHero
-                ? "text-hero-muted hover:bg-hero-surface/70 hover:text-hero-foreground"
+                ? "text-foreground hover:bg-background/80 hover:text-primary"
                 : "text-muted-foreground hover:bg-secondary hover:text-foreground";
-              const iconColor = isOverHero ? "text-hero-foreground" : "text-primary";
+              const iconColor = "text-primary";
 
               return (
                 <a
@@ -90,7 +90,7 @@ export function SiteHeader() {
             </a>
 
             <button
-              className={`grid size-10 place-items-center rounded-full border transition focus-visible:ring-2 focus-visible:ring-ring lg:hidden ${overHero ? "border-hero-border bg-hero-surface/70 text-hero-foreground hover:bg-hero-surface" : "border-border bg-secondary text-foreground hover:bg-accent hover:text-accent-foreground"}`}
+              className={`grid size-10 place-items-center rounded-full border transition focus-visible:ring-2 focus-visible:ring-ring lg:hidden ${overHero ? "border-border bg-background/80 text-foreground hover:bg-background" : "border-border bg-secondary text-foreground hover:bg-accent hover:text-accent-foreground"}`}
               type="button"
               aria-label={menuOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={menuOpen}

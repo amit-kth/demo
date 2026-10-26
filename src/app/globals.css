@@ -145,6 +145,45 @@
   }
 }
 
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-glow-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate3d(0, -0.75rem, 0) scale(1.06);
+    opacity: 0.85;
+  }
+}
+
+@keyframes hero-card-drift {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -0.5rem;
+  }
+}
+
+@keyframes hero-route-flow {
+  to {
+    stroke-dashoffset: -36;
+  }
+}
+
 @keyframes marquee {
   to {
     transform: translateX(-50%);
@@ -152,6 +191,46 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .hero-enter {
+    animation: hero-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-enter-delay-1 {
+    animation-delay: 100ms;
+  }
+
+  .hero-enter-delay-2 {
+    animation-delay: 180ms;
+  }
+
+  .hero-enter-delay-3 {
+    animation-delay: 260ms;
+  }
+
+  .hero-enter-delay-4 {
+    animation-delay: 340ms;
+  }
+
+  .hero-ambient {
+    animation: hero-glow-drift 9s ease-in-out infinite;
+  }
+
+  .hero-art-float {
+    animation: hero-card-drift 7s ease-in-out infinite;
+  }
+
+  .hero-art-float-slow {
+    animation: hero-card-drift 8.5s ease-in-out -2s infinite;
+  }
+
+  .hero-art-float-alt {
+    animation: hero-card-drift 10s ease-in-out -4s infinite;
+  }
+
+  .hero-art-route {
+    animation: hero-route-flow 5s ease-in-out infinite;
+  }
+
   .brand-marquee {
     animation: marquee 36s linear infinite;
   }

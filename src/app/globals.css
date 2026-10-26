@@ -145,23 +145,7 @@
   }
 }
 
-@keyframes float-soft {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    translate: 0 -0.75rem;
-  }
-}
-
-@keyframes orbit-slow {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes enter-up {
+@keyframes hero-rise {
   from {
     opacity: 0;
     transform: translateY(1rem);
@@ -172,6 +156,15 @@
   }
 }
 
+@keyframes hero-backdrop-drift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.045) translate3d(-0.5rem, 0, 0);
+  }
+}
+
 @keyframes marquee {
   to {
     transform: translateX(-50%);
@@ -179,41 +172,29 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-float {
-    animation: float-soft 7s ease-in-out infinite;
-  }
-
-  .hero-float-late {
-    animation-delay: 1.4s;
-  }
-
-  .hero-orbit {
-    animation: orbit-slow 34s linear infinite;
-  }
-
-  .hero-orbit-reverse {
-    animation-direction: reverse;
-    animation-duration: 48s;
-  }
-
   .hero-enter {
-    animation: enter-up 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: hero-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   .hero-enter-delay-1 {
-    animation-delay: 120ms;
+    animation-delay: 100ms;
   }
 
   .hero-enter-delay-2 {
-    animation-delay: 220ms;
+    animation-delay: 180ms;
   }
 
   .hero-enter-delay-3 {
-    animation-delay: 340ms;
+    animation-delay: 260ms;
   }
 
   .hero-enter-delay-4 {
-    animation-delay: 460ms;
+    animation-delay: 340ms;
+  }
+
+  .hero-backdrop {
+    animation: hero-backdrop-drift 28s ease-in-out infinite alternate;
+    transform-origin: right center;
   }
 
   .brand-marquee {
@@ -236,9 +217,5 @@
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .hero-enter {
-    animation: none;
   }
 }

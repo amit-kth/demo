@@ -88,7 +88,7 @@ const projects = [
   {
     brand: "Morrow",
     category: "E-commerce · Retail",
-    title: "A smoother way to browse and buy.",
+    title: "A simpler way to shop online.",
     description: "An online store concept with product categories, a browsable catalogue and a straightforward path to checkout.",
     image: "/concept-juniper.jpg",
     alt: "E-commerce website interface with navigation, a retail product grid and shopping controls",
@@ -97,7 +97,7 @@ const projects = [
   {
     brand: "Forma",
     category: "Mobile app · Productivity",
-    title: "A clearer view of the workday.",
+    title: "A clearer daily plan.",
     description: "A mobile productivity app concept with task planning, priorities and a quick progress overview.",
     image: "/concept-forma.jpg",
     alt: "Smartphone displaying a mobile productivity app interface with task cards and a progress dashboard",
@@ -107,19 +107,19 @@ const projects = [
 
 const commonQuestions = [
   {
-    question: "What can you build for my business?",
+    question: "What can you build?",
     answer: "Business websites, online stores, custom web apps and mobile apps for iOS and Android. We can also plan the digital marketing that supports them.",
   },
   {
-    question: "Can I choose just one service?",
+    question: "Can I start with one service?",
     answer: "Yes. Start with the service you need now: website development, an app, SEO, social media, paid ads or content marketing. Add more later if useful.",
   },
   {
-    question: "Do you work with both small and larger companies?",
+    question: "Do you work with small and large teams?",
     answer: "Yes. We work with local Indian businesses and larger teams, shaping each project around the people who will use and manage it.",
   },
   {
-    question: "What happens after a project goes live?",
+    question: "What happens after launch?",
     answer: "We can help with updates, new features and ongoing marketing. The next steps depend on your goals and the kind of support you need.",
   },
 ];
@@ -188,12 +188,11 @@ export default function Home() {
           <div className="grid w-full items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-6 2xl:gap-12">
             <div className="max-w-3xl lg:col-span-7">
               <h1
-                className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl"
+                className="font-display text-balance text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl"
                 id="hero-title"
               >
                 <span className="hero-enter hero-enter-delay-1 block">Web &amp; app</span>
                 <span className="hero-enter hero-enter-delay-2 block text-accent">development</span>
-                <span className="hero-enter hero-enter-delay-3 block">for your business.</span>
               </h1>
               <p className="hero-enter hero-enter-delay-3 mt-5 max-w-2xl text-base leading-relaxed text-hero-muted sm:mt-6 sm:text-lg lg:text-xl">
                 We build mobile-friendly websites, online stores and apps, then help businesses across India reach the right customers with digital marketing.
@@ -242,8 +241,8 @@ export default function Home() {
           <Reveal className="grid gap-8 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
               <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">01 / What we do</p>
-              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl 2xl:text-7xl">
-                Build it. Launch it. Help it grow.
+              <h2 className="mt-4 max-w-3xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl 2xl:text-6xl">
+                Build. Launch. Grow.
               </h2>
             </div>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:col-span-5">
@@ -262,7 +261,7 @@ export default function Home() {
                   <span className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">Web &amp; e-commerce</span>
                 </div>
                 <div className="relative z-10 mt-auto max-w-2xl pt-16">
-                  <h3 className="font-display text-4xl font-semibold leading-tight sm:text-5xl 2xl:text-6xl">Web development</h3>
+                  <h3 className="font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl 2xl:text-5xl">Web development</h3>
                   <p className="mt-4 max-w-xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
                     Responsive, accessible websites, online stores and web apps, built around your customers and your day-to-day.
                   </p>
@@ -288,7 +287,7 @@ export default function Home() {
                   <Smartphone className="size-8 text-primary transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110" strokeWidth={1.5} aria-hidden="true" />
                 </div>
                 <div className="relative z-10 mt-auto pt-16">
-                  <h3 className="font-display text-4xl font-semibold leading-tight sm:text-5xl 2xl:text-6xl">App development</h3>
+                  <h3 className="font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl 2xl:text-5xl">App development</h3>
                   <p className="mt-4 text-base leading-relaxed sm:text-lg">
                     Plan, design and build Android and iOS apps, from the first screen through app store submission.
                   </p>
@@ -307,7 +306,7 @@ export default function Home() {
                 <div className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-center">
                   <div className="lg:col-span-4">
                     <span className="inline-flex items-center gap-2 rounded-full border border-hero-border bg-hero-surface px-4 py-2 text-xs font-bold uppercase tracking-widest text-accent">03 / Reach</span>
-                    <h3 className="mt-5 font-display text-4xl font-semibold leading-tight sm:text-5xl 2xl:text-6xl">Digital marketing</h3>
+                    <h3 className="mt-5 font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl 2xl:text-5xl">Digital marketing</h3>
                     <p className="mt-4 max-w-md text-base leading-relaxed text-hero-muted sm:text-lg">
                       Make it easier to find you, understand you and choose you.
                     </p>
@@ -333,8 +332,8 @@ export default function Home() {
           <Reveal className="grid gap-8 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
               <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">02 / How we work</p>
-              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl 2xl:text-7xl">
-                A clear route from idea to launch.
+              <h2 className="mt-4 max-w-3xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl 2xl:text-6xl">
+                Idea to launch.
               </h2>
             </div>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:col-span-5">
@@ -368,8 +367,8 @@ export default function Home() {
           <Reveal className="grid gap-8 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
               <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">03 / Project examples</p>
-              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl 2xl:text-7xl">
-                Websites, online stores & apps.
+              <h2 className="mt-4 max-w-3xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl 2xl:text-6xl">
+                Websites, stores & apps.
               </h2>
             </div>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:col-span-5">
@@ -410,7 +409,7 @@ export default function Home() {
                   </div>
                   <div className={`flex flex-1 flex-col justify-center p-6 sm:p-7 ${project.layout === "wide" ? "lg:col-span-5 lg:p-10" : ""}`}>
                     <p className="text-xs font-bold uppercase tracking-widest text-primary">{project.category}</p>
-                    <h3 className="mt-3 font-display text-2xl font-semibold leading-tight sm:text-3xl">{project.title}</h3>
+                    <h3 className="mt-3 font-display text-balance text-xl font-semibold leading-tight sm:text-2xl lg:text-3xl">{project.title}</h3>
                     <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">{project.description}</p>
                   </div>
                 </article>
@@ -424,7 +423,7 @@ export default function Home() {
         <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-4">
             <p className="text-xs font-bold uppercase tracking-widest text-accent sm:text-sm">04 / Good to know</p>
-            <h2 className="mt-4 font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl 2xl:text-7xl">A few useful answers.</h2>
+            <h2 className="mt-4 font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl 2xl:text-6xl">Quick answers.</h2>
             <p className="mt-5 text-lg leading-relaxed text-hero-muted">
               Have a different question? Tell us what you&apos;re planning and we&apos;ll take it from there.
             </p>
@@ -457,8 +456,8 @@ export default function Home() {
         <Container className="relative z-10 grid gap-10 lg:grid-cols-12 lg:items-center">
           <Reveal className="lg:col-span-8">
             <p className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/10 px-4 py-2 text-xs font-bold uppercase tracking-widest">Ready when you are <span className="size-2 rounded-full bg-accent" /></p>
-            <h2 className="mt-5 max-w-4xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl 2xl:text-7xl">
-              What should we build together?
+            <h2 className="mt-5 max-w-4xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl 2xl:text-6xl">
+              Let&apos;s build something useful.
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-primary-foreground/85">
               Tell us about the website, app or marketing challenge you&apos;re working on.

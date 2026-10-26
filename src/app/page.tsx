@@ -1,7 +1,6 @@
 import Image from "next/image";
 import {
   Activity,
-  ArrowDownRight,
   ArrowRight,
   ArrowUpRight,
   Check,
@@ -21,6 +20,7 @@ import {
 } from "lucide-react";
 import { BrandMark } from "@/components/brand-mark";
 import { Container } from "@/components/container";
+import { HeroSection } from "@/components/hero-section";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsAppButton } from "@/components/whatsapp-button";
@@ -165,76 +165,7 @@ export default function Home() {
       />
       <SiteHeader />
 
-      <section
-        aria-labelledby="hero-title"
-        className="relative isolate min-h-svh overflow-hidden bg-hero text-hero-foreground"
-        id="top"
-      >
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="/slash-logic-backdrop-v3.png"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-left md:object-center"
-          />
-          <div className="absolute inset-0 bg-linear-to-r from-hero via-hero/75 to-hero/35" />
-          <div className="absolute inset-0 bg-linear-to-t from-hero/70 via-transparent to-hero/10" />
-          <div className="absolute inset-0 bg-linear-to-b from-hero/35 via-transparent to-transparent" />
-        </div>
-
-        <Container className="flex min-h-svh items-center pb-12 pt-24 sm:pb-16 sm:pt-28 lg:pt-20 2xl:pb-20 2xl:pt-24">
-          <div className="grid w-full items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-6 2xl:gap-12">
-            <div className="max-w-3xl lg:col-span-7">
-              <h1
-                className="font-display text-balance text-2xl font-semibold leading-none tracking-tight sm:text-3xl md:text-4xl lg:text-4xl xl:text-6xl 2xl:text-7xl"
-                id="hero-title"
-              >
-                <span className="hero-enter hero-enter-delay-1 block">Digital development</span>
-                <span className="hero-enter hero-enter-delay-2 block text-accent">for growing businesses.</span>
-              </h1>
-              <p className="hero-enter hero-enter-delay-3 mt-5 max-w-2xl text-base leading-relaxed text-hero-muted sm:mt-6 sm:text-lg lg:text-xl">
-                We build mobile-friendly websites, online stores and apps, then help businesses across India reach the right customers with digital marketing.
-              </p>
-              <div className="hero-enter hero-enter-delay-4 mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
-                <a
-                  className="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-primary px-6 py-3 text-base font-bold text-primary-foreground shadow-lg transition hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring sm:w-auto"
-                  href="#services"
-                >
-                  Explore services
-                  <ArrowDownRight className="size-5 transition-transform group-hover:translate-y-1 group-hover:translate-x-0.5" aria-hidden="true" />
-                </a>
-                <WhatsAppButton href={whatsappHref} />
-              </div>
-            </div>
-
-            <div className="relative hidden min-h-96 lg:col-span-5 lg:block" aria-hidden="true">
-              <div className="hero-orbit absolute inset-3 rounded-full border border-primary-foreground/20" />
-              <div className="hero-orbit hero-orbit-reverse absolute inset-12 rounded-full border border-dashed border-accent/45" />
-              <div className="absolute inset-24 rounded-full bg-primary/20 blur-3xl" />
-              <div className="hero-float absolute left-1/2 top-1/2 grid size-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-3xl border border-hero-border bg-hero-surface/90 text-primary shadow-2xl backdrop-blur-sm">
-                <Code2 className="size-14" strokeWidth={1.2} aria-hidden="true" />
-              </div>
-              <div className="hero-float absolute left-0 top-12 inline-flex items-center gap-3 rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground shadow-xl">
-                <Code2 className="size-5" aria-hidden="true" /> Web development
-              </div>
-              <div className="hero-float hero-float-late absolute right-0 top-1/2 inline-flex -translate-y-1/2 items-center gap-3 rounded-full bg-accent px-5 py-3 text-sm font-bold text-accent-foreground shadow-xl">
-                <Smartphone className="size-5" aria-hidden="true" /> App development
-              </div>
-              <div className="hero-float absolute bottom-10 left-4 inline-flex items-center gap-3 rounded-full bg-background px-5 py-3 text-sm font-bold text-foreground shadow-xl">
-                <Megaphone className="size-5 text-primary" aria-hidden="true" /> Digital marketing
-              </div>
-              <span className="absolute right-10 top-6 size-3 rounded-full bg-accent shadow-lg" />
-              <span className="absolute bottom-8 right-12 size-2 rounded-full bg-primary shadow-lg" />
-            </div>
-          </div>
-        </Container>
-
-        <a className="absolute bottom-5 right-6 hidden items-center gap-2 text-xs font-semibold uppercase tracking-widest text-hero-muted transition hover:text-hero-foreground sm:inline-flex" href="#services">
-          Scroll to explore <ArrowDownRight className="size-4" aria-hidden="true" />
-        </a>
-      </section>
+      <HeroSection />
 
       <section className="bg-background py-16 sm:py-20 lg:py-24 2xl:py-32" id="services">
         <Container>

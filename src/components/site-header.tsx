@@ -47,9 +47,11 @@ export function SiteHeader() {
           >
             {links.map((link) => {
               const Icon = link.icon;
-              const linkColors = overHero && !menuOpen
+              const isOverHero = overHero && !menuOpen;
+              const linkColors = isOverHero
                 ? "text-hero-muted hover:bg-hero-surface/70 hover:text-hero-foreground"
                 : "text-muted-foreground hover:bg-secondary hover:text-foreground";
+              const iconColor = isOverHero ? "text-hero-foreground" : "text-primary";
 
               return (
                 <a
@@ -58,7 +60,7 @@ export function SiteHeader() {
                   key={link.href}
                   onClick={closeMenu}
                 >
-                  <Icon className="size-4 text-primary transition-transform group-hover:-translate-y-0.5" strokeWidth={1.8} aria-hidden="true" />
+                  <Icon className={`size-4 ${iconColor} transition-transform group-hover:-translate-y-0.5`} strokeWidth={1.8} aria-hidden="true" />
                   {link.label}
                 </a>
               );

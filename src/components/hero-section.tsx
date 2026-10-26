@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/container";
-import { HeroArtwork } from "@/components/hero-artwork";
 
 export function HeroSection() {
   return (
@@ -9,19 +9,28 @@ export function HeroSection() {
       className="relative isolate min-h-svh overflow-hidden bg-hero text-hero-foreground"
       id="top"
     >
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-br from-hero via-hero to-primary/20" />
-      <div className="hero-ambient pointer-events-none absolute -right-32 -top-24 -z-10 size-96 rounded-full bg-primary/20 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 left-1/4 -z-10 size-96 rounded-full bg-accent/10 blur-3xl" />
+      <div className="absolute inset-0 -z-10 overflow-hidden bg-hero">
+        <Image
+          src="/hero-creative-bg.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="hero-backdrop object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-linear-to-r from-hero/85 via-hero/60 to-hero/40 md:from-hero/35 md:via-hero/10 md:to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-hero/75 via-hero/10 to-hero/25" />
+      </div>
 
       <Container className="flex min-h-svh items-center pb-12 pt-24 sm:pb-16 sm:pt-28 lg:pt-20 2xl:pb-20 2xl:pt-24">
-        <div className="grid w-full items-center gap-8 md:grid-cols-12 lg:gap-6 2xl:gap-10">
-          <div className="relative z-20 max-w-3xl md:col-span-7">
+        <div className="grid w-full items-center md:grid-cols-12">
+          <div className="relative z-10 max-w-3xl md:col-span-8 lg:col-span-7">
             <p className="hero-enter mb-5 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-hero-muted sm:mb-6 sm:text-sm">
               <span className="h-px w-8 bg-primary" />
               Websites / apps / digital marketing
             </p>
             <h1
-              className="font-display text-balance text-2xl font-semibold leading-none tracking-tight sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+              className="font-display text-balance text-3xl font-semibold leading-none tracking-tight sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl"
               id="hero-title"
             >
               <span className="hero-enter hero-enter-delay-1 block">Websites to apps.</span>
@@ -39,7 +48,7 @@ export function HeroSection() {
                 <ArrowUpRight className="size-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
               </a>
               <a
-                className="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full border border-hero-border bg-hero-surface/50 px-6 py-3 text-base font-semibold text-hero-foreground backdrop-blur-sm transition motion-reduce:transition-none hover:-translate-y-0.5 hover:bg-hero-surface focus-visible:ring-2 focus-visible:ring-ring sm:w-auto"
+                className="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full border border-hero-border bg-hero-surface/55 px-6 py-3 text-base font-semibold text-hero-foreground shadow-lg shadow-hero/10 backdrop-blur-md transition motion-reduce:transition-none hover:-translate-y-0.5 hover:bg-hero-surface focus-visible:ring-2 focus-visible:ring-ring sm:w-auto"
                 href="#services"
               >
                 Explore services
@@ -47,12 +56,12 @@ export function HeroSection() {
               </a>
             </div>
           </div>
-
-          <div className="relative hidden md:col-span-5 md:block">
-            <HeroArtwork />
-          </div>
         </div>
       </Container>
+
+      <p className="pointer-events-none absolute bottom-6 right-8 z-10 hidden text-xs font-medium text-hero-muted/70 md:block">
+        Illustrative service visual
+      </p>
     </section>
   );
 }

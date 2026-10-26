@@ -156,31 +156,12 @@
   }
 }
 
-@keyframes hero-glow-drift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.55;
+@keyframes hero-backdrop-drift {
+  from {
+    transform: scale(1);
   }
-  50% {
-    transform: translate3d(0, -0.75rem, 0) scale(1.06);
-    opacity: 0.85;
-  }
-}
-
-@keyframes hero-card-drift {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-  50% {
-    translate: 0 -0.5rem;
-  }
-}
-
-@keyframes hero-route-flow {
   to {
-    stroke-dashoffset: -36;
+    transform: scale(1.045) translate3d(-0.5rem, 0, 0);
   }
 }
 
@@ -211,24 +192,9 @@
     animation-delay: 340ms;
   }
 
-  .hero-ambient {
-    animation: hero-glow-drift 9s ease-in-out infinite;
-  }
-
-  .hero-art-float {
-    animation: hero-card-drift 7s ease-in-out infinite;
-  }
-
-  .hero-art-float-slow {
-    animation: hero-card-drift 8.5s ease-in-out -2s infinite;
-  }
-
-  .hero-art-float-alt {
-    animation: hero-card-drift 10s ease-in-out -4s infinite;
-  }
-
-  .hero-art-route {
-    animation: hero-route-flow 5s ease-in-out infinite;
+  .hero-backdrop {
+    animation: hero-backdrop-drift 28s ease-in-out infinite alternate;
+    transform-origin: right center;
   }
 
   .brand-marquee {

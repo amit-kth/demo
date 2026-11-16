@@ -29,6 +29,9 @@
   --color-hero-border: var(--hero-border);
   --color-whatsapp: var(--whatsapp);
   --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-tone-warm: var(--tone-warm);
+  --color-tone-mint: var(--tone-mint);
+  --color-tone-lilac: var(--tone-lilac);
 
   --radius-sm: calc(var(--radius) - 0.25rem);
   --radius-md: calc(var(--radius) - 0.125rem);
@@ -63,6 +66,9 @@
   --hero-border: oklch(1 0 0 / 0.17);
   --whatsapp: oklch(0.74 0.19 151);
   --whatsapp-foreground: oklch(0.18 0.03 154);
+  --tone-warm: oklch(0.84 0.12 55);
+  --tone-mint: oklch(0.82 0.11 156);
+  --tone-lilac: oklch(0.82 0.11 305);
   --radius: 1.25rem;
 }
 
@@ -91,6 +97,23 @@
   --hero-foreground: oklch(0.98 0.008 250);
   --hero-muted: oklch(0.78 0.03 252);
   --hero-border: oklch(1 0 0 / 0.16);
+  --tone-warm: oklch(0.36 0.07 55);
+  --tone-mint: oklch(0.34 0.06 156);
+  --tone-lilac: oklch(0.36 0.07 305);
+}
+
+.site-noise {
+  background-image: url("/grain.svg");
+  background-repeat: repeat;
+  background-size: 160px 160px;
+}
+
+.site-grid-texture {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--primary) 9%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--primary) 9%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 52% 42%, #000 0%, transparent 78%);
 }
 
 @layer base {

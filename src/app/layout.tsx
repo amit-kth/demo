@@ -1,15 +1,17 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import { siteUrl } from "@/lib/site-config";
 
 const metadataBase = siteUrl ? new URL(siteUrl) : undefined;
 
 export const metadata: Metadata = {
   metadataBase,
-  title: "Slash Logic | Web, App & Digital Marketing in India",
+  title: "Slash Logic | Web, Software, Apps & Digital Growth",
   description:
-    "Mobile-friendly website development, e-commerce, custom software, Android and iOS apps, SEO and digital marketing for businesses across India.",
+    "Websites, custom software, mobile apps, focused AI chatbots and digital marketing for businesses across India.",
   applicationName: "Slash Logic",
   keywords: [
     "web development services India",
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
     "custom software development India",
     "SEO services India",
     "digital marketing for Indian businesses",
-    "social media marketing India",
+    "AI chatbot development India",
   ],
   robots: {
     index: true,
@@ -37,18 +39,18 @@ export const metadata: Metadata = {
   },
   alternates: metadataBase ? { canonical: "/" } : undefined,
   openGraph: {
-    title: "Slash Logic | Web, App & Digital Marketing in India",
+    title: "Slash Logic | Web, Software, Apps & Digital Growth",
     description:
-      "Website development, e-commerce, Android and iOS apps, SEO and digital marketing for businesses across India.",
+      "Website development, e-commerce, mobile apps, focused AI chatbots and digital marketing for businesses across India.",
     type: "website",
     locale: "en_IN",
     siteName: "Slash Logic",
   },
   twitter: {
     card: "summary",
-    title: "Slash Logic | Web, App & Digital Marketing in India",
+    title: "Slash Logic | Web, Software, Apps & Digital Growth",
     description:
-      "Website development, e-commerce, mobile apps, SEO and digital marketing for Indian businesses.",
+      "Websites, software, mobile apps, AI chatbots and digital marketing for Indian businesses.",
   },
   icons: {
     icon: "/slash-logic-logo-mark.png",
@@ -72,7 +74,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }

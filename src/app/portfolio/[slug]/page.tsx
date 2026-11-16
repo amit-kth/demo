@@ -36,7 +36,7 @@ export default async function ConceptDetailPage({ params }: ConceptRouteProps) {
     <main className="bg-background text-foreground">
       <PageIntro
         eyebrow={`Concept work / ${project.type}`}
-        title={`${project.name}: a ${project.type.toLowerCase()}.`}
+        title={`${project.name}: a ${project.type.toLowerCase()} concept.`}
         description={project.description}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Concept work", href: "/portfolio" }, { label: project.name }]}
         sideNote={{ label: "Clearly a concept", text: "This is an illustrative exploration, not a client engagement, live deployment or verified business outcome." }}
@@ -81,7 +81,7 @@ export default async function ConceptDetailPage({ params }: ConceptRouteProps) {
         <Container className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-5">
           <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground"><Check className="size-6" aria-hidden="true" /></span>
           <div className="min-w-0 flex-1">
-            <h2 className="font-display text-2xl font-semibold">What this concept does not claim.</h2>
+            <h2 className="font-display text-2xl font-semibold">A concept, not a case study.</h2>
             <p className="mt-3 max-w-3xl text-base leading-relaxed text-hero-muted">It does not represent a customer, a commissioned engagement, a launched product, a client testimonial or measured results. It is here to make a possible interface direction easier to discuss.</p>
           </div>
         </Container>

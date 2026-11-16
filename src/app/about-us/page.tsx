@@ -17,19 +17,19 @@ export const metadata = pageMetadata({
 const principles = [
   {
     number: "01",
-    title: "Understand before recommending.",
+    title: "Understand first.",
     detail: "Begin with the people, process and business need. The right solution depends on that context.",
     icon: Compass,
   },
   {
     number: "02",
-    title: "Keep the work understandable.",
+    title: "Keep decisions clear.",
     detail: "Make decisions, open questions and the next review visible as the project moves forward.",
     icon: MessageSquareText,
   },
   {
     number: "03",
-    title: "Build with the next step in mind.",
+    title: "Plan for what comes next.",
     detail: "Consider how people will use and maintain a product beyond launch.",
     icon: Lightbulb,
   },
@@ -49,7 +49,7 @@ export default function AboutPage() {
     <main className="bg-background text-foreground">
       <PageIntro
         eyebrow="About / Slash Logic"
-        title="A technology partner for the work behind your next step."
+        title="Technology that fits your work."
         description="We connect websites, software, apps, focused chatbots and marketing to the needs behind the work."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About us" }]}
         sideNote={{ label: "The starting point", text: "Understand the business need before recommending tools." }}
@@ -60,7 +60,7 @@ export default function AboutPage() {
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">01 / Who we are</p>
-            <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">One connected view of digital work.</h2>
+            <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Bring your digital work together.</h2>
           </Reveal>
           <Reveal className="space-y-5 lg:col-span-7">
             <p className="text-lg leading-relaxed text-foreground sm:text-xl">Websites, internal tools and customer discovery all shape the same digital experience.</p>
@@ -75,7 +75,7 @@ export default function AboutPage() {
           <Reveal>
             <SectionHeading
               eyebrow="02 / What guides the work"
-              title="Useful work begins with useful questions."
+              title="Start with the right questions."
               description="Principles to guide the work, not promises about a particular result."
             />
           </Reveal>
@@ -103,7 +103,7 @@ export default function AboutPage() {
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">03 / How we work</p>
-            <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">A clear path, with room for discovery.</h2>
+            <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">A process that fits the project.</h2>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">The project plan should reflect its size and uncertainty. A straightforward website and a custom product do not need the same process.</p>
             <Link className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary transition hover:gap-3" href="/services">Explore the service areas <ArrowRight className="size-4" aria-hidden="true" /></Link>
           </Reveal>
@@ -126,7 +126,7 @@ export default function AboutPage() {
             <Reveal className="lg:col-span-5">
               <span className="grid size-12 place-items-center rounded-2xl bg-primary text-primary-foreground"><Eye className="size-6" aria-hidden="true" /></span>
               <p className="mt-7 text-xs font-bold uppercase tracking-widest text-accent sm:text-sm">04 / Technology examples</p>
-              <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Choose a stack for the work ahead.</h2>
+              <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Choose tools that fit.</h2>
               <p className="mt-5 max-w-lg text-base leading-relaxed text-hero-muted sm:text-lg">Examples, not a fixed stack. Capability, licensing, privacy and ongoing support all matter.</p>
             </Reveal>
             <div className="lg:col-span-7">
@@ -149,7 +149,7 @@ export default function AboutPage() {
         <Container className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-primary">Ready to talk through an idea?</p>
-            <h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold sm:text-3xl">Start with the challenge you want to solve.</h2>
+            <h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold sm:text-3xl">Start with your challenge.</h2>
           </div>
           <ActionLink href="/contact-us">Get in touch</ActionLink>
         </Container>

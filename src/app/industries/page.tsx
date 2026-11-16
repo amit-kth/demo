@@ -21,7 +21,7 @@ export default function IndustriesPage() {
     <main className="bg-background text-foreground">
       <PageIntro
         eyebrow="Industries / Different work, different needs"
-        title="Digital tools shaped around the work behind the business."
+        title="Digital ideas for different industries."
         description="Explore possible digital approaches for different kinds of work. The right scope depends on each organisation."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Industries" }]}
         sideNote={{ label: "Starting points, not case studies", text: "Examples describe possibilities, not client engagements or results." }}
@@ -33,7 +33,7 @@ export default function IndustriesPage() {
           <Reveal>
             <SectionHeading
               eyebrow="01 / Consider the context"
-              title="A useful solution starts with the way work happens."
+              title="Understand the work before choosing tools."
               description="The same kind of website or application can serve very different needs. Begin with the audience, process and information involved."
             />
           </Reveal>
@@ -82,7 +82,7 @@ export default function IndustriesPage() {
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">02 / More contexts</p>
-              <h2 className="mt-4 max-w-3xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Different problems call for different tools.</h2>
+              <h2 className="mt-4 max-w-3xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Find the tool that fits.</h2>
             </div>
             <p className="max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">Browse the remaining areas and the kinds of digital work worth exploring.</p>
           </div>
@@ -119,7 +119,7 @@ export default function IndustriesPage() {
 
       <section className="py-16 sm:py-20 lg:py-24">
         <Container className="flex flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
-          <div><p className="text-xs font-bold uppercase tracking-widest text-primary">Find the right next step</p><h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold sm:text-3xl">Explore the services behind these ideas.</h2></div>
+          <div><p className="text-xs font-bold uppercase tracking-widest text-primary">Find the right next step</p><h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold sm:text-3xl">Find the right service.</h2></div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <ActionLink href="/services">Explore services</ActionLink>
             <Link className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold transition hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href="/get-a-quote">Talk through a need <ArrowUpRight className="size-4" aria-hidden="true" /></Link>

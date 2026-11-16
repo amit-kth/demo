@@ -14,8 +14,8 @@ export default function PortfolioPage() {
     <main className="bg-background text-foreground">
       <PageIntro
         eyebrow="Our work / Illustrative concepts"
-        title="Interface ideas, shown as concepts."
-        description="Explore website, store and app concepts made to help discuss possible directions."
+        title="See digital concepts in context."
+        description="Explore illustrative website, store and app ideas."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Concept work" }]}
         sideNote={{ label: "A clear distinction", text: "These are concepts, not client projects or measured outcomes." }}
       />

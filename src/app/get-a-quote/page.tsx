@@ -24,7 +24,7 @@ export default function GetAQuotePage() {
     <main className="bg-background text-foreground">
       <PageIntro
         eyebrow="Get a quote / Project outline"
-        title="A useful estimate begins with a useful brief."
+        title="Start with a clear project outline."
         description="Share the problem, who it affects and the kind of work you have in mind."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Get a quote" }]}
         sideNote={{ label: "A simple start", text: "Use WhatsApp to share a short outline and discuss the next step." }}
@@ -35,8 +35,8 @@ export default function GetAQuotePage() {
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <p className="text-xs font-bold uppercase tracking-widest text-primary">Helpful context to share</p>
-            <h2 className="mt-4 max-w-2xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl">You can start with what you know.</h2>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">A complete specification is not required. A short outline can make the first discussion more focused.</p>
+            <h2 className="mt-4 max-w-2xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl">Start with the basics.</h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">No full spec needed. A few details are enough to start.</p>
             <ol className="mt-8 divide-y divide-border border-y border-border">
               {outlinePrompts.map((prompt, index) => {
                 const Icon = prompt.icon;
@@ -57,8 +57,8 @@ export default function GetAQuotePage() {
             <div aria-hidden="true" className="absolute -right-14 -top-20 -z-10 size-72 rounded-full border border-hero-border" />
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-accent">Ready to share the outline?</p>
-              <h2 className="mt-4 font-display text-2xl font-semibold leading-tight sm:text-3xl">Choose the conversation that works for you.</h2>
-              <p className="mt-4 text-sm leading-relaxed text-hero-muted sm:text-base">Use the existing WhatsApp contact route to send a short description or ask a question. Please avoid sending confidential or sensitive information in an initial message.</p>
+              <h2 className="mt-4 font-display text-2xl font-semibold leading-tight sm:text-3xl">Let&apos;s talk it through.</h2>
+              <p className="mt-4 text-sm leading-relaxed text-hero-muted sm:text-base">Send a short note or question on WhatsApp. Please do not share sensitive information.</p>
             </div>
             <a className="group mt-10 inline-flex min-h-14 items-center justify-center gap-3 self-start rounded-full bg-whatsapp px-6 py-3 text-base font-bold text-whatsapp-foreground shadow-md transition hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 hover:brightness-110 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href={whatsappHref} target="_blank" rel="noreferrer">
               <WhatsAppIcon className="size-5" /> Start on WhatsApp <ArrowUpRight className="size-5 transition-transform group-hover:-translate-y-0.5 motion-reduce:group-hover:translate-y-0 group-hover:translate-x-0.5 motion-reduce:group-hover:translate-x-0" aria-hidden="true" />

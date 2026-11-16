@@ -14,7 +14,7 @@ export default function BlogPage() {
     <main className="bg-background text-foreground">
       <PageIntro
         eyebrow="Insights / Notes for the next decision"
-        title="Useful thinking for digital work."
+        title="Practical guides for your next project."
         description="Guides for planning websites, online stores and focused chatbot experiences."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Insights" }]}
         sideNote={{ label: "Practical, not prescriptive", text: "Use these ideas as a starting point, then weigh your goals and constraints." }}

@@ -26,10 +26,11 @@ export default function ServicesPage() {
     <main className="bg-background text-foreground">
       <PageIntro
         eyebrow="Services / A connected set of capabilities"
-        title="Build the part of your digital business that matters next."
+        title="Build what your business needs next."
         description="Websites, software, apps, focused chatbots and marketing, shaped around one clear need."
         sideNote={{ label: "A practical starting point", text: "A goal or challenge is enough to explore the right scope." }}
         image={{ src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout on a laptop", label: "Illustrative design workspace", tint: "warm" }}
+        imageLayout="background"
       />
 
       <section className="py-16 sm:py-20 lg:py-24 2xl:py-32">
@@ -37,7 +38,7 @@ export default function ServicesPage() {
           <Reveal>
             <SectionHeading
               eyebrow="01 / Service map"
-              title="A clear route through the options."
+              title="Find the right service."
               description="Review each service’s scope, common use cases and questions."
             />
           </Reveal>
@@ -85,7 +86,7 @@ export default function ServicesPage() {
         <Container className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-16">
           <Reveal className="lg:col-span-5">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">02 / How to choose</p>
-            <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl">Begin with what needs to work better.</h2>
+            <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl">Start with the need.</h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">A conversation can clarify options, trade-offs and the constraints that matter.</p>
             <ActionLink className="mt-7" href="/get-a-quote">Plan a project</ActionLink>
           </Reveal>

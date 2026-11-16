@@ -49,8 +49,9 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
         image={service.group === "AI"
           ? { src: "/ai-support-desk.jpg", alt: "A support chat interface shown on a laptop and phone", label: "Illustrative chatbot interface", tint: "lilac" }
           : service.slug === "ecommerce-development"
-            ? { src: "/commerce-workflow.jpg", alt: "A retailer preparing orders with digital tools", label: "Illustrative commerce workflow", tint: "mint" }
+            ? { src: "/independent-retail-hero.jpg", alt: "An independent shop owner preparing an order beside a laptop", label: "Illustrative retail workflow", tint: "mint" }
             : { src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout on a laptop", label: "Illustrative design process", tint: "warm" }}
+        imageLayout={service.slug === "ecommerce-development" ? "background" : "split"}
         sideNote={service.group === "AI"
           ? { label: "Designed with boundaries", text: "AI output can be incomplete or incorrect. Define the use case, approved information and human handoff before choosing an implementation." }
           : service.group === "Growth"
@@ -63,7 +64,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-16">
             <Reveal className="lg:col-span-7">
               <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">01 / The opportunity</p>
-              <h2 className="mt-4 max-w-3xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Start with the task. Then choose the tool.</h2>
+              <h2 className="mt-4 max-w-3xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">What this service can cover.</h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">{service.overview}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <ActionLink href="/get-a-quote">Talk through a project</ActionLink>
@@ -88,7 +89,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
           <Reveal>
             <SectionHeading
               eyebrow={`02 / ${service.label}`}
-              title="What this work can include."
+              title="Ways we can help."
               description="Scope depends on your setup and goals. These examples are options, not a fixed package."
             />
           </Reveal>
@@ -112,7 +113,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">03 / A considered process</p>
-            <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl">From a useful question to a reviewed release.</h2>
+            <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl">Plan, build, review.</h2>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">The exact sequence changes with the project. These checkpoints help keep decisions and feedback visible.</p>
           </Reveal>
           <div className="lg:col-span-7">
@@ -133,7 +134,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
           <Container className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-5">
             <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground"><ShieldCheck className="size-6" aria-hidden="true" /></span>
             <div className="min-w-0 flex-1">
-              <h2 className="font-display text-2xl font-semibold">Privacy, review and limitations belong in the design.</h2>
+              <h2 className="font-display text-2xl font-semibold">Keep people in the loop.</h2>
               <p className="mt-3 max-w-3xl text-base leading-relaxed text-hero-muted">Before connecting AI to business information, agree which sources are approved, who can access them, how uncertain answers are handled and when a person needs to step in. AI output should not be treated as professional or consequential decision-making advice.</p>
             </div>
           </Container>
@@ -144,7 +145,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-4">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">04 / Questions</p>
-            <h2 className="mt-4 font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl">A few things to consider.</h2>
+            <h2 className="mt-4 font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl">Common questions.</h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">If a question is not covered here, bring it into a project conversation.</p>
           </Reveal>
           <div className="space-y-3 lg:col-span-8">
@@ -189,7 +190,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
         <Container className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/75">Ready to explore the scope?</p>
-            <h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold sm:text-3xl">Tell us what you want to make easier.</h2>
+            <h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold sm:text-3xl">What should work better?</h2>
           </div>
           <ActionLink href="/get-a-quote" variant="light" className="self-start sm:self-auto">Start a conversation</ActionLink>
         </Container>

@@ -18,7 +18,7 @@ export default function CareerPage() {
     <main className="bg-background text-foreground">
       <PageIntro
         eyebrow="Careers / Work with us"
-        title="Interested in contributing to useful digital work?"
+        title="Interested in future opportunities?"
         description="Confirmed role and application details will be shared here when available."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Careers" }]}
         sideNote={{ label: "No active opening", text: "Please check back for confirmed opportunities." }}
@@ -31,7 +31,7 @@ export default function CareerPage() {
             <span className="grid size-12 place-items-center rounded-2xl bg-primary text-primary-foreground"><BriefcaseBusiness className="size-6" aria-hidden="true" /></span>
             <div className="mt-auto max-w-xl pt-14">
               <p className="text-xs font-bold uppercase tracking-widest text-accent">Future opportunities</p>
-              <h2 className="mt-4 font-display text-3xl font-semibold leading-tight sm:text-4xl">Good work starts with clear expectations.</h2>
+              <h2 className="mt-4 font-display text-3xl font-semibold leading-tight sm:text-4xl">We’ll share details when roles are confirmed.</h2>
               <p className="mt-4 text-base leading-relaxed text-hero-muted sm:text-lg">When a role is ready to share, its responsibilities, required experience and application steps should be stated here clearly.</p>
             </div>
           </div>
@@ -39,7 +39,7 @@ export default function CareerPage() {
           <aside className="flex flex-col justify-between rounded-3xl border border-border bg-secondary p-7 sm:p-9 lg:col-span-5 lg:p-10">
             <div>
               <span className="grid size-11 place-items-center rounded-2xl bg-background text-primary"><CircleHelp className="size-5" aria-hidden="true" /></span>
-              <h2 className="mt-7 font-display text-2xl font-semibold leading-tight sm:text-3xl">Want to ask about future opportunities?</h2>
+              <h2 className="mt-7 font-display text-2xl font-semibold leading-tight sm:text-3xl">Ask about future roles.</h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">You can send a brief introduction about the kind of work you are interested in. Avoid sharing sensitive personal documents in an initial message.</p>
             </div>
             <a className="group mt-8 inline-flex min-h-12 items-center justify-center gap-2 self-start rounded-full bg-whatsapp px-5 py-3 text-sm font-bold text-whatsapp-foreground transition hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href={whatsappHref} target="_blank" rel="noreferrer">

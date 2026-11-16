@@ -165,7 +165,7 @@ export default function Home() {
         <Container className="grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-14">
           <Reveal className="lg:col-span-5">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">Slash Logic / A connected view</p>
-            <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl" id="home-intro-title">Make the work clearer before choosing what to build.</h2>
+            <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl" id="home-intro-title">Digital work starts with the people using it.</h2>
           </Reveal>
           <Reveal className="lg:col-span-7">
             <p className="max-w-3xl text-base leading-relaxed text-foreground sm:text-lg">Websites, software, apps, focused chatbots and marketing, shaped around the people and process behind the need.</p>
@@ -182,7 +182,7 @@ export default function Home() {
           <Reveal>
             <SectionHeading
               eyebrow="01 / What we do"
-              title="Digital foundations, from the first page to the next big step."
+              title="Build what your business needs next."
               description="Websites, software, apps, focused chatbots and marketing, shaped around one clear need."
             />
           </Reveal>
@@ -236,7 +236,7 @@ export default function Home() {
           <Reveal>
             <SectionHeading
               eyebrow="02 / How we work"
-              title="Make the next decision clearer."
+              title="A clear path from brief to launch."
               description="Make the people, priorities and open questions visible before choosing a solution."
             />
           </Reveal>
@@ -263,9 +263,9 @@ export default function Home() {
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
             <Reveal className="lg:col-span-5">
               <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">03 / Where we work</p>
-              <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl 2xl:text-6xl">Different industries. Different day-to-day.</h2>
+              <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl 2xl:text-6xl">Every industry works differently.</h2>
               <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Explore the challenges digital tools can help make clearer.
+                See how digital tools might support different kinds of work.
               </p>
               <Link className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary transition hover:gap-3" href="/industries">
                 Explore industries <ArrowRight className="size-4" aria-hidden="true" />
@@ -300,7 +300,7 @@ export default function Home() {
           <Reveal>
             <SectionHeading
               eyebrow="04 / Concept work"
-              title="A few ways a digital idea can take shape."
+              title="Explore illustrative design concepts."
               description="Illustrative website and app concepts, not client projects or performance claims."
             />
           </Reveal>
@@ -356,7 +356,7 @@ export default function Home() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <Reveal>
               <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">06 / Notes & guides</p>
-              <h2 className="mt-4 max-w-3xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Thoughtful starting points.</h2>
+              <h2 className="mt-4 max-w-3xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Guides for your next digital project.</h2>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">Practical notes on planning websites, digital products and focused AI experiences.</p>
             </Reveal>
             <ActionLink href="/blog" variant="outline" icon="right" className="self-start md:self-auto">Browse insights</ActionLink>
@@ -382,7 +382,7 @@ export default function Home() {
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-4">
             <p className="text-xs font-bold uppercase tracking-widest text-accent sm:text-sm">07 / Good to know</p>
-            <h2 className="mt-4 font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Before we begin.</h2>
+            <h2 className="mt-4 font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Common questions, answered.</h2>
             <p className="mt-5 text-base leading-relaxed text-hero-muted sm:text-lg">A few answers to common questions about working together and choosing a useful next step.</p>
             <Link className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-accent transition hover:gap-3" href="/faq">Browse all answers <ArrowRight className="size-4" aria-hidden="true" /></Link>
           </Reveal>
@@ -408,7 +408,7 @@ export default function Home() {
         <Container className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-center">
           <Reveal className="lg:col-span-8">
             <p className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/10 px-4 py-2 text-xs font-bold uppercase tracking-widest">A project starts with a conversation</p>
-            <h2 className="mt-5 max-w-4xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl 2xl:text-6xl">Let&apos;s make the next step useful.</h2>
+            <h2 className="mt-5 max-w-4xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl 2xl:text-6xl">Let&apos;s talk through your project.</h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg">Tell us what you are working on, what feels difficult or what you would like to explore.</p>
           </Reveal>
           <Reveal className="flex flex-col items-start gap-3 lg:col-span-4 lg:items-end lg:justify-self-end">

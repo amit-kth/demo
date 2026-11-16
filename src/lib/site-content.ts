@@ -42,7 +42,7 @@ export const services: ServicePage[] = [
     group: "Build",
     icon: LaptopMinimal,
     short: "Business websites, landing pages, stores and web applications.",
-    title: "A website built around the way your business works.",
+    title: "A website that works for your business.",
     intro:
       "From a clear first impression to the actions your customers need to take, shape a website around your goals and the people using it.",
     overview:
@@ -90,7 +90,7 @@ export const services: ServicePage[] = [
     group: "Build",
     icon: Code2,
     short: "Custom software and business tools shaped around your process.",
-    title: "Software for the work that does not fit off the shelf.",
+    title: "Custom software for the way you work.",
     intro:
       "When a process spans too many tools or manual steps, a purpose-built application can bring the work into one considered flow.",
     overview:
@@ -137,7 +137,7 @@ export const services: ServicePage[] = [
     group: "Build",
     icon: Smartphone,
     short: "Mobile experiences for Android, iOS and cross-platform products.",
-    title: "An app that earns its place on the home screen.",
+    title: "Apps built for real mobile needs.",
     intro:
       "Plan an app for moments that need a dedicated mobile experience, not just a smaller website.",
     overview:
@@ -184,7 +184,7 @@ export const services: ServicePage[] = [
     group: "Build",
     icon: ShoppingBag,
     short: "Online stores with considered catalogues, checkout and order flows.",
-    title: "Make the path from product discovery to checkout feel clear.",
+    title: "Make online shopping easier.",
     intro:
       "A useful online store needs more than product tiles. It needs a catalogue, buying journey and management flow that make sense together.",
     overview:
@@ -231,7 +231,7 @@ export const services: ServicePage[] = [
     group: "AI",
     icon: Bot,
     short: "Customer-support chatbots and practical AI integrations.",
-    title: "Useful AI, with people still in the loop.",
+    title: "Helpful chatbots and AI integrations.",
     intro:
       "Explore focused chatbot and AI integration ideas for support, enquiries and finding answers in approved business information.",
     overview:
@@ -279,7 +279,7 @@ export const services: ServicePage[] = [
     group: "AI",
     icon: Bot,
     short: "Website assistants for FAQs, support and enquiry triage.",
-    title: "A chatbot for the questions your team answers every day.",
+    title: "A chatbot for everyday questions.",
     intro:
       "Give visitors a guided way to find approved information, ask a common question or pass an enquiry to your team.",
     overview:
@@ -326,7 +326,7 @@ export const services: ServicePage[] = [
     group: "AI",
     icon: Network,
     short: "Connect a selected AI capability to a website or application.",
-    title: "Bring a focused AI capability into the tools people use.",
+    title: "Connect AI to the tools you use.",
     intro:
       "Explore how a chatbot or AI-powered search experience could fit into an existing website, application or business workflow.",
     overview:
@@ -373,7 +373,7 @@ export const services: ServicePage[] = [
     group: "Growth",
     icon: Megaphone,
     short: "A considered mix of search, content, social and paid campaigns.",
-    title: "Make it easier for the right people to find you.",
+    title: "Help the right people find you.",
     intro:
       "Bring your online presence and marketing activity into focus with work shaped around your audience, offer and next business priority.",
     overview:
@@ -421,7 +421,7 @@ export const services: ServicePage[] = [
     group: "Growth",
     icon: ChartNoAxesCombined,
     short: "Clear site structure and helpful content for organic search.",
-    title: "Build a stronger foundation for organic search.",
+    title: "Improve your visibility in search.",
     intro:
       "Help search engines and people understand what your pages offer through clear structure, relevant content and technical care.",
     overview:
@@ -592,7 +592,7 @@ export const projectConcepts = [
     type: "Website concept",
     conceptBrief: "How might a business explain a broad digital-services offer without crowding its first page?",
     designExplorations: ["Service information hierarchy", "Clear routes between capabilities", "A focused contact path"],
-    title: "A clearer way to present digital services.",
+    title: "A clear home for digital services.",
     description:
       "A conceptual business website exploring how service information and a contact path could work together.",
     image: "/concept-morrow.jpg",
@@ -608,7 +608,7 @@ export const projectConcepts = [
     type: "Store concept",
     conceptBrief: "How might a small product catalogue make browsing and the next step feel clear?",
     designExplorations: ["Product category structure", "Retail product discovery", "A considered route toward checkout"],
-    title: "A more considered online shop.",
+    title: "An online shop that feels clear.",
     description:
       "An illustrative retail store exploring product discovery, category browsing and a considered route to checkout.",
     image: "/concept-juniper.jpg",
@@ -624,7 +624,7 @@ export const projectConcepts = [
     type: "App concept",
     conceptBrief: "How might a daily planning app bring priorities and progress into one calm screen?",
     designExplorations: ["Mobile task planning", "Priority cues", "A compact progress overview"],
-    title: "A calmer view of daily tasks.",
+    title: "Daily tasks, made easier to see.",
     description:
       "A conceptual productivity app exploring task planning, priorities and a simple progress overview.",
     image: "/concept-forma.jpg",

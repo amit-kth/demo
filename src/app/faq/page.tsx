@@ -14,7 +14,7 @@ export default function FaqPage() {
     <main className="bg-background text-foreground">
       <PageIntro
         eyebrow="FAQ / Good to know"
-        title="Questions are part of a good brief."
+        title="Clear answers to common questions."
         description="Quick answers about services, planning and focused AI use cases."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
         sideNote={{ label: "Still unsure?", text: "A conversation can help clarify what to explore." }}

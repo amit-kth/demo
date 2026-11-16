@@ -11,20 +11,20 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "write-a-website-brief-that-keeps-work-moving",
     category: "Web",
-    title: "A useful website brief starts with the work, not the page count",
+    title: "A good website brief starts with the goal",
     excerpt:
       "A clear brief helps a team agree on who the site is for, what it needs to do and what can wait for a later phase.",
     readingTime: "5 min read",
     sections: [
       {
-        heading: "Start with the change you want to make",
+        heading: "Start with the outcome",
         paragraphs: [
           "Before listing pages, describe the problem the website should help solve. Perhaps people need to understand a service more quickly, compare products or find a straightforward way to make an enquiry. A concrete user need gives the project a better starting point than a long feature list.",
           "Keep the goal specific enough to guide decisions, but open enough to let the team explore a suitable approach.",
         ],
       },
       {
-        heading: "Name the audience and its next step",
+        heading: "Know who the site serves",
         paragraphs: [
           "A website may serve several audiences, but it helps to identify the people who matter most at launch. Describe what they already know, what they are trying to do and what a useful next step looks like.",
         ],
@@ -49,7 +49,7 @@ export const blogArticles: BlogArticle[] = [
         ],
       },
       {
-        heading: "End with a shared definition of ready",
+        heading: "Agree on what is ready",
         paragraphs: [
           "Before work begins, agree on what the first release includes, who reviews it and how feedback will be gathered. A concise scope, clear owners and a list of open questions give everyone a useful reference as the project develops.",
         ],
@@ -59,7 +59,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "questions-to-answer-before-building-an-online-store",
     category: "E-commerce",
-    title: "Questions to answer before building an online store",
+    title: "Plan your online store before you build",
     excerpt:
       "A store is a working system as well as a storefront. These early questions help connect the shopping journey to the way orders are handled.",
     readingTime: "6 min read",
@@ -83,14 +83,14 @@ export const blogArticles: BlogArticle[] = [
         ],
       },
       {
-        heading: "Plan the work behind the storefront",
+        heading: "Plan how orders get handled",
         paragraphs: [
           "Order handling, inventory updates, customer questions and returns are part of the experience too. A store design should account for the people who manage those tasks, not only the customer-facing pages.",
           "If the business already uses a catalogue, accounting tool or fulfilment service, identify it early. The available integration options depend on each provider and the access it supports.",
         ],
       },
       {
-        heading: "Choose technology after the requirements",
+        heading: "Choose tools to fit the need",
         paragraphs: [
           "Compare platforms with your catalogue, workflows, team skills, maintenance needs and total cost. A polished storefront alone is not enough.",
           "The choice should also account for security, accessibility, performance and how the store can be kept current after launch.",
@@ -107,7 +107,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "where-a-support-chatbot-helps-and-where-people-should-step-in",
     category: "AI & automation",
-    title: "Where support chatbots help, and when a person should step in",
+    title: "Where chatbots help, and when people should step in",
     excerpt:
       "A chatbot works best with a defined job, approved information and a clear way to hand a conversation to a human.",
     readingTime: "6 min read",
@@ -120,14 +120,14 @@ export const blogArticles: BlogArticle[] = [
         ],
       },
       {
-        heading: "Decide what the assistant is allowed to use",
+        heading: "Choose what the chatbot can use",
         paragraphs: [
           "List the pages, documents and answers that are approved as sources. Consider who owns them, how they are kept current and whether they contain information the chatbot should not expose.",
           "Data access, retention and the chosen service provider should be reviewed before private or personal information is connected.",
         ],
       },
       {
-        heading: "Make the handoff part of the design",
+        heading: "Design the human handoff",
         paragraphs: [
           "People should know when they are interacting with an automated assistant. Give the chatbot a clear way to say it is uncertain, stop when a request falls outside its role and point users toward a person or another appropriate channel.",
         ],
@@ -138,7 +138,7 @@ export const blogArticles: BlogArticle[] = [
         ],
       },
       {
-        heading: "Test real questions, not just ideal prompts",
+        heading: "Test real questions",
         paragraphs: [
           "Try short questions, misspellings, follow-up questions and requests that are outside the intended scope. Check whether answers stay grounded in approved material and whether the handoff appears at the right time.",
           "Review the experience as the source information changes. A chatbot is not a set-and-forget feature; its boundaries and content need ongoing attention.",

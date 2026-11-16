@@ -6,7 +6,7 @@ type WhatsAppButtonProps = {
 };
 
 const buttonClasses =
-  "group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-whatsapp px-6 py-3 text-base font-semibold text-whatsapp-foreground shadow-lg transition hover:-translate-y-0.5 hover:brightness-110 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring active:scale-95 sm:w-auto";
+  "group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-whatsapp px-6 py-3 text-base font-semibold text-whatsapp-foreground shadow-lg transition hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 hover:brightness-110 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring active:scale-95 sm:w-auto";
 
 function ButtonContent() {
   return (
@@ -14,7 +14,7 @@ function ButtonContent() {
       <WhatsAppIcon className="size-5" />
       <span>Chat on WhatsApp</span>
       <ArrowUpRight
-        className="size-5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+        className="size-5 transition group-hover:-translate-y-0.5 motion-reduce:group-hover:translate-y-0 group-hover:translate-x-0.5 motion-reduce:group-hover:translate-x-0"
         strokeWidth={1.8}
         aria-hidden="true"
       />

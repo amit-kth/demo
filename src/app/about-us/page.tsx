@@ -30,7 +30,7 @@ const principles = [
   {
     number: "03",
     title: "Build with the next step in mind.",
-    detail: "Consider how a product will be used, maintained and extended—not just how it looks at launch.",
+    detail: "Consider how people will use and maintain a product beyond launch.",
     icon: Lightbulb,
   },
 ];
@@ -50,9 +50,10 @@ export default function AboutPage() {
       <PageIntro
         eyebrow="About / Slash Logic"
         title="A technology partner for the work behind your next step."
-        description="Slash Logic works across websites, software, mobile apps, focused AI chatbots and digital marketing—bringing the right people, product and process into the same conversation."
+        description="We connect websites, software, apps, focused chatbots and marketing to the needs behind the work."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About us" }]}
-        sideNote={{ label: "The starting point", text: "A practical understanding of the business problem comes before a recommendation about tools." }}
+        sideNote={{ label: "The starting point", text: "Understand the business need before recommending tools." }}
+        image={{ src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout on a laptop", label: "Illustrative design workspace", tint: "lilac" }}
       />
 
       <section className="py-16 sm:py-20 lg:py-24 2xl:py-32">
@@ -62,9 +63,9 @@ export default function AboutPage() {
             <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">One connected view of digital work.</h2>
           </Reveal>
           <Reveal className="space-y-5 lg:col-span-7">
-            <p className="text-lg leading-relaxed text-foreground sm:text-xl">A website, an internal tool and the way people discover a business are connected parts of the same experience.</p>
-            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">Slash Logic brings design, development and digital marketing into one practical conversation. The work can start with a single page or a clear process challenge, then grow when the need is there.</p>
-            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">The focus is on useful digital foundations: clear content, considered interfaces, understandable choices and a scope shaped around the people who will use the result.</p>
+            <p className="text-lg leading-relaxed text-foreground sm:text-xl">Websites, internal tools and customer discovery all shape the same digital experience.</p>
+            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">We bring design, development and digital marketing into one conversation. Work can start with a page or process challenge, then grow when needed.</p>
+            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">The focus: clear content, considered interfaces and a scope shaped around the people who use the result.</p>
           </Reveal>
         </Container>
       </section>
@@ -75,7 +76,7 @@ export default function AboutPage() {
             <SectionHeading
               eyebrow="02 / What guides the work"
               title="Useful work begins with useful questions."
-              description="These are working principles for the projects we take on—not promises about a particular result or a substitute for a clear scope."
+              description="Principles to guide the work, not promises about a particular result."
             />
           </Reveal>
           <div className="mt-10 grid gap-4 lg:mt-14 lg:grid-cols-12">
@@ -126,7 +127,7 @@ export default function AboutPage() {
               <span className="grid size-12 place-items-center rounded-2xl bg-primary text-primary-foreground"><Eye className="size-6" aria-hidden="true" /></span>
               <p className="mt-7 text-xs font-bold uppercase tracking-widest text-accent sm:text-sm">04 / Technology examples</p>
               <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Choose a stack for the work ahead.</h2>
-              <p className="mt-5 max-w-lg text-base leading-relaxed text-hero-muted sm:text-lg">The examples below are options to consider—not a promise that every tool fits every project. Capability, licensing, availability, privacy and long-term support all matter.</p>
+              <p className="mt-5 max-w-lg text-base leading-relaxed text-hero-muted sm:text-lg">Examples, not a fixed stack. Capability, licensing, privacy and ongoing support all matter.</p>
             </Reveal>
             <div className="lg:col-span-7">
               <dl className="divide-y divide-hero-border border-y border-hero-border">

@@ -25,9 +25,10 @@ export default function GetAQuotePage() {
       <PageIntro
         eyebrow="Get a quote / Project outline"
         title="A useful estimate begins with a useful brief."
-        description="Start a conversation with a few details about the problem, the people and the kind of work you have in mind. The scope can be clarified from there."
+        description="Share the problem, who it affects and the kind of work you have in mind."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Get a quote" }]}
-        sideNote={{ label: "A simple start", text: "Use the WhatsApp contact route to share a short project outline and discuss a useful next step." }}
+        sideNote={{ label: "A simple start", text: "Use WhatsApp to share a short outline and discuss the next step." }}
+        image={{ src: "/commerce-workflow.jpg", alt: "A retailer using a laptop to manage a product order", label: "Illustrative commerce workflow", tint: "mint" }}
       />
 
       <section className="py-14 sm:py-18 lg:py-24 2xl:py-32">

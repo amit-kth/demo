@@ -53,12 +53,12 @@ const toneStyles = {
     number: "text-primary-foreground/15",
   },
   accent: {
-    shell: "bg-accent text-accent-foreground",
-    icon: "bg-background/70 text-primary",
-    sub: "text-accent-foreground/80",
-    link: "text-accent-foreground",
-    ring: "border-accent-foreground/15",
-    number: "text-accent-foreground/10",
+    shell: "bg-tone-warm text-foreground",
+    icon: "bg-background/80 text-primary",
+    sub: "text-foreground/75",
+    link: "text-primary",
+    ring: "border-foreground/15",
+    number: "text-foreground/10",
   },
   paper: {
     shell: "border border-border bg-card text-card-foreground",
@@ -168,7 +168,7 @@ export default function Home() {
             <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl" id="home-intro-title">Make the work clearer before choosing what to build.</h2>
           </Reveal>
           <Reveal className="lg:col-span-7">
-            <p className="max-w-3xl text-base leading-relaxed text-foreground sm:text-lg">Slash Logic works across websites, software, mobile apps, focused AI chatbots and digital marketing. Each project starts with the people and process behind the business need.</p>
+            <p className="max-w-3xl text-base leading-relaxed text-foreground sm:text-lg">Websites, software, apps, focused chatbots and marketing, shaped around the people and process behind the need.</p>
             <div className="mt-6 flex flex-wrap gap-x-7 gap-y-3">
               <Link className="inline-flex items-center gap-2 text-sm font-bold text-primary transition hover:gap-3 motion-reduce:transition-none" href="/about-us">About Slash Logic <ArrowRight className="size-4" aria-hidden="true" /></Link>
               <Link className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground transition hover:text-primary motion-reduce:transition-none" href="/services">Explore services <ArrowUpRight className="size-4" aria-hidden="true" /></Link>
@@ -183,7 +183,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="01 / What we do"
               title="Digital foundations, from the first page to the next big step."
-              description="Build a useful presence, bring a process into focus or make it easier for customers to find you. Start with one need and shape the next step from there."
+              description="Websites, software, apps, focused chatbots and marketing, shaped around one clear need."
             />
           </Reveal>
 
@@ -194,40 +194,50 @@ export default function Home() {
             <ServiceTile className="lg:col-span-7" slug="ai-solutions" number="04" tone="dark" />
             <ServiceTile className="lg:col-span-8" slug="digital-marketing" number="05" tone="mist" />
             <Reveal className="h-full lg:col-span-4">
-              <aside className="flex h-full min-h-72 flex-col justify-between rounded-3xl border border-border bg-background p-6 sm:p-8">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-primary">A closer look</p>
-                  <h3 className="mt-4 max-w-xs font-display text-2xl font-semibold leading-tight">More ways to make the digital work fit.</h3>
+              <aside className="flex h-full min-h-72 flex-col overflow-hidden rounded-3xl border border-border bg-background">
+                <div className="relative h-36 shrink-0 overflow-hidden">
+                  <Image
+                    src="/commerce-workflow.jpg"
+                    alt="A retailer preparing an order beside a digital sales dashboard"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 30vw"
+                    className="object-cover"
+                  />
+                  <div aria-hidden="true" className="absolute inset-0 bg-linear-to-tr from-hero/40 via-transparent to-tone-mint/15" />
+                  <span className="absolute left-4 top-4 rounded-full bg-background/95 px-3 py-1.5 text-xs font-bold text-foreground shadow-sm">Illustrative retail workflow</span>
                 </div>
-                <ul className="mt-8 divide-y divide-border">
-                  {["E-commerce development", "SEO services"].map((label) => {
-                    const item = services.find((service) => service.label === label);
-                    return item ? (
-                      <li key={item.slug}>
-                        <Link className="group flex min-h-12 items-center justify-between gap-3 py-3 text-sm font-semibold transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href={`/services/${item.slug}`}>
-                          {item.label}
-                          <ArrowUpRight className="size-4 shrink-0 transition-transform group-hover:-translate-y-0.5 motion-reduce:group-hover:translate-y-0 group-hover:translate-x-0.5 motion-reduce:group-hover:translate-x-0" aria-hidden="true" />
-                        </Link>
-                      </li>
-                    ) : null;
-                  })}
-                </ul>
-                <Link className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary transition hover:gap-3" href="/services">
-                  View all services <ArrowRight className="size-4" aria-hidden="true" />
-                </Link>
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary">Explore further</p>
+                  <h3 className="mt-2 max-w-xs font-display text-xl font-semibold leading-tight sm:text-2xl">Connect storefront and operations.</h3>
+                  <ul className="mt-auto divide-y divide-border pt-3">
+                    {["E-commerce development", "SEO services"].map((label) => {
+                      const item = services.find((service) => service.label === label);
+                      return item ? (
+                        <li key={item.slug}>
+                          <Link className="group flex min-h-11 items-center justify-between gap-3 py-2 text-sm font-semibold transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href={`/services/${item.slug}`}>
+                            {item.label}
+                            <ArrowUpRight className="size-4 shrink-0 transition-transform group-hover:-translate-y-0.5 motion-reduce:group-hover:translate-y-0 group-hover:translate-x-0.5 motion-reduce:group-hover:translate-x-0" aria-hidden="true" />
+                          </Link>
+                        </li>
+                      ) : null;
+                    })}
+                  </ul>
+                </div>
               </aside>
             </Reveal>
           </div>
         </Container>
       </section>
 
-      <section className="bg-secondary py-16 sm:py-20 lg:py-24 2xl:py-32" id="approach">
+      <section className="relative isolate overflow-hidden bg-secondary py-16 sm:py-20 lg:py-24 2xl:py-32" id="approach">
+        <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-20 -z-10 size-80 rounded-full bg-tone-mint/20 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 right-0 -z-10 size-80 rounded-full bg-tone-lilac/20 blur-3xl" />
         <Container>
           <Reveal>
             <SectionHeading
               eyebrow="02 / How we work"
               title="Make the next decision clearer."
-              description="A project moves better when the people, priorities and open questions are visible. The work begins with understanding the problem—not assuming the solution."
+              description="Make the people, priorities and open questions visible before choosing a solution."
             />
           </Reveal>
           <ol className="mt-10 grid gap-0 border-t border-border sm:mt-14 sm:grid-cols-2 lg:grid-cols-5">
@@ -241,7 +251,7 @@ export default function Home() {
           </ol>
           <div className="mt-9 flex flex-col gap-4 border-l-2 border-primary pl-5 sm:flex-row sm:items-center sm:justify-between sm:pl-6">
             <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Reviews and next steps are agreed around the scope, so the project stays easy to understand as it grows.
+              Reviews and next steps follow the agreed scope.
             </p>
             <ActionLink href="/about-us" variant="outline" icon="right" className="self-start sm:self-auto">Our approach</ActionLink>
           </div>
@@ -255,7 +265,7 @@ export default function Home() {
               <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">03 / Where we work</p>
               <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl 2xl:text-6xl">Different industries. Different day-to-day.</h2>
               <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-                The useful solution depends on the work behind the business. Explore the kinds of challenges digital tools can help make clearer.
+                Explore the challenges digital tools can help make clearer.
               </p>
               <Link className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary transition hover:gap-3" href="/industries">
                 Explore industries <ArrowRight className="size-4" aria-hidden="true" />
@@ -291,7 +301,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="04 / Concept work"
               title="A few ways a digital idea can take shape."
-              description="These are illustrative concepts created to explore structure and interface—not completed client projects, testimonials or performance results."
+              description="Illustrative website and app concepts, not client projects or performance claims."
             />
           </Reveal>
           <div className="mt-9 grid items-stretch gap-5 lg:mt-12 lg:grid-cols-12">
@@ -299,19 +309,21 @@ export default function Home() {
             <ConceptCard className="lg:col-span-5" project={homeConcepts[1]} />
           </div>
           <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">Concept names and screens are illustrative; they do not represent client engagements.</p>
+            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">Names and screens are illustrative.</p>
             <ActionLink href="/portfolio" variant="outline" icon="right">View all concepts</ActionLink>
           </div>
         </Container>
       </section>
 
-      <section className="bg-hero py-16 text-hero-foreground sm:py-20 lg:py-24 2xl:py-32" id="technology">
-        <Container className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-16">
+      <section className="relative isolate overflow-hidden bg-hero py-16 text-hero-foreground sm:py-20 lg:py-24 2xl:py-32" id="technology">
+        <div aria-hidden="true" className="pointer-events-none absolute -left-20 top-1/3 -z-10 size-80 rounded-full bg-primary/20 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -right-16 bottom-0 -z-10 size-72 rounded-full bg-tone-lilac/15 blur-3xl" />
+        <Container className="relative z-10 grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-16">
           <Reveal className="lg:col-span-5">
             <p className="text-xs font-bold uppercase tracking-widest text-accent sm:text-sm">05 / Technology</p>
             <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Tools should fit the job.</h2>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-hero-muted sm:text-lg">
-              The technology is a choice made around the brief, the team and long-term support—not a checklist to apply to every project.
+              Choose tools for the brief, team and long-term support plan.
             </p>
             <Link className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-accent transition hover:gap-3" href="/about-us#technology">
               See technology examples <ArrowRight className="size-4" aria-hidden="true" />

@@ -19,9 +19,9 @@ export default function CareerPage() {
       <PageIntro
         eyebrow="Careers / Work with us"
         title="Interested in contributing to useful digital work?"
-        description="Role information will be shared here when openings and application details are confirmed."
+        description="Confirmed role and application details will be shared here when available."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Careers" }]}
-        sideNote={{ label: "No role is being advertised here", text: "This page does not list an active vacancy. Please check back for confirmed opportunities." }}
+        sideNote={{ label: "No active opening", text: "Please check back for confirmed opportunities." }}
       />
 
       <section className="py-14 sm:py-18 lg:py-24 2xl:py-32">

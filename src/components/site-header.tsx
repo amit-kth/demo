@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { BrandMark } from "@/components/brand-mark";
 import { Container } from "@/components/container";
+import { ServiceMenu } from "@/components/service-menu";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
-import { serviceGroups, services } from "@/lib/site-content";
 import { whatsappHref } from "@/lib/site-config";
 
 const primaryLinks = [
@@ -28,7 +28,7 @@ function linkIsActive(pathname: string, href: string) {
 export function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const [overHero, setOverHero] = useState(pathname === "/");
   const isHome = pathname === "/";
 
@@ -49,20 +49,19 @@ export function SiteHeader() {
 
   useEffect(() => {
     setMenuOpen(false);
-    setServicesOpen(false);
   }, [pathname]);
 
   useEffect(() => {
-    if (!menuOpen && !servicesOpen) return;
+    if (!menuOpen) return;
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setMenuOpen(false);
-        setServicesOpen(false);
+        window.requestAnimationFrame(() => menuButtonRef.current?.focus());
       }
     };
     window.addEventListener("keydown", closeOnEscape);
     return () => window.removeEventListener("keydown", closeOnEscape);
-  }, [menuOpen, servicesOpen]);
+  }, [menuOpen]);
 
   const navSurface = overHero && !menuOpen
     ? "text-hero-muted hover:bg-hero-surface/70 hover:text-hero-foreground"
@@ -72,7 +71,6 @@ export function SiteHeader() {
 
   const closeNavigation = () => {
     setMenuOpen(false);
-    setServicesOpen(false);
   };
 
   return (
@@ -98,94 +96,12 @@ export function SiteHeader() {
               </Link>
             ))}
 
-            <div className="hidden lg:relative lg:block">
-              <div className="flex items-center">
-                <Link
-                  aria-current={linkIsActive(pathname, "/services") ? "page" : undefined}
-                  className={`${navLinkClass} ${linkIsActive(pathname, "/services") ? activeNavClass : ""}`}
-                  href="/services"
-                  onClick={closeNavigation}
-                >
-                  Services
-                </Link>
-                <button
-                  aria-label="Toggle services menu"
-                  aria-expanded={servicesOpen}
-                  aria-controls="services-menu-desktop"
-                  className={`-ml-2 grid size-8 place-items-center rounded-full transition hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${navSurface}`}
-                  type="button"
-                  onClick={() => setServicesOpen((open) => !open)}
-                >
-                  <ChevronDown className={`size-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} aria-hidden="true" />
-                </button>
-              </div>
-              {servicesOpen ? (
-                <div id="services-menu-desktop" className="absolute left-1/2 top-full z-50 mt-4 w-[min(44rem,calc(100vw-2rem))] -translate-x-1/2 rounded-3xl border border-border bg-background p-6 text-foreground shadow-2xl">
-                  <div className="grid gap-7 sm:grid-cols-3">
-                    {serviceGroups.map((group) => (
-                      <div key={group.title}>
-                        <p className="text-xs font-bold uppercase tracking-widest text-primary">{group.title}</p>
-                        <ul className="mt-3 space-y-1">
-                          {group.slugs.map((slug) => {
-                            const service = services.find((entry) => entry.slug === slug);
-                            if (!service) return null;
-                            return (
-                              <li key={service.slug}>
-                                <Link className="block rounded-lg px-2 py-2 text-sm font-medium text-foreground transition hover:bg-secondary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href={`/services/${service.slug}`} onClick={closeNavigation}>
-                                  {service.label}
-                                </Link>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                  <Link className="mt-6 inline-flex items-center gap-2 border-t border-border pt-4 text-sm font-semibold text-primary transition hover:gap-3" href="/services" onClick={closeNavigation}>
-                    Explore all services <ArrowUpRight className="size-4" aria-hidden="true" />
-                  </Link>
-                </div>
-              ) : null}
+            <div className="hidden lg:block">
+              <ServiceMenu overHero={overHero && !menuOpen} onNavigate={closeNavigation} />
             </div>
 
             <div className="lg:hidden">
-              <div className="flex items-center gap-1">
-                <Link className="inline-flex min-h-11 flex-1 items-center rounded-full px-3 text-sm font-semibold text-foreground transition hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href="/services" onClick={closeNavigation}>
-                  Services
-                </Link>
-                <button
-                  aria-label="Toggle service links"
-                  aria-expanded={servicesOpen}
-                  aria-controls="services-menu-mobile"
-                  className="grid size-10 place-items-center rounded-full text-muted-foreground transition hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  type="button"
-                  onClick={() => setServicesOpen((open) => !open)}
-                >
-                  <ChevronDown className={`size-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} aria-hidden="true" />
-                </button>
-              </div>
-              {servicesOpen ? (
-                <div id="services-menu-mobile" className="grid gap-4 rounded-xl bg-secondary/70 p-4 sm:grid-cols-2">
-                  {serviceGroups.map((group) => (
-                    <div key={group.title}>
-                      <p className="text-xs font-bold uppercase tracking-widest text-primary">{group.title}</p>
-                      <ul className="mt-2 space-y-1">
-                        {group.slugs.map((slug) => {
-                          const service = services.find((entry) => entry.slug === slug);
-                          if (!service) return null;
-                          return (
-                            <li key={service.slug}>
-                              <Link className="block rounded-md py-2 text-sm font-medium text-foreground hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href={`/services/${service.slug}`} onClick={closeNavigation}>
-                                {service.label}
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              ) : null}
+              <ServiceMenu mobile navigationOpen={menuOpen} onNavigate={closeNavigation} />
             </div>
 
             {primaryLinks.slice(2).map((link) => (
@@ -232,11 +148,9 @@ export function SiteHeader() {
               type="button"
               aria-label={menuOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={menuOpen}
+              ref={menuButtonRef}
               aria-controls="primary-navigation"
-              onClick={() => {
-                setMenuOpen((open) => !open);
-                setServicesOpen(false);
-              }}
+              onClick={() => setMenuOpen((open) => !open)}
             >
               {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>

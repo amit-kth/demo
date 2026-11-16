@@ -27,8 +27,9 @@ export default function ServicesPage() {
       <PageIntro
         eyebrow="Services / A connected set of capabilities"
         title="Build the part of your digital business that matters next."
-        description="Bring a website, software product, mobile app, focused AI chatbot or marketing need into focus. Each service can start on its own and connect to a wider plan when useful."
-        sideNote={{ label: "A practical starting point", text: "You do not need a finished specification to begin a conversation. A goal or challenge is enough to explore the right scope." }}
+        description="Websites, software, apps, focused chatbots and marketing, shaped around one clear need."
+        sideNote={{ label: "A practical starting point", text: "A goal or challenge is enough to explore the right scope." }}
+        image={{ src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout on a laptop", label: "Illustrative design workspace", tint: "warm" }}
       />
 
       <section className="py-16 sm:py-20 lg:py-24 2xl:py-32">
@@ -37,7 +38,7 @@ export default function ServicesPage() {
             <SectionHeading
               eyebrow="01 / Service map"
               title="A clear route through the options."
-              description="Explore the areas below, then follow any service link for its scope, common use cases and a few questions to consider."
+              description="Review each service’s scope, common use cases and questions."
             />
           </Reveal>
           <div className="mt-10 space-y-5 sm:mt-14">
@@ -85,7 +86,7 @@ export default function ServicesPage() {
           <Reveal className="lg:col-span-5">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">02 / How to choose</p>
             <h2 className="mt-4 max-w-xl font-display text-balance text-3xl font-semibold leading-tight sm:text-4xl">Begin with what needs to work better.</h2>
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">A first conversation can make the options and trade-offs easier to see. The right service depends on the people, process and constraints involved.</p>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">A conversation can clarify options, trade-offs and the constraints that matter.</p>
             <ActionLink className="mt-7" href="/get-a-quote">Plan a project</ActionLink>
           </Reveal>
           <Reveal className="lg:col-span-7">

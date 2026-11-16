@@ -44,7 +44,7 @@ export const blogArticles: BlogArticle[] = [
       {
         heading: "Bring the practical constraints forward",
         paragraphs: [
-          "Share any existing content, systems, brand assets, accessibility needs and approval steps that may shape the work. Mention dependencies early—such as a product catalogue or an external service—even if the technical details are not yet known.",
+          "Share existing content, systems, brand assets, accessibility needs and approval steps. Flag dependencies, such as a catalogue or external service, even if the technical details are unclear.",
           "A good brief does not need to answer everything. It should make the knowns, unknowns and decisions still to make visible.",
         ],
       },
@@ -92,7 +92,7 @@ export const blogArticles: BlogArticle[] = [
       {
         heading: "Choose technology after the requirements",
         paragraphs: [
-          "A hosted platform, an existing commerce system or a custom build may each suit different needs. Compare them against the catalogue, required workflows, team skills, maintenance expectations and total cost—not just the launch screen.",
+          "Compare platforms with your catalogue, workflows, team skills, maintenance needs and total cost. A polished storefront alone is not enough.",
           "The choice should also account for security, accessibility, performance and how the store can be kept current after launch.",
         ],
       },
@@ -107,7 +107,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "where-a-support-chatbot-helps-and-where-people-should-step-in",
     category: "AI & automation",
-    title: "Where a support chatbot helps—and where a person should step in",
+    title: "Where support chatbots help, and when a person should step in",
     excerpt:
       "A chatbot works best with a defined job, approved information and a clear way to hand a conversation to a human.",
     readingTime: "6 min read",

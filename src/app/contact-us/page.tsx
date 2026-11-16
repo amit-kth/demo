@@ -18,9 +18,10 @@ export default function ContactPage() {
       <PageIntro
         eyebrow="Contact / Start with a conversation"
         title="Tell us what you are trying to make easier."
-        description="Share the challenge, the idea or the question you are working through. A first conversation can help clarify what to explore next."
+        description="Share the challenge or idea you are working through. A first conversation can help clarify the next step."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
-        sideNote={{ label: "No long brief needed", text: "A short outline is enough to begin. Scope and details can be discussed after the first conversation." }}
+        sideNote={{ label: "No long brief needed", text: "A short outline is enough to begin." }}
+        image={{ src: "/website-product-studio.jpg", alt: "A designer sketching and reviewing a website layout", label: "Illustrative project planning", tint: "warm" }}
       />
 
       <section className="py-14 sm:py-18 lg:py-24 2xl:py-32">

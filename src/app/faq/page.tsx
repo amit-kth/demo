@@ -15,9 +15,9 @@ export default function FaqPage() {
       <PageIntro
         eyebrow="FAQ / Good to know"
         title="Questions are part of a good brief."
-        description="Browse a few practical answers about services, project planning and focused AI use cases."
+        description="Quick answers about services, planning and focused AI use cases."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
-        sideNote={{ label: "Still unsure?", text: "A short project conversation can help clarify the scope and the questions that need a closer look." }}
+        sideNote={{ label: "Still unsure?", text: "A conversation can help clarify what to explore." }}
       />
       <section className="py-14 sm:py-18 lg:py-24 2xl:py-32">
         <Container>

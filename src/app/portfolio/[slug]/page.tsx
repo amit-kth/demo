@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: ConceptRouteProps): Promise<M
   const project = projectConcepts.find((item) => item.slug === slug);
   if (!project) return { title: "Concept not found | Slash Logic" };
   return pageMetadata({
-    title: `${project.name} — ${project.type} | Slash Logic`,
+    title: `${project.name} | ${project.type} | Slash Logic`,
     description: project.description,
     canonical: `/portfolio/${project.slug}`,
   });

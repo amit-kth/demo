@@ -22,9 +22,10 @@ export default function IndustriesPage() {
       <PageIntro
         eyebrow="Industries / Different work, different needs"
         title="Digital tools shaped around the work behind the business."
-        description="Explore common challenges and possible digital approaches across the industries Slash Logic is positioned to support. The right scope always depends on the organisation and its context."
+        description="Explore possible digital approaches for different kinds of work. The right scope depends on each organisation."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Industries" }]}
-        sideNote={{ label: "Starting points, not case studies", text: "The examples below describe possible approaches. They are not client engagements, sector results or a claim that every solution fits every business." }}
+        sideNote={{ label: "Starting points, not case studies", text: "Examples describe possibilities, not client engagements or results." }}
+        image={{ src: "/commerce-workflow.jpg", alt: "A retailer preparing an order with digital tools and a laptop dashboard", label: "Illustrative retail workflow", tint: "mint" }}
       />
 
       <section className="py-16 sm:py-20 lg:py-24 2xl:py-32">

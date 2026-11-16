@@ -46,6 +46,11 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
           { label: "Services", href: "/services" },
           { label: service.label },
         ]}
+        image={service.group === "AI"
+          ? { src: "/ai-support-desk.jpg", alt: "A support chat interface shown on a laptop and phone", label: "Illustrative chatbot interface", tint: "lilac" }
+          : service.slug === "ecommerce-development"
+            ? { src: "/commerce-workflow.jpg", alt: "A retailer preparing orders with digital tools", label: "Illustrative commerce workflow", tint: "mint" }
+            : { src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout on a laptop", label: "Illustrative design process", tint: "warm" }}
         sideNote={service.group === "AI"
           ? { label: "Designed with boundaries", text: "AI output can be incomplete or incorrect. Define the use case, approved information and human handoff before choosing an implementation." }
           : service.group === "Growth"
@@ -84,7 +89,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
             <SectionHeading
               eyebrow={`02 / ${service.label}`}
               title="What this work can include."
-              description="The right scope depends on your current setup, audience and goals. These are common areas to explore—not a fixed package."
+              description="Scope depends on your setup and goals. These examples are options, not a fixed package."
             />
           </Reveal>
           <div className="mt-10 grid gap-4 sm:mt-12 lg:grid-cols-12">

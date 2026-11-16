@@ -94,7 +94,7 @@ export const services: ServicePage[] = [
     intro:
       "When a process spans too many tools or manual steps, a purpose-built application can bring the work into one considered flow.",
     overview:
-      "Begin with the people, decisions and information in the process—not a list of features. Define a useful first version, then make room for future needs.",
+      "Begin with the people, decisions and information in the process. Define a useful first version, then leave room for future needs.",
     capabilities: [
       {
         title: "Business applications",
@@ -139,7 +139,7 @@ export const services: ServicePage[] = [
     short: "Mobile experiences for Android, iOS and cross-platform products.",
     title: "An app that earns its place on the home screen.",
     intro:
-      "Plan a mobile experience around the moments when a customer or team member genuinely needs an app—not just a smaller website.",
+      "Plan an app for moments that need a dedicated mobile experience, not just a smaller website.",
     overview:
       "Explore the core journeys, screens and supporting services first. The implementation approach can then follow the project’s users, requirements and maintenance plan.",
     capabilities: [
@@ -188,7 +188,7 @@ export const services: ServicePage[] = [
     intro:
       "A useful online store needs more than product tiles. It needs a catalogue, buying journey and management flow that make sense together.",
     overview:
-      "Plan the store around your products, customers and operations—from how items are found to how orders are handled after checkout.",
+      "Plan the store around products, customers and operations, from discovery to order handling.",
     capabilities: [
       {
         title: "Storefront & catalogue",
@@ -235,7 +235,7 @@ export const services: ServicePage[] = [
     intro:
       "Explore focused chatbot and AI integration ideas for support, enquiries and finding answers in approved business information.",
     overview:
-      "Start with a specific task and a clear boundary. A chatbot should make a useful step easier—not make decisions that belong to a person.",
+      "Give a chatbot a focused task and clear boundaries. Keep decisions that need human judgment with a person.",
     capabilities: [
       {
         title: "Website support assistants",
@@ -330,7 +330,7 @@ export const services: ServicePage[] = [
     intro:
       "Explore how a chatbot or AI-powered search experience could fit into an existing website, application or business workflow.",
     overview:
-      "The integration should be shaped by the task, source information, access controls and expected human review—not by a model choice alone.",
+      "Shape integrations around the task, information, access controls and human review.",
     capabilities: [
       {
         title: "Website & app connections",
@@ -445,7 +445,7 @@ export const services: ServicePage[] = [
       {
         title: "Measurement with context",
         description:
-          "Use available search data to inform what to improve next—without guaranteed outcomes.",
+          "Use search data to guide improvements, without promising outcomes.",
       },
     ],
     approach: ["Review the current site", "Prioritize useful changes", "Improve and publish", "Measure over time"],
@@ -646,7 +646,7 @@ export const commonQuestions = [
     category: "Working together",
     question: "Can I start with one service?",
     answer:
-      "Yes. Start with the need that matters now—a website, app, software tool, chatbot or a specific marketing task—and shape any next phase later.",
+      "Yes. Start with one need, such as a website, app, software tool, chatbot or marketing task. Plan the next phase later.",
   },
   {
     category: "Working together",

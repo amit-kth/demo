@@ -1,0 +1,17 @@
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/_next/static/.* [OR]
+RewriteCond %{REQUEST_URI} ^/public/.*
+RewriteRule ^.*$ - [L]
+
+PassengerAppRoot "/home/ramsiya/slashlogic.ramsiya.com"
+PassengerBaseURI "/"
+PassengerNodejs "/home/ramsiya/nodevenv/slashlogic.ramsiya.com/20/bin/node"
+PassengerAppType node
+PassengerStartupFile server.js
+
+<Directory "/home/ramsiya/slashlogic.ramsiya.com/public">
+    Options -Indexes +FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>

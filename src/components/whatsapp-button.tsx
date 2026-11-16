@@ -13,7 +13,11 @@ function ButtonContent() {
     <>
       <WhatsAppIcon className="size-5" />
       <span>Chat on WhatsApp</span>
-      <ArrowUpRight className="size-5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.8} aria-hidden="true" />
+      <ArrowUpRight
+        className="size-5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
     </>
   );
 }

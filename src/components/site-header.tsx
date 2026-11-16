@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUpRight, BriefcaseBusiness, Code2, Menu, MessageCircle, Workflow, X } from "lucide-react";
+import {
+  ArrowUpRight,
+  BriefcaseBusiness,
+  Code2,
+  Menu,
+  MessageCircle,
+  Workflow,
+  X,
+} from "lucide-react";
 import { BrandMark } from "@/components/brand-mark";
 import { Container } from "@/components/container";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
@@ -36,8 +44,12 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <div className={`transition-colors duration-300 ${overHero ? "bg-transparent" : "border-b border-border bg-background shadow-md"}`}>
-        <Container className={`relative flex items-center justify-between gap-4 transition-[height] duration-300 ${overHero ? "h-16" : "h-14"}`}>
+      <div
+        className={`transition-colors duration-300 ${overHero ? "bg-transparent" : "border-b border-border bg-background shadow-md"}`}
+      >
+        <Container
+          className={`relative flex items-center justify-between gap-4 transition-[height] duration-300 ${overHero ? "h-16" : "h-14"}`}
+        >
           <BrandMark tone={overHero ? "light" : "dark"} />
 
           <nav
@@ -47,11 +59,10 @@ export function SiteHeader() {
           >
             {links.map((link) => {
               const Icon = link.icon;
-              const isOverHero = overHero && !menuOpen;
-              const linkColors = isOverHero
-                ? "text-hero-muted hover:bg-hero-surface/70 hover:text-hero-foreground"
-                : "text-muted-foreground hover:bg-secondary hover:text-foreground";
-              const iconColor = isOverHero ? "text-hero-foreground" : "text-primary";
+              const linkColors =
+                overHero && !menuOpen
+                  ? "text-hero-muted hover:bg-hero-surface/70 hover:text-hero-foreground"
+                  : "text-muted-foreground hover:bg-secondary hover:text-foreground";
 
               return (
                 <a
@@ -60,7 +71,11 @@ export function SiteHeader() {
                   key={link.href}
                   onClick={closeMenu}
                 >
-                  <Icon className={`size-4 ${iconColor} transition-transform group-hover:-translate-y-0.5`} strokeWidth={1.8} aria-hidden="true" />
+                  <Icon
+                    className="size-4 text-primary transition-transform group-hover:-translate-y-0.5"
+                    strokeWidth={1.8}
+                    aria-hidden="true"
+                  />
                   {link.label}
                 </a>
               );
@@ -72,7 +87,9 @@ export function SiteHeader() {
               rel="noreferrer"
               onClick={closeMenu}
             >
-              <span className="inline-flex items-center gap-2"><WhatsAppIcon className="size-5" /> WhatsApp us</span>
+              <span className="inline-flex items-center gap-2">
+                <WhatsAppIcon className="size-5" /> WhatsApp us
+              </span>
               <ArrowUpRight className="size-4" aria-hidden="true" />
             </a>
           </nav>
@@ -86,7 +103,10 @@ export function SiteHeader() {
             >
               <WhatsAppIcon className="size-5" />
               Start a conversation
-              <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+              <ArrowUpRight
+                className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
             </a>
 
             <button
@@ -97,7 +117,11 @@ export function SiteHeader() {
               aria-controls="primary-navigation"
               onClick={() => setMenuOpen((open) => !open)}
             >
-              {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+              {menuOpen ? (
+                <X className="size-5" />
+              ) : (
+                <Menu className="size-5" />
+              )}
             </button>
           </div>
         </Container>

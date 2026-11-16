@@ -13,7 +13,9 @@ export function Reveal({ children, className = "" }: RevealProps) {
 
   useEffect(() => {
     const element = elementRef.current;
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (!element || reduceMotion || !("IntersectionObserver" in window)) return;
 
     const bounds = element.getBoundingClientRect();

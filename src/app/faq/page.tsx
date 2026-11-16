@@ -18,6 +18,8 @@ export default function FaqPage() {
         description="Quick answers about services, planning and focused AI use cases."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
         sideNote={{ label: "Still unsure?", text: "A conversation can help clarify what to explore." }}
+        image={{ src: "/blue-glass-atmosphere.jpg", alt: "" }}
+        imageLayout="background"
       />
       <section className="py-14 sm:py-18 lg:py-24 2xl:py-32">
         <Container>

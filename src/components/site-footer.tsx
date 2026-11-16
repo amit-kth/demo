@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ActionLink } from "@/components/action-link";
@@ -29,8 +30,13 @@ const footerGroups = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-hero text-hero-foreground">
-      <Container className="py-14 sm:py-18 lg:py-20">
+    <footer className="relative isolate overflow-hidden bg-hero text-hero-foreground">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-20">
+        <Image src="/blue-glass-atmosphere.jpg" alt="" fill sizes="100vw" className="object-cover object-right opacity-80" />
+      </div>
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-r from-hero/95 via-hero/85 to-hero/65" />
+      <div aria-hidden="true" className="site-noise pointer-events-none absolute inset-0 z-0 opacity-15 mix-blend-soft-light" />
+      <Container className="relative z-10 py-14 sm:py-18 lg:py-20">
         <div className="grid gap-10 border-b border-hero-border pb-12 lg:grid-cols-12 lg:items-end lg:gap-12 lg:pb-16">
           <div className="lg:col-span-8">
             <p className="text-xs font-bold uppercase tracking-widest text-accent sm:text-sm">A good place to begin</p>

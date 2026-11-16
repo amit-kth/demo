@@ -11,17 +11,17 @@ export function HeroSection() {
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-br from-hero via-hero to-primary/20" />
       <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-12 -z-10 size-96 rounded-full bg-primary/25 blur-3xl" />
-      <div className="absolute inset-y-0 right-0 -z-10 hidden w-[56%] overflow-hidden lg:block">
+      <div className="absolute inset-y-0 right-0 -z-10 hidden w-1/2 overflow-hidden lg:block">
         <Image
-          src="/workspace-hero.jpg"
+          src="/hero-creative-bg.webp"
           alt=""
           fill
           priority
-          sizes="56vw"
-          className="hero-backdrop object-cover object-[58%_center]"
+          sizes="50vw"
+          className="hero-backdrop object-cover object-right"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-hero/85 via-hero/35 to-transparent" />
-        <div className="absolute inset-0 bg-linear-to-t from-hero/55 via-transparent to-hero/15" />
+        <div className="absolute inset-0 bg-linear-to-r from-hero/75 via-hero/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-hero/50 via-transparent to-hero/15" />
       </div>
       <div aria-hidden="true" className="site-noise pointer-events-none absolute inset-0 z-0 opacity-10 mix-blend-soft-light" />
 
@@ -51,15 +51,15 @@ export function HeroSection() {
               </ActionLink>
             </div>
           </div>
-          <div aria-hidden="true" className="relative -mx-4 mt-1 h-64 overflow-hidden border-y border-hero-border sm:mx-0 sm:h-80 sm:rounded-3xl sm:border md:col-span-12 lg:hidden">
+          <div aria-hidden="true" className="relative -mx-4 mt-1 h-48 overflow-hidden border-y border-hero-border sm:mx-0 sm:h-64 sm:rounded-3xl sm:border md:col-span-12 lg:hidden">
             <Image
-              src="/workspace-hero.jpg"
+              src="/hero-creative-bg.webp"
               alt=""
               fill
               sizes="100vw"
-              className="object-cover object-center"
+              className="object-cover object-right"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-hero/55 via-hero/10 to-hero/20" />
+            <div className="absolute inset-0 bg-linear-to-t from-hero/30 via-transparent to-hero/10" />
           </div>
         </div>
       </Container>

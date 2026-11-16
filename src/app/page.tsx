@@ -230,9 +230,15 @@ export default function Home() {
       </section>
 
       <section className="relative isolate overflow-hidden bg-secondary py-16 sm:py-20 lg:py-24 2xl:py-32" id="approach">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 -z-20 hidden w-[48%] overflow-hidden lg:block">
+          <Image src="/workspace-hero.jpg" alt="" fill sizes="48vw" className="object-cover object-right opacity-55" />
+          <div className="absolute inset-0 bg-linear-to-r from-secondary via-secondary/85 to-secondary/65" />
+          <div className="absolute inset-0 bg-linear-to-t from-secondary/30 via-transparent to-secondary/20" />
+        </div>
+        <div aria-hidden="true" className="site-grid-texture pointer-events-none absolute inset-0 z-0 opacity-25" />
         <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-20 -z-10 size-80 rounded-full bg-tone-mint/20 blur-3xl" />
         <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 right-0 -z-10 size-80 rounded-full bg-tone-lilac/20 blur-3xl" />
-        <Container>
+        <Container className="relative z-10">
           <Reveal>
             <SectionHeading
               eyebrow="02 / How we work"
@@ -316,6 +322,11 @@ export default function Home() {
       </section>
 
       <section className="relative isolate overflow-hidden bg-hero py-16 text-hero-foreground sm:py-20 lg:py-24 2xl:py-32" id="technology">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-20">
+          <Image src="/blue-glass-atmosphere.jpg" alt="" fill sizes="100vw" className="object-cover object-right" />
+        </div>
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-r from-hero/95 via-hero/80 to-hero/55" />
+        <div aria-hidden="true" className="site-noise pointer-events-none absolute inset-0 z-0 opacity-15 mix-blend-soft-light" />
         <div aria-hidden="true" className="pointer-events-none absolute -left-20 top-1/3 -z-10 size-80 rounded-full bg-primary/20 blur-3xl" />
         <div aria-hidden="true" className="pointer-events-none absolute -right-16 bottom-0 -z-10 size-72 rounded-full bg-tone-lilac/15 blur-3xl" />
         <Container className="relative z-10 grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-16">

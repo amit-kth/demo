@@ -40,6 +40,8 @@ export default async function ConceptDetailPage({ params }: ConceptRouteProps) {
         description={project.description}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Concept work", href: "/portfolio" }, { label: project.name }]}
         sideNote={{ label: "Clearly a concept", text: "This is an illustrative exploration, not a client engagement, live deployment or verified business outcome." }}
+        image={{ src: "/blue-glass-atmosphere.jpg", alt: "" }}
+        imageLayout="background"
       />
 
       <section className="py-14 sm:py-18 lg:py-24">

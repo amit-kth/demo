@@ -28,7 +28,8 @@ export default function GetAQuotePage() {
         description="Share the problem, who it affects and the kind of work you have in mind."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Get a quote" }]}
         sideNote={{ label: "A simple start", text: "Use WhatsApp to share a short outline and discuss the next step." }}
-        image={{ src: "/commerce-workflow.jpg", alt: "A retailer using a laptop to manage a product order", label: "Illustrative commerce workflow", tint: "mint" }}
+        image={{ src: "/independent-retail-hero.jpg", alt: "An independent shop owner preparing an order beside a laptop", label: "Illustrative retail workflow", tint: "mint", position: "right" }}
+        imageLayout="background"
       />
 
       <section className="py-14 sm:py-18 lg:py-24 2xl:py-32">

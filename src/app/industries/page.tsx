@@ -25,7 +25,8 @@ export default function IndustriesPage() {
         description="Explore possible digital approaches for different kinds of work. The right scope depends on each organisation."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Industries" }]}
         sideNote={{ label: "Starting points, not case studies", text: "Examples describe possibilities, not client engagements or results." }}
-        image={{ src: "/commerce-workflow.jpg", alt: "A retailer preparing an order with digital tools and a laptop dashboard", label: "Illustrative retail workflow", tint: "mint" }}
+        image={{ src: "/learning-context-hero.jpg", alt: "A teacher and adult learner reviewing a tablet in a classroom", label: "Illustrative education workflow", tint: "mint", position: "right" }}
+        imageLayout="background"
       />
 
       <section className="py-16 sm:py-20 lg:py-24 2xl:py-32">

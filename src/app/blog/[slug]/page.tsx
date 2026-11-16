@@ -39,10 +39,11 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
         description={article.excerpt}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Insights", href: "/blog" }, { label: "Guide" }]}
         image={article.category === "E-commerce"
-          ? { src: "/commerce-workflow.jpg", alt: "A retailer reviewing an online order on a laptop", label: "Illustrative online store", tint: "mint" }
+          ? { src: "/independent-retail-hero.jpg", alt: "An independent shop owner preparing an order beside a laptop", label: "Illustrative online store", tint: "mint", position: "right" }
           : article.category === "AI & automation"
-            ? { src: "/ai-support-desk.jpg", alt: "A laptop showing a simple customer support chat interface", label: "Illustrative chatbot interface", tint: "lilac" }
-            : { src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout", label: "Illustrative website planning", tint: "warm" }}
+            ? { src: "/ai-support-desk.jpg", alt: "A laptop showing a simple customer support chat interface", label: "Illustrative chatbot interface", tint: "lilac", position: "right" }
+            : { src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout", label: "Illustrative website planning", tint: "warm", position: "right" }}
+        imageLayout="background"
         sideNote={{ label: "A general guide", text: "Use these ideas as a starting point, then review your project’s needs and constraints." }}
       />
 

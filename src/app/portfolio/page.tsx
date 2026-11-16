@@ -18,6 +18,8 @@ export default function PortfolioPage() {
         description="Explore illustrative website, store and app ideas."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Concept work" }]}
         sideNote={{ label: "A clear distinction", text: "These are concepts, not client projects or measured outcomes." }}
+        image={{ src: "/blue-glass-atmosphere.jpg", alt: "" }}
+        imageLayout="background"
       />
       <section className="py-14 sm:py-18 lg:py-24 2xl:py-32">
         <Container>

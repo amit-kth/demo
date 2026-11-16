@@ -47,11 +47,11 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
           { label: service.label },
         ]}
         image={service.group === "AI"
-          ? { src: "/ai-support-desk.jpg", alt: "A support chat interface shown on a laptop and phone", label: "Illustrative chatbot interface", tint: "lilac" }
+          ? { src: "/ai-support-desk.jpg", alt: "A support chat interface shown on a laptop and phone", label: "Illustrative chatbot interface", tint: "lilac", position: "right" }
           : service.slug === "ecommerce-development"
-            ? { src: "/independent-retail-hero.jpg", alt: "An independent shop owner preparing an order beside a laptop", label: "Illustrative retail workflow", tint: "mint" }
+            ? { src: "/independent-retail-hero.jpg", alt: "An independent shop owner preparing an order beside a laptop", label: "Illustrative retail workflow", tint: "mint", position: "right" }
             : { src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout on a laptop", label: "Illustrative design process", tint: "warm" }}
-        imageLayout={service.slug === "ecommerce-development" ? "background" : "split"}
+        imageLayout={service.slug === "ecommerce-development" || service.group === "AI" || service.slug === "website-development" ? "background" : "split"}
         sideNote={service.group === "AI"
           ? { label: "Designed with boundaries", text: "AI output can be incomplete or incorrect. Define the use case, approved information and human handoff before choosing an implementation." }
           : service.group === "Growth"

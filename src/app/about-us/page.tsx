@@ -1,4 +1,5 @@
 import { pageMetadata } from "@/lib/page-metadata";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Compass, Eye, Lightbulb, MessageSquareText } from "lucide-react";
 import { ActionLink } from "@/components/action-link";
@@ -53,7 +54,8 @@ export default function AboutPage() {
         description="We connect websites, software, apps, focused chatbots and marketing to the needs behind the work."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About us" }]}
         sideNote={{ label: "The starting point", text: "Understand the business need before recommending tools." }}
-        image={{ src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout on a laptop", label: "Illustrative design workspace", tint: "lilac" }}
+        image={{ src: "/workspace-hero.jpg", alt: "A designer sketching a digital layout beside a laptop", label: "Illustrative digital workspace", tint: "lilac", position: "right" }}
+        imageLayout="background"
       />
 
       <section className="py-16 sm:py-20 lg:py-24 2xl:py-32">
@@ -120,8 +122,13 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-hero py-16 text-hero-foreground sm:py-20 lg:py-24" id="technology">
-        <Container>
+      <section className="relative isolate overflow-hidden bg-hero py-16 text-hero-foreground sm:py-20 lg:py-24" id="technology">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-20">
+          <Image src="/blue-glass-atmosphere.jpg" alt="" fill sizes="100vw" className="object-cover object-right opacity-80" />
+        </div>
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-r from-hero/95 via-hero/85 to-hero/65" />
+        <div aria-hidden="true" className="site-noise pointer-events-none absolute inset-0 z-0 opacity-15 mix-blend-soft-light" />
+        <Container className="relative z-10">
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <span className="grid size-12 place-items-center rounded-2xl bg-primary text-primary-foreground"><Eye className="size-6" aria-hidden="true" /></span>

@@ -7,8 +7,9 @@ type Breadcrumb = { label: string; href?: string };
 type IntroImage = {
   src: string;
   alt: string;
-  label: string;
+  label?: string;
   tint?: "warm" | "mint" | "lilac";
+  position?: "center" | "left" | "right";
 };
 type ImageLayout = "split" | "background";
 
@@ -26,6 +27,12 @@ const tintColors = {
   warm: "bg-tone-warm",
   mint: "bg-tone-mint",
   lilac: "bg-tone-lilac",
+} as const;
+
+const imagePositions = {
+  center: "object-center",
+  left: "object-left",
+  right: "object-right",
 } as const;
 
 function DescriptionBlock({
@@ -69,7 +76,7 @@ export function PageIntro({
             fill
             priority
             sizes="100vw"
-            className="-z-20 object-cover object-center"
+            className={`-z-20 object-cover ${imagePositions[image.position ?? "center"]}`}
           />
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-r from-hero via-hero/90 to-hero/50 lg:to-hero/15" />
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-t from-hero/70 via-transparent to-hero/20" />
@@ -83,6 +90,7 @@ export function PageIntro({
         </>
       )}
       <div aria-hidden="true" className={`site-noise pointer-events-none absolute inset-0 z-0 ${immersive ? "opacity-20 mix-blend-soft-light" : "opacity-[0.07]"}`} />
+      <div aria-hidden="true" className={`site-grid-texture pointer-events-none absolute inset-0 z-0 ${immersive ? "opacity-20" : "opacity-30"}`} />
 
       <Container className="relative z-10">
         {breadcrumbs.length > 0 ? (
@@ -126,19 +134,21 @@ export function PageIntro({
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 42vw, 34vw"
-                className="object-cover"
+                className={`object-cover ${imagePositions[image.position ?? "center"]}`}
               />
               <div aria-hidden="true" className="absolute inset-0 bg-linear-to-tr from-hero/35 via-transparent to-tone-warm/10" />
-              <figcaption className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-background/95 px-3.5 py-2 text-xs font-semibold text-foreground shadow-sm">
-                <span className={`size-2 rounded-full ${tintColors[image.tint ?? "warm"]}`} aria-hidden="true" />
-                {image.label}
-              </figcaption>
+              {image.label ? (
+                <figcaption className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-background/95 px-3.5 py-2 text-xs font-semibold text-foreground shadow-sm">
+                  <span className={`size-2 rounded-full ${tintColors[image.tint ?? "warm"]}`} aria-hidden="true" />
+                  {image.label}
+                </figcaption>
+              ) : null}
             </figure>
           ) : null}
         </div>
       </Container>
 
-      {immersive && image ? (
+      {immersive && image?.label ? (
         <p className="absolute bottom-5 right-5 z-20 inline-flex max-w-[calc(100%-2.5rem)] items-center gap-2 rounded-full border border-hero-border bg-hero/75 px-3.5 py-2 text-xs font-medium text-hero-foreground shadow-lg backdrop-blur-md sm:bottom-7 sm:right-8">
           <span className={`size-2 shrink-0 rounded-full ${tintColors[image.tint ?? "warm"]}`} aria-hidden="true" />
           {image.label}

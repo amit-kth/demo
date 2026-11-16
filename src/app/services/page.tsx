@@ -29,7 +29,7 @@ export default function ServicesPage() {
         title="Build what your business needs next."
         description="Websites, software, apps, focused chatbots and marketing, shaped around one clear need."
         sideNote={{ label: "A practical starting point", text: "A goal or challenge is enough to explore the right scope." }}
-        image={{ src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout on a laptop", label: "Illustrative design workspace", tint: "warm" }}
+        image={{ src: "/blue-glass-atmosphere.jpg", alt: "" }}
         imageLayout="background"
       />
 

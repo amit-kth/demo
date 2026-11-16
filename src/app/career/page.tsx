@@ -22,6 +22,8 @@ export default function CareerPage() {
         description="Confirmed role and application details will be shared here when available."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Careers" }]}
         sideNote={{ label: "No active opening", text: "Please check back for confirmed opportunities." }}
+        image={{ src: "/blue-glass-atmosphere.jpg", alt: "" }}
+        imageLayout="background"
       />
 
       <section className="py-14 sm:py-18 lg:py-24 2xl:py-32">

@@ -21,7 +21,8 @@ export default function ContactPage() {
         description="Share the challenge or idea you are working through. A first conversation can help clarify the next step."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
         sideNote={{ label: "No long brief needed", text: "A short outline is enough to begin." }}
-        image={{ src: "/website-product-studio.jpg", alt: "A designer sketching and reviewing a website layout", label: "Illustrative project planning", tint: "warm" }}
+        image={{ src: "/website-product-studio.jpg", alt: "A designer sketching and reviewing a website layout", label: "Illustrative project planning", tint: "warm", position: "right" }}
+        imageLayout="background"
       />
 
       <section className="py-14 sm:py-18 lg:py-24 2xl:py-32">

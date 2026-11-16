@@ -51,6 +51,7 @@ const toneStyles = {
     link: "text-primary-foreground",
     ring: "border-primary-foreground/20",
     number: "text-primary-foreground/15",
+    wash: "from-sky-200/20 via-transparent to-blue-950/30",
   },
   accent: {
     shell: "bg-tone-warm text-foreground",
@@ -59,6 +60,7 @@ const toneStyles = {
     link: "text-primary",
     ring: "border-foreground/15",
     number: "text-foreground/10",
+    wash: "from-white/40 via-transparent to-orange-500/10",
   },
   paper: {
     shell: "border border-border bg-card text-card-foreground",
@@ -67,6 +69,7 @@ const toneStyles = {
     link: "text-primary",
     ring: "border-primary/15",
     number: "text-primary/10",
+    wash: "from-white/80 via-transparent to-sky-300/20",
   },
   dark: {
     shell: "bg-hero text-hero-foreground",
@@ -75,6 +78,7 @@ const toneStyles = {
     link: "text-accent",
     ring: "border-hero-border",
     number: "text-hero-foreground/10",
+    wash: "from-primary/25 via-transparent to-black/35",
   },
   mist: {
     shell: "bg-secondary text-foreground",
@@ -83,6 +87,7 @@ const toneStyles = {
     link: "text-primary",
     ring: "border-primary/15",
     number: "text-primary/10",
+    wash: "from-white/70 via-transparent to-primary/10",
   },
 } as const;
 
@@ -96,16 +101,18 @@ function ServiceTile({ slug, number, tone, className = "" }: { slug: string; num
 
   return (
     <Reveal className={`h-full ${className}`}>
-      <article className={`group relative isolate flex h-full min-h-72 flex-col overflow-hidden rounded-3xl p-6 shadow-sm transition duration-300 motion-reduce:transition-none hover:-translate-y-1 motion-reduce:hover:translate-y-0 hover:shadow-xl sm:p-8 ${style.shell}`}>
-        <div aria-hidden="true" className={`absolute -right-14 -top-16 size-56 rounded-full border ${style.ring} transition-transform duration-700 group-hover:scale-110 motion-reduce:transition-none`} />
-        <span aria-hidden="true" className={`absolute -bottom-7 right-5 font-display text-8xl font-semibold leading-none ${style.number}`}>{number}</span>
+      <article className={`group relative isolate flex h-full min-h-64 flex-col overflow-hidden rounded-3xl p-5 shadow-sm transition duration-300 motion-reduce:transition-none hover:-translate-y-1 motion-reduce:hover:translate-y-0 hover:shadow-xl sm:min-h-72 sm:p-8 ${style.shell}`}>
+        <div aria-hidden="true" className={`pointer-events-none absolute inset-0 z-0 bg-linear-to-br ${style.wash}`} />
+        <div aria-hidden="true" className="site-grid-texture pointer-events-none absolute inset-0 z-0 opacity-30 mix-blend-soft-light" />
+        <div aria-hidden="true" className={`pointer-events-none absolute -right-14 -top-16 z-0 size-56 rounded-full border ${style.ring} transition-transform duration-700 group-hover:scale-110 motion-reduce:transition-none`} />
+        <span aria-hidden="true" className={`pointer-events-none absolute -bottom-7 right-5 font-display text-8xl font-semibold leading-none ${style.number}`}>{number}</span>
         <div className="relative z-10 flex items-start justify-between gap-4">
           <span className={`grid size-12 place-items-center rounded-2xl ${style.icon}`}>
             <Icon className="size-6" strokeWidth={1.7} aria-hidden="true" />
           </span>
           <span className="text-xs font-bold uppercase tracking-widest opacity-70">{number} / {service.group}</span>
         </div>
-        <div className="relative z-10 mt-auto max-w-xl pt-12">
+        <div className="relative z-10 mt-auto max-w-xl pt-8 sm:pt-12">
           <h3 className="font-display text-balance text-2xl font-semibold leading-tight sm:text-3xl">{service.label}</h3>
           <p className={`mt-3 max-w-lg text-base leading-relaxed ${style.sub}`}>{service.short}</p>
           <Link className={`mt-6 inline-flex min-h-10 items-center gap-2 rounded-sm text-sm font-bold transition hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${style.link}`} href={`/services/${service.slug}`}>
@@ -121,7 +128,7 @@ function ConceptCard({ project, className = "" }: { project: (typeof projectConc
   return (
     <Reveal className={`h-full ${className}`}>
       <Link className="project-card group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition duration-300 motion-reduce:transition-none hover:-translate-y-1 motion-reduce:hover:translate-y-0 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href={`/portfolio/${project.slug}`}>
-        <div className="relative h-64 overflow-hidden sm:h-72">
+        <div className="relative h-52 overflow-hidden sm:h-72">
           <Image src={project.image} alt={project.alt} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 58vw, 48vw" className="project-art object-cover" />
           <div className="absolute inset-0 bg-linear-to-t from-foreground/70 via-foreground/5 to-transparent" />
           <span className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-background/95 px-4 py-2 text-xs font-bold uppercase tracking-wider text-foreground shadow-md">
@@ -161,7 +168,7 @@ export default function Home() {
       />
       <HeroSection />
 
-      <section className="bg-secondary py-14 sm:py-18 lg:py-20" aria-labelledby="home-intro-title">
+      <section className="bg-secondary py-12 sm:py-16 lg:py-20" aria-labelledby="home-intro-title">
         <Container className="grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-14">
           <Reveal className="lg:col-span-5">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">Slash Logic / A connected view</p>
@@ -177,7 +184,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-background py-16 sm:py-20 lg:py-24 2xl:py-32" id="services">
+      <section className="bg-background py-12 sm:py-16 lg:py-20 2xl:py-24" id="services">
         <Container>
           <Reveal>
             <SectionHeading
@@ -194,8 +201,8 @@ export default function Home() {
             <ServiceTile className="lg:col-span-7" slug="ai-solutions" number="04" tone="dark" />
             <ServiceTile className="lg:col-span-8" slug="digital-marketing" number="05" tone="mist" />
             <Reveal className="h-full lg:col-span-4">
-              <aside className="flex h-full min-h-72 flex-col overflow-hidden rounded-3xl border border-border bg-background">
-                <div className="relative h-36 shrink-0 overflow-hidden">
+              <aside className="flex h-full min-h-64 flex-col overflow-hidden rounded-3xl border border-border bg-background sm:min-h-72">
+                <div className="relative h-32 shrink-0 overflow-hidden sm:h-36">
                   <Image
                     src="/commerce-workflow.jpg"
                     alt="A retailer preparing an order beside a digital sales dashboard"
@@ -204,7 +211,6 @@ export default function Home() {
                     className="object-cover"
                   />
                   <div aria-hidden="true" className="absolute inset-0 bg-linear-to-tr from-hero/40 via-transparent to-tone-mint/15" />
-                  <span className="absolute left-4 top-4 rounded-full bg-background/95 px-3 py-1.5 text-xs font-bold text-foreground shadow-sm">Illustrative retail workflow</span>
                 </div>
                 <div className="flex flex-1 flex-col p-5 sm:p-6">
                   <p className="text-xs font-bold uppercase tracking-widest text-primary">Explore further</p>
@@ -229,7 +235,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-secondary py-16 sm:py-20 lg:py-24 2xl:py-32" id="approach">
+      <section className="relative isolate overflow-hidden bg-secondary py-12 sm:py-16 lg:py-20 2xl:py-24" id="approach">
         <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 -z-20 hidden w-[48%] overflow-hidden lg:block">
           <Image src="/workspace-hero.jpg" alt="" fill sizes="48vw" className="object-cover object-right opacity-55" />
           <div className="absolute inset-0 bg-linear-to-r from-secondary via-secondary/85 to-secondary/65" />
@@ -264,7 +270,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-background py-16 sm:py-20 lg:py-24 2xl:py-32" id="industries">
+      <section className="bg-background py-12 sm:py-16 lg:py-20 2xl:py-24" id="industries">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
             <Reveal className="lg:col-span-5">
@@ -301,7 +307,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-secondary py-16 sm:py-20 lg:py-24 2xl:py-32" id="work">
+      <section className="bg-secondary py-12 sm:py-16 lg:py-20 2xl:py-24" id="work">
         <Container>
           <Reveal>
             <SectionHeading
@@ -321,7 +327,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-hero py-16 text-hero-foreground sm:py-20 lg:py-24 2xl:py-32" id="technology">
+      <section className="relative isolate overflow-hidden bg-hero py-12 text-hero-foreground sm:py-16 lg:py-20 2xl:py-24" id="technology">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-20">
           <Image src="/blue-glass-atmosphere.jpg" alt="" fill sizes="100vw" className="object-cover object-right" />
         </div>
@@ -362,7 +368,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-background py-16 sm:py-20 lg:py-24 2xl:py-32" id="insights">
+      <section className="bg-background py-12 sm:py-16 lg:py-20 2xl:py-24" id="insights">
         <Container>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <Reveal>
@@ -389,7 +395,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-hero py-16 text-hero-foreground sm:py-20 lg:py-24" id="faq">
+      <section className="bg-hero py-12 text-hero-foreground sm:py-16 lg:py-20" id="faq">
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-4">
             <p className="text-xs font-bold uppercase tracking-widest text-accent sm:text-sm">07 / Good to know</p>
@@ -413,7 +419,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-primary py-16 text-primary-foreground sm:py-20 lg:py-24 2xl:py-32" id="contact">
+      <section className="relative isolate overflow-hidden bg-primary py-12 text-primary-foreground sm:py-16 lg:py-20 2xl:py-24" id="contact">
         <div aria-hidden="true" className="absolute -right-24 -top-32 size-96 rounded-full border border-primary-foreground/20" />
         <div aria-hidden="true" className="absolute -right-12 -top-20 size-72 rounded-full border border-dashed border-accent/65" />
         <Container className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-center">

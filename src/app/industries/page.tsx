@@ -25,11 +25,11 @@ export default function IndustriesPage() {
         description="Explore possible digital approaches for different kinds of work. The right scope depends on each organisation."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Industries" }]}
         sideNote={{ label: "Starting points, not case studies", text: "Examples describe possibilities, not client engagements or results." }}
-        image={{ src: "/learning-context-hero.jpg", alt: "A teacher and adult learner reviewing a tablet in a classroom", label: "Illustrative education workflow", tint: "mint", position: "right" }}
+        image={{ src: "/learning-context-hero.jpg", alt: "A teacher and adult learner reviewing a tablet in a classroom", position: "right" }}
         imageLayout="background"
       />
 
-      <section className="py-16 sm:py-20 lg:py-24 2xl:py-32">
+      <section className="py-12 sm:py-16 lg:py-20 2xl:py-24">
         <Container>
           <Reveal>
             <SectionHeading
@@ -40,7 +40,7 @@ export default function IndustriesPage() {
           </Reveal>
           <div className="mt-10 grid gap-4 lg:mt-14 lg:grid-cols-12">
             <Reveal className="h-full lg:col-span-7">
-              <article className="relative isolate flex h-full min-h-96 flex-col overflow-hidden rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
+              <article className="relative isolate flex h-full min-h-72 flex-col overflow-hidden rounded-3xl bg-primary p-5 text-primary-foreground sm:min-h-96 sm:p-10">
                 <div aria-hidden="true" className="absolute -right-12 -top-16 -z-10 size-72 rounded-full border border-primary-foreground/20" />
                 <div className="flex items-center justify-between gap-4">
                   <span className="grid size-12 place-items-center rounded-2xl bg-primary-foreground/15"><featured.icon className="size-6" aria-hidden="true" /></span>
@@ -78,7 +78,7 @@ export default function IndustriesPage() {
         </Container>
       </section>
 
-      <section className="bg-secondary py-16 sm:py-20 lg:py-24 2xl:py-32">
+      <section className="bg-secondary py-12 sm:py-16 lg:py-20 2xl:py-24">
         <Container>
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
@@ -118,7 +118,7 @@ export default function IndustriesPage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-12 sm:py-16 lg:py-20">
         <Container className="flex flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
           <div><p className="text-xs font-bold uppercase tracking-widest text-primary">Find the right next step</p><h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold sm:text-3xl">Find the right service.</h2></div>
           <div className="flex flex-col gap-3 sm:flex-row">

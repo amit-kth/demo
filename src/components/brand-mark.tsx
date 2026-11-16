@@ -7,23 +7,22 @@ type BrandMarkProps = {
 
 export function BrandMark({ tone = "light" }: BrandMarkProps) {
   const wordColor = tone === "dark" ? "text-foreground" : "text-hero-foreground";
+  const markTone = tone === "light" ? "grayscale brightness-0 invert" : "";
 
   return (
     <Link
-      className={`group inline-flex shrink-0 items-center gap-3 whitespace-nowrap rounded-md ${wordColor} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring`}
+      className={`group inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-md ${wordColor} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:gap-3`}
       href="/"
       aria-label="Slash Logic home"
     >
-      <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-card p-1 shadow-sm ring-1 ring-border/70 transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none sm:size-11">
-        <Image
-          src="/slash-logic-logo-mark.png"
-          alt=""
-          width={509}
-          height={379}
-          sizes="44px"
-          className="h-6 w-8 object-contain sm:h-7 sm:w-9"
-        />
-      </span>
+      <Image
+        src="/slash-logic-logo-mark.png"
+        alt=""
+        width={509}
+        height={379}
+        sizes="48px"
+        className={`h-8 w-11 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none sm:h-9 sm:w-12 ${markTone}`}
+      />
       <span className="font-display text-base font-semibold tracking-tight sm:text-lg">
         Slash Logic
       </span>

@@ -33,7 +33,7 @@ export default function ServicesPage() {
         imageLayout="background"
       />
 
-      <section className="py-16 sm:py-20 lg:py-24 2xl:py-32">
+      <section className="py-12 sm:py-16 lg:py-20 2xl:py-24">
         <Container>
           <Reveal>
             <SectionHeading
@@ -82,7 +82,7 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      <section className="bg-secondary py-16 sm:py-20 lg:py-24">
+      <section className="bg-secondary py-12 sm:py-16 lg:py-20">
         <Container className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-16">
           <Reveal className="lg:col-span-5">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">02 / How to choose</p>

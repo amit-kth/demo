@@ -36,7 +36,7 @@ export function SiteFooter() {
       </div>
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-r from-hero/95 via-hero/85 to-hero/65" />
       <div aria-hidden="true" className="site-noise pointer-events-none absolute inset-0 z-0 opacity-15 mix-blend-soft-light" />
-      <Container className="relative z-10 py-14 sm:py-18 lg:py-20">
+      <Container className="relative z-10 py-12 sm:py-16 lg:py-20">
         <div className="grid gap-10 border-b border-hero-border pb-12 lg:grid-cols-12 lg:items-end lg:gap-12 lg:pb-16">
           <div className="lg:col-span-8">
             <p className="text-xs font-bold uppercase tracking-widest text-accent sm:text-sm">A good place to begin</p>

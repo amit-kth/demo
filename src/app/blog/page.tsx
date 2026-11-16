@@ -18,10 +18,10 @@ export default function BlogPage() {
         description="Guides for planning websites, online stores and focused chatbot experiences."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Insights" }]}
         sideNote={{ label: "Practical, not prescriptive", text: "Use these ideas as a starting point, then weigh your goals and constraints." }}
-        image={{ src: "/ai-support-desk.jpg", alt: "A laptop and phone showing a simple support chat interface", label: "Illustrative chatbot interface", tint: "lilac", position: "right" }}
+        image={{ src: "/ai-support-desk.jpg", alt: "A laptop and phone showing a simple support chat interface", position: "right" }}
         imageLayout="background"
       />
-      <section className="py-14 sm:py-18 lg:py-24 2xl:py-32">
+      <section className="py-10 sm:py-16 lg:py-20 2xl:py-24">
         <Container>
           <BlogExplorer />
         </Container>

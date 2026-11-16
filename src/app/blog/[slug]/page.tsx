@@ -39,15 +39,15 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
         description={article.excerpt}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Insights", href: "/blog" }, { label: "Guide" }]}
         image={article.category === "E-commerce"
-          ? { src: "/independent-retail-hero.jpg", alt: "An independent shop owner preparing an order beside a laptop", label: "Illustrative online store", tint: "mint", position: "right" }
+          ? { src: "/independent-retail-hero.jpg", alt: "An independent shop owner preparing an order beside a laptop", position: "right" }
           : article.category === "AI & automation"
-            ? { src: "/ai-support-desk.jpg", alt: "A laptop showing a simple customer support chat interface", label: "Illustrative chatbot interface", tint: "lilac", position: "right" }
-            : { src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout", label: "Illustrative website planning", tint: "warm", position: "right" }}
+            ? { src: "/ai-support-desk.jpg", alt: "A laptop showing a simple customer support chat interface", position: "right" }
+            : { src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout", position: "right" }}
         imageLayout="background"
         sideNote={{ label: "A general guide", text: "Use these ideas as a starting point, then review your project’s needs and constraints." }}
       />
 
-      <section className="py-14 sm:py-18 lg:py-24">
+      <section className="py-10 sm:py-16 lg:py-20">
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <nav aria-label="On this page" className="h-fit rounded-3xl border border-border bg-secondary p-5 sm:p-6 lg:sticky lg:top-28 lg:col-span-4">
             <p className="text-xs font-bold uppercase tracking-widest text-primary">In this guide</p>

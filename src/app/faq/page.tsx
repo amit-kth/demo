@@ -21,7 +21,7 @@ export default function FaqPage() {
         image={{ src: "/blue-glass-atmosphere.jpg", alt: "" }}
         imageLayout="background"
       />
-      <section className="py-14 sm:py-18 lg:py-24 2xl:py-32">
+      <section className="py-10 sm:py-16 lg:py-20 2xl:py-24">
         <Container>
           <FaqBrowser />
         </Container>

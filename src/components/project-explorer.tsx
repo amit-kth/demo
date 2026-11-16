@@ -23,22 +23,22 @@ export function ProjectExplorer() {
 
   return (
     <>
-      <div className="flex flex-col gap-5 rounded-3xl border border-border bg-card p-5 sm:flex-row sm:items-end sm:justify-between sm:p-6">
-        <div>
+      <div className="grid gap-4 rounded-3xl border border-border bg-card p-4 sm:gap-5 sm:p-6 lg:grid-cols-12 lg:items-end">
+        <div className="min-w-0 lg:col-span-5">
           <p className="text-xs font-bold uppercase tracking-widest text-primary">Explore concepts</p>
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">Filter these illustrative examples by the kind of work or industry context.</p>
         </div>
-        <div className="grid gap-3 sm:grid-cols-2">
-          <label className="grid gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+        <div className="grid min-w-0 gap-3 sm:grid-cols-2 lg:col-span-7">
+          <label className="grid min-w-0 gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
             Service
-            <select className="min-h-11 min-w-48 rounded-xl border border-input bg-background px-3 text-sm font-medium normal-case tracking-normal text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" value={serviceFilter} onChange={(event) => setServiceFilter(event.target.value)}>
+            <select className="min-h-11 w-full min-w-0 rounded-xl border border-input bg-background px-3 text-sm font-medium normal-case tracking-normal text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" value={serviceFilter} onChange={(event) => setServiceFilter(event.target.value)}>
               <option value="all">All services</option>
               {serviceOptions.map((service) => <option key={service} value={service}>{service}</option>)}
             </select>
           </label>
-          <label className="grid gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+          <label className="grid min-w-0 gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
             Industry
-            <select className="min-h-11 min-w-48 rounded-xl border border-input bg-background px-3 text-sm font-medium normal-case tracking-normal text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" value={industryFilter} onChange={(event) => setIndustryFilter(event.target.value)}>
+            <select className="min-h-11 w-full min-w-0 rounded-xl border border-input bg-background px-3 text-sm font-medium normal-case tracking-normal text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" value={industryFilter} onChange={(event) => setIndustryFilter(event.target.value)}>
               <option value="all">All industries</option>
               {industryOptions.map((industry) => <option key={industry} value={industry}>{industry}</option>)}
             </select>
@@ -46,31 +46,31 @@ export function ProjectExplorer() {
         </div>
       </div>
 
-      <p className="mt-5 text-sm text-muted-foreground" aria-live="polite">Showing {filteredProjects.length} {filteredProjects.length === 1 ? "concept" : "concepts"}.</p>
+      <p className="mt-4 text-sm text-muted-foreground" aria-live="polite">Showing {filteredProjects.length} {filteredProjects.length === 1 ? "concept" : "concepts"}.</p>
       {filteredProjects.length > 0 ? (
-        <div className="mt-5 grid items-stretch gap-5 lg:grid-cols-12">
+        <div className="mt-4 grid items-stretch gap-4 lg:grid-cols-12">
           {filteredProjects.map((project, index) => (
             <article className={`project-card group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition duration-300 motion-reduce:transition-none hover:-translate-y-1 motion-reduce:hover:translate-y-0 hover:shadow-xl ${index === 0 && !hasFilters ? "lg:col-span-7" : index === 1 && !hasFilters ? "lg:col-span-5" : "lg:col-span-6"}`} key={project.name}>
-              <div className="relative h-64 overflow-hidden sm:h-80">
+              <div className="relative h-52 overflow-hidden sm:h-72">
                 <Image src={project.image} alt={project.alt} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 55vw, 48vw" className="project-art object-cover" />
                 <div className="absolute inset-0 bg-linear-to-t from-foreground/70 via-foreground/5 to-transparent" />
-                <span className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-background/95 px-4 py-2 text-xs font-bold uppercase tracking-wider text-foreground shadow-md">
+                <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-background/95 px-3.5 py-2 text-xs font-bold uppercase tracking-wider text-foreground shadow-md sm:left-5 sm:top-5 sm:px-4">
                   <Sparkles className="size-4 text-primary" aria-hidden="true" /> Concept project
                 </span>
-                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 text-background">
+                <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 text-background sm:bottom-5 sm:left-5 sm:right-5">
                   <div><p className="text-xs font-bold uppercase tracking-widest text-background/80">{project.category}</p><h2 className="mt-2 font-display text-2xl font-semibold sm:text-3xl">{project.name}</h2></div>
-                  <span className="grid size-11 shrink-0 place-items-center rounded-full bg-accent text-accent-foreground transition-transform group-hover:rotate-45 motion-reduce:group-hover:rotate-0 motion-reduce:transition-none"><ArrowUpRight className="size-5" aria-hidden="true" /></span>
+                  <span className="grid size-10 shrink-0 place-items-center rounded-full bg-accent text-accent-foreground transition-transform group-hover:rotate-45 motion-reduce:group-hover:rotate-0 motion-reduce:transition-none sm:size-11"><ArrowUpRight className="size-5" aria-hidden="true" /></span>
                 </div>
               </div>
-              <div className="flex flex-1 flex-col p-6 sm:p-7">
+              <div className="flex flex-1 flex-col p-5 sm:p-7">
                 <p className="text-xs font-bold uppercase tracking-widest text-primary">{project.type}</p>
                 <h3 className="mt-3 font-display text-balance text-xl font-semibold leading-tight sm:text-2xl">{project.title}</h3>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">{project.description}</p>
-                <div className="mt-auto flex flex-wrap gap-2 pt-6">
+                <div className="mt-auto flex flex-wrap gap-2 pt-5 sm:pt-6">
                   <span className="rounded-full bg-secondary px-3 py-1.5 text-xs font-semibold text-secondary-foreground">{project.service}</span>
                   <span className="rounded-full bg-secondary px-3 py-1.5 text-xs font-semibold text-secondary-foreground">{project.industry}</span>
                 </div>
-                <Link className="mt-5 inline-flex min-h-10 items-center gap-2 self-start rounded-sm text-sm font-bold text-primary transition hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href={`/portfolio/${project.slug}`}>
+                <Link className="mt-4 inline-flex min-h-10 items-center gap-2 self-start rounded-sm text-sm font-bold text-primary transition hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href={`/portfolio/${project.slug}`}>
                   Explore concept <ArrowUpRight className="size-4" aria-hidden="true" />
                 </Link>
               </div>
@@ -86,9 +86,9 @@ export function ProjectExplorer() {
         </div>
       )}
 
-      <div className="mt-8 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-7 flex flex-col gap-4 border-t border-border pt-5 sm:mt-8 sm:flex-row sm:items-center sm:justify-between sm:pt-6">
         <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">These examples are conceptual explorations. They are not published client work, case studies or evidence of customer outcomes.</p>
-        <Link className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-semibold transition hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href="/services">Explore services <ArrowUpRight className="size-4" aria-hidden="true" /></Link>
+        <Link className="inline-flex min-h-11 items-center gap-2 self-start rounded-full border border-border px-4 py-2 text-sm font-semibold transition hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href="/services">Explore services <ArrowUpRight className="size-4" aria-hidden="true" /></Link>
       </div>
     </>
   );

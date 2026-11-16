@@ -47,10 +47,10 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
           { label: service.label },
         ]}
         image={service.group === "AI"
-          ? { src: "/ai-support-desk.jpg", alt: "A support chat interface shown on a laptop and phone", label: "Illustrative chatbot interface", tint: "lilac", position: "right" }
+          ? { src: "/ai-support-desk.jpg", alt: "A support chat interface shown on a laptop and phone", position: "right" }
           : service.slug === "ecommerce-development"
-            ? { src: "/independent-retail-hero.jpg", alt: "An independent shop owner preparing an order beside a laptop", label: "Illustrative retail workflow", tint: "mint", position: "right" }
-            : { src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout on a laptop", label: "Illustrative design process", tint: "warm" }}
+            ? { src: "/independent-retail-hero.jpg", alt: "An independent shop owner preparing an order beside a laptop", position: "right" }
+            : { src: "/website-product-studio.jpg", alt: "A designer reviewing a website layout on a laptop" }}
         imageLayout={service.slug === "ecommerce-development" || service.group === "AI" || service.slug === "website-development" ? "background" : "split"}
         sideNote={service.group === "AI"
           ? { label: "Designed with boundaries", text: "AI output can be incomplete or incorrect. Define the use case, approved information and human handoff before choosing an implementation." }
@@ -59,7 +59,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
             : { label: "A useful first release", text: "Begin with the work that matters now. Scope can grow as the product, audience and needs become clearer." }}
       />
 
-      <section className="py-16 sm:py-20 lg:py-24 2xl:py-32">
+      <section className="py-12 sm:py-16 lg:py-20 2xl:py-24">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-16">
             <Reveal className="lg:col-span-7">
@@ -84,7 +84,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
         </Container>
       </section>
 
-      <section className="bg-secondary py-16 sm:py-20 lg:py-24 2xl:py-32">
+      <section className="bg-secondary py-12 sm:py-16 lg:py-20 2xl:py-24">
         <Container>
           <Reveal>
             <SectionHeading
@@ -109,7 +109,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-12 sm:py-16 lg:py-20">
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">03 / A considered process</p>
@@ -130,7 +130,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
       </section>
 
       {service.group === "AI" ? (
-        <section className="bg-hero py-14 text-hero-foreground sm:py-16">
+        <section className="bg-hero py-10 text-hero-foreground sm:py-14">
           <Container className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-5">
             <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground"><ShieldCheck className="size-6" aria-hidden="true" /></span>
             <div className="min-w-0 flex-1">
@@ -141,7 +141,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
         </section>
       ) : null}
 
-      <section className="bg-background py-16 sm:py-20 lg:py-24">
+      <section className="bg-background py-12 sm:py-16 lg:py-20">
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-4">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">04 / Questions</p>
@@ -165,7 +165,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
       </section>
 
       {related.length > 0 ? (
-        <section className="bg-secondary py-14 sm:py-16">
+        <section className="bg-secondary py-10 sm:py-14">
           <Container>
             <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
               <div>
@@ -186,7 +186,7 @@ export default async function ServiceDetailPage({ params }: ServiceRouteProps) {
         </section>
       ) : null}
 
-      <section className="bg-primary py-14 text-primary-foreground sm:py-16">
+      <section className="bg-primary py-10 text-primary-foreground sm:py-14">
         <Container className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/75">Ready to explore the scope?</p>

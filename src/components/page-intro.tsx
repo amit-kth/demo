@@ -7,8 +7,6 @@ type Breadcrumb = { label: string; href?: string };
 type IntroImage = {
   src: string;
   alt: string;
-  label?: string;
-  tint?: "warm" | "mint" | "lilac";
   position?: "center" | "left" | "right";
 };
 type ImageLayout = "split" | "background";
@@ -22,12 +20,6 @@ type PageIntroProps = {
   image?: IntroImage;
   imageLayout?: ImageLayout;
 };
-
-const tintColors = {
-  warm: "bg-tone-warm",
-  mint: "bg-tone-mint",
-  lilac: "bg-tone-lilac",
-} as const;
 
 const imagePositions = {
   center: "object-center",
@@ -67,7 +59,7 @@ export function PageIntro({
   const immersive = Boolean(image && imageLayout === "background");
 
   return (
-    <section className={`relative isolate overflow-hidden ${immersive ? "min-h-[34rem] bg-hero py-28 text-hero-foreground sm:min-h-[40rem] sm:py-36 lg:min-h-[44rem] lg:py-40" : "bg-secondary pb-14 pt-28 sm:pb-18 sm:pt-36 lg:pb-20 lg:pt-40"}`}>
+    <section className={`relative isolate overflow-hidden ${immersive ? "min-h-[34rem] bg-hero py-28 text-hero-foreground sm:min-h-[40rem] sm:py-36 lg:min-h-[44rem] lg:py-40" : "bg-secondary pb-12 pt-24 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36"}`}>
       {immersive && image ? (
         <>
           <Image
@@ -94,7 +86,7 @@ export function PageIntro({
 
       <Container className="relative z-10">
         {breadcrumbs.length > 0 ? (
-          <nav aria-label="Breadcrumb" className="mb-8">
+          <nav aria-label="Breadcrumb" className="mb-6 sm:mb-8">
             <ol className={`flex flex-wrap items-center gap-2 text-sm font-medium ${immersive ? "text-hero-muted" : "text-muted-foreground"}`}>
               {breadcrumbs.map((crumb, index) => (
                 <li className="inline-flex items-center gap-2" key={`${crumb.label}-${index}`}>
@@ -118,7 +110,7 @@ export function PageIntro({
               <span className={`h-px w-8 ${immersive ? "bg-accent" : "bg-primary"}`} aria-hidden="true" />
               {eyebrow}
             </p>
-            <h1 className={`mt-5 max-w-5xl font-display text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl 2xl:text-7xl ${immersive ? "text-hero-foreground" : "text-foreground"}`}>
+            <h1 className={`mt-5 max-w-5xl font-display text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl 2xl:text-7xl ${immersive ? "text-hero-foreground" : "text-foreground"}`}>
               {title}
             </h1>
             <div className="mt-5 max-w-2xl">
@@ -137,23 +129,10 @@ export function PageIntro({
                 className={`object-cover ${imagePositions[image.position ?? "center"]}`}
               />
               <div aria-hidden="true" className="absolute inset-0 bg-linear-to-tr from-hero/35 via-transparent to-tone-warm/10" />
-              {image.label ? (
-                <figcaption className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-background/95 px-3.5 py-2 text-xs font-semibold text-foreground shadow-sm">
-                  <span className={`size-2 rounded-full ${tintColors[image.tint ?? "warm"]}`} aria-hidden="true" />
-                  {image.label}
-                </figcaption>
-              ) : null}
             </figure>
           ) : null}
         </div>
       </Container>
-
-      {immersive && image?.label ? (
-        <p className="absolute bottom-5 right-5 z-20 inline-flex max-w-[calc(100%-2.5rem)] items-center gap-2 rounded-full border border-hero-border bg-hero/75 px-3.5 py-2 text-xs font-medium text-hero-foreground shadow-lg backdrop-blur-md sm:bottom-7 sm:right-8">
-          <span className={`size-2 shrink-0 rounded-full ${tintColors[image.tint ?? "warm"]}`} aria-hidden="true" />
-          {image.label}
-        </p>
-      ) : null}
     </section>
   );
 }

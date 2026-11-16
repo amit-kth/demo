@@ -21,13 +21,13 @@ export default function ContactPage() {
         description="Share the challenge or idea you are working through. A first conversation can help clarify the next step."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
         sideNote={{ label: "No long brief needed", text: "A short outline is enough to begin." }}
-        image={{ src: "/website-product-studio.jpg", alt: "A designer sketching and reviewing a website layout", label: "Illustrative project planning", tint: "warm", position: "right" }}
+        image={{ src: "/website-product-studio.jpg", alt: "A designer sketching and reviewing a website layout", position: "right" }}
         imageLayout="background"
       />
 
-      <section className="py-14 sm:py-18 lg:py-24 2xl:py-32">
+      <section className="py-10 sm:py-16 lg:py-20 2xl:py-24">
         <Container className="grid gap-6 lg:grid-cols-12 lg:gap-10">
-          <div className="relative isolate flex min-h-96 flex-col overflow-hidden rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10 lg:col-span-7 lg:p-12">
+          <div className="relative isolate flex min-h-72 flex-col overflow-hidden rounded-3xl bg-primary p-5 text-primary-foreground sm:min-h-96 sm:p-10 lg:col-span-7 lg:p-12">
             <div aria-hidden="true" className="absolute -right-20 -top-20 -z-10 size-96 rounded-full border border-primary-foreground/20" />
             <span className="grid size-12 place-items-center rounded-2xl bg-primary-foreground/15"><MessageCircle className="size-6" aria-hidden="true" /></span>
             <div className="mt-auto max-w-xl pt-12">

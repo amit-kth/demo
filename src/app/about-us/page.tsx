@@ -54,11 +54,11 @@ export default function AboutPage() {
         description="We connect websites, software, apps, focused chatbots and marketing to the needs behind the work."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About us" }]}
         sideNote={{ label: "The starting point", text: "Understand the business need before recommending tools." }}
-        image={{ src: "/workspace-hero.jpg", alt: "A designer sketching a digital layout beside a laptop", label: "Illustrative digital workspace", tint: "lilac", position: "right" }}
+        image={{ src: "/workspace-hero.jpg", alt: "A designer sketching a digital layout beside a laptop", position: "right" }}
         imageLayout="background"
       />
 
-      <section className="py-16 sm:py-20 lg:py-24 2xl:py-32">
+      <section className="py-12 sm:py-16 lg:py-20 2xl:py-24">
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">01 / Who we are</p>
@@ -72,7 +72,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-secondary py-16 sm:py-20 lg:py-24 2xl:py-32">
+      <section className="bg-secondary py-12 sm:py-16 lg:py-20 2xl:py-24">
         <Container>
           <Reveal>
             <SectionHeading
@@ -86,7 +86,7 @@ export default function AboutPage() {
               const Icon = principle.icon;
               return (
                 <Reveal className={principleSpans[index]} key={principle.number}>
-                  <article className={`flex h-full min-h-72 flex-col rounded-3xl p-6 sm:p-8 ${index === 0 ? "bg-primary text-primary-foreground" : index === 1 ? "border border-border bg-card" : "bg-hero text-hero-foreground"}`}>
+                  <article className={`flex h-full min-h-64 flex-col rounded-3xl p-5 sm:min-h-72 sm:p-8 ${index === 0 ? "bg-primary text-primary-foreground" : index === 1 ? "border border-border bg-card" : "bg-hero text-hero-foreground"}`}>
                     <div className="flex items-start justify-between gap-4">
                       <span className="grid size-11 place-items-center rounded-2xl bg-background/15"><Icon className="size-5" aria-hidden="true" /></span>
                       <span className="font-display text-lg font-semibold opacity-65">{principle.number}</span>
@@ -101,7 +101,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24 2xl:py-32">
+      <section className="py-12 sm:py-16 lg:py-20 2xl:py-24">
         <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
             <p className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">03 / How we work</p>
@@ -122,7 +122,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-hero py-16 text-hero-foreground sm:py-20 lg:py-24" id="technology">
+      <section className="relative isolate overflow-hidden bg-hero py-12 text-hero-foreground sm:py-16 lg:py-20" id="technology">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-20">
           <Image src="/blue-glass-atmosphere.jpg" alt="" fill sizes="100vw" className="object-cover object-right opacity-80" />
         </div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-background py-16 sm:py-20 lg:py-24">
+      <section className="bg-background py-12 sm:py-16 lg:py-20">
         <Container className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-primary">Ready to talk through an idea?</p>

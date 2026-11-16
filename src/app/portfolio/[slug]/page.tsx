@@ -44,7 +44,7 @@ export default async function ConceptDetailPage({ params }: ConceptRouteProps) {
         imageLayout="background"
       />
 
-      <section className="py-14 sm:py-18 lg:py-24">
+      <section className="py-10 sm:py-16 lg:py-20">
         <Container>
           <div className="relative aspect-video overflow-hidden rounded-3xl bg-secondary sm:aspect-video">
             <Image src={project.image} alt={project.alt} fill priority sizes="(max-width: 768px) 100vw, 90vw" className="object-cover" />
@@ -79,7 +79,7 @@ export default async function ConceptDetailPage({ params }: ConceptRouteProps) {
         </Container>
       </section>
 
-      <section className="bg-hero py-14 text-hero-foreground sm:py-16">
+      <section className="bg-hero py-10 text-hero-foreground sm:py-14">
         <Container className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-5">
           <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground"><Check className="size-6" aria-hidden="true" /></span>
           <div className="min-w-0 flex-1">
@@ -89,7 +89,7 @@ export default async function ConceptDetailPage({ params }: ConceptRouteProps) {
         </Container>
       </section>
 
-      <section className="py-14 sm:py-18 lg:py-24">
+      <section className="py-10 sm:py-16 lg:py-20">
         <Container>
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div><p className="text-xs font-bold uppercase tracking-widest text-primary">Continue exploring</p><h2 className="mt-3 font-display text-2xl font-semibold sm:text-3xl">Other concepts</h2></div>
@@ -106,7 +106,7 @@ export default async function ConceptDetailPage({ params }: ConceptRouteProps) {
         </Container>
       </section>
 
-      <section className="bg-primary py-14 text-primary-foreground sm:py-16">
+      <section className="bg-primary py-10 text-primary-foreground sm:py-14">
         <Container className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div><p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/75">Have a real brief in mind?</p><h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold sm:text-3xl">Let&apos;s shape the right scope for it.</h2></div>
           <ActionLink href="/get-a-quote" variant="light">Start a conversation</ActionLink>
